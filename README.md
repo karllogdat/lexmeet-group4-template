@@ -1,18 +1,72 @@
-# React + Vite
+# LexMeet Group 4 Template (Blue)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <img src="./images/home.png" alt="Home">
+</p>
 
-Currently, two official plugins are available:
+## Starting the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project requires a working NodeJS installation.
 
-## React Compiler
+First, clone the repository on your machine and go to its directory.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```bash
+git clone https://github.com/karllogdat/lexmeet-group4-template.git
+cd lexmeet-group4-template
+```
 
-Note: This will impact Vite dev & build performances.
+Next, install the project's dependencies using:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Lastly, run the project.
+
+```bash
+npm run dev
+```
+
+## Contributing
+
+To contribute: first, clone the repository on your machine using:
+
+```bash
+git clone https://github.com/karllogdat/lexmeet-group4-template.git
+```
+
+### Adding Features (Pages, Components, etc)
+
+When adding new features, including pages or components, create a new branch
+following the name convention (without spaces):
+
+```text
+feat-[feature name]
+```
+
+Create a branch with your chosen branch name using:
+
+```bash
+git checkout -u feat-[feature name]
+```
+
+To merge your newly added features, push your additions/changes upstream using:
+
+```bash
+git add -A
+git commit -m "feature message such as changes or additions made in this commit"
+git push origin feat-[feature name]
+```
+
+Then, create a pull request from `feat-[feature name]` to `master` where the
+changes will be reviewed. After review, your new commits will be in the
+`master` branch.
+
+### Making Fixes
+
+Follow the steps in [adding features](#adding-features-pages-components-etc),
+but follow this branch naming format:
+
+```text
+fix-[fix name]
+```
