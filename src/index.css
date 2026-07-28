@@ -1,1 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+.g4-heading-1 {
+  @apply font-playfair text-5xl;
+}
+
+.g4-heading-2 {
+  @apply font-playfair text-[42px];
+}
+
+.g4-heading-3 {
+  @apply font-playfair text-[30px];
+}
+
+.g4-large-body {
+  @apply font-inter font-medium text-2xl;
+}
+
+.g4-body {
+  @apply font-inter text-2xl;
+}
+
+.g4-button {
+  @apply font-inter font-semibold text-2xl;
+}
+
+.g4-caption {
+  @apply font-inter text-[22px];
+}
+
+.g4-subcaption {
+  @apply font-inter text-[20px];
+}
