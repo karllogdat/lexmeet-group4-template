@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
 
+import SubsectionImage from "../assets/everyday-law/subsection-card.jpg";
+
 export default function SubsectionCard() {
   return (
     <div className="flex flex-col justify-between p-5 gap-4">
@@ -7,7 +9,9 @@ export default function SubsectionCard() {
         <h3 className="g4-heading-3 text-g4-900">Everyday Law</h3>
         <img
           className="w-full h-72 object-cover shadow-g4-700 shadow-[8px_8px_0]"
-          src="./src/assets/everyday-law/subsection-card.jpg"
+          src={
+            SubsectionImage || "./src/assets/everyday-law/subsection-card.jpg"
+          }
         />
         <h3 className="g4-heading-3 text-g4-900">
           Starting a Business? Here's the Legal Checklist You Actually Need
