@@ -4,6 +4,8 @@ import Tag from "../components/Tag";
 import SubsectionCard from "../components/everyday_law/SubsectionCard";
 import Button from "../components/Button";
 
+import LatestBlog from "./src/assets/everyday_law/latest-blog.jpg";
+
 export default function EverydayLawMainPage() {
   return (
     <div className="flex flex-col items-center p-20 gap-2.5">
@@ -38,7 +40,7 @@ export default function EverydayLawMainPage() {
         <div className="flex w-full h-fit gap-8">
           <img
             className="w-1/2 bg-cover aspect-auto"
-            src="./src/assets/everyday-law/latest-blog.jpg"
+            src={LatestBlog || "./src/assets/everyday-law/latest-blog.jpg"}
           />
           <div className="w-1/2 h-full flex flex-col justify-center gap-2.5">
             <h3 className="g4-heading-3 text-g4-900">
