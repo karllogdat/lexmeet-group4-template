@@ -51,6 +51,15 @@ export const provinces = [
   "Camarines Sur",
   "Nueva Vizcaya",
   "Zamboanga",
+  "Agusan del Sur",
+  "Cavite",
+  "Agusan del Norte",
+  "Leyte",
+  "Camarines Norte",
+  "La Union",
+  "Camarines Sur",
+  "Nueva Vizcaya",
+  "Zamboanga",
 ];
 
 export const recognitions = [
@@ -59,6 +68,13 @@ export const recognitions = [
     type: "award",
     title: "Special Awards",
     description: "Best Law Firm in 2020 Women's Rights Cases Category, December 2020",
+  },
+  {
+    id: "citation-1",
+    type: "citation",
+    title: "Citations",
+    description:
+      "University of Santo Tomas, Certificate of Recognition for Best Internship Law Firm, 2021",
   },
   {
     id: "citation-1",
