@@ -38,3 +38,14 @@
 .g4-subcaption {
   @apply font-inter text-[20px];
 }
+
+@theme {
+  /* Group 4 Blue */
+  --color-g4-50: #eaf6fb;
+  --color-g4-400: #89cff1;
+  --color-g4-500: #6eb1d6;
+  --color-g4-600: #5293bb;
+  --color-g4-700: #3776a1;
+  --color-g4-800: #1b5886;
+  --color-g4-900: #003a6b;
+}
