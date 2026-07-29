@@ -2,7 +2,7 @@ import TypographyEntry from "../components/design-system/TypographyEntry";
 
 export default function DesignSystemPage() {
   return (
-    <div className="flex w-full h-screen items-center justify-center">
+    <div className="flex w-full h-shrink items-center justify-center">
       <div className="flex flex-col gap-8 p-8 border border-slate-300 rounded-lg">
         <h1 className="font-inter font-bold text-5xl">Typography</h1>
         <div className="flex flex-col gap-6">
