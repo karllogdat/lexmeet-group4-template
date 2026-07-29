@@ -1,10 +1,14 @@
-import { ArrowRight, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import IconButton from "../components/IconButton";
-import Tag from "../components/Tag";
 import SubsectionCard from "../components/everyday_law/SubsectionCard";
 import Button from "../components/Button";
 
-import LatestBlog from "../assets/everyday-law/latest-blog.jpg";
+import LatestBlog from "../components/everyday_law/LatestBlog";
+import {
+  latestBlogSample,
+  tags,
+} from "../components/everyday_law/EverydayLawMainData";
+import PopularTags from "../components/everyday_law/PopularTags";
 
 export default function EverydayLawMainPage() {
   return (
@@ -21,68 +25,16 @@ export default function EverydayLawMainPage() {
       </div>
 
       {/* popular tags section */}
-      <div className="flex flex-col w-full gap-4 p-2">
-        <h3 className="g4-heading-3 text-g4-900">Popular Tags</h3>
-        <div className="flex flex-wrap gap-4">
-          <Tag name="Cyberlibel" />
-          <Tag name="Annulment" />
-          <Tag name="Divorce" />
-          <Tag name="Legal Separation" />
-          <Tag name="Everyday Law" />
-        </div>
-      </div>
+      <PopularTags tags={tags} />
 
       {/*Latest Blog Section */}
-      <div className="w-full flex flex-col gap-2.5">
-        <h2 className="w-fit border-b-[5px] border-g4-700 g4-heading-2 text-g4-900">
-          Latest Blog
-        </h2>
-        <div className="flex w-full h-fit gap-8">
-          <img
-            className="w-1/2 bg-cover aspect-auto"
-            src={LatestBlog || "./src/assets/everyday-law/latest-blog.jpg"}
-          />
-          <div className="w-1/2 h-full flex flex-col justify-center gap-2.5">
-            <h3 className="g4-heading-3 text-g4-900">
-              Behind the Case: Practical Lessons from Real Client Experiences
-            </h3>
-            <p className="g4-large-body text-g4-600">
-              Juan Dela Cruz • January 1, 2026
-            </p>
-            <p className="line-clamp-7 text-truncate g4-body">
-              Growing a business means taking on new opportunities, but it also
-              comes with legal responsibilities that many entrepreneurs
-              overlook. One of the most common mistakes we see is relying on
-              verbal agreements or informal conversations instead of written
-              contracts. While trust is important, a properly drafted agreement
-              sets clear expectations for both parties, covering payment terms,
-              timelines, responsibilities, confidentiality, and dispute
-              resolution. Another frequent issue is choosing a business
-              structure that no longer fits the company's growth. Many
-              businesses begin as sole proprietorships because registration is
-              simple, but as operations expand, owners may benefit from a
-              different structure that offers better liability protection, tax
-              planning, and investment opportunities. We also encounter
-              businesses that unintentionally fall behind on regulatory
-              compliance, such as permit renewals, reportorial requirements,
-              labor obligations, or data privacy responsibilities. These
-              seemingly minor oversights can result in unnecessary penalties,
-              operational delays, and avoidable legal complications.
-            </p>
-
-            <div className="flex w-fit py-2 items-center justify-center gap-2.5 text-g4-700">
-              <span className="g4-button">Read More</span>
-              <ArrowRight />
-            </div>
-          </div>
-        </div>
-      </div>
+      <LatestBlog blog={latestBlogSample} />
 
       {/*Three subsections*/}
       <div className="grid grid-cols-3 w-full gap-2 5">
-        <SubsectionCard />
-        <SubsectionCard />
-        <SubsectionCard />
+        <SubsectionCard type="Everyday Law" blog={latestBlogSample} />
+        <SubsectionCard type="Law Updates" blog={latestBlogSample} />
+        <SubsectionCard type="Lawyers Blog" blog={latestBlogSample} />
       </div>
 
       {/* talk and standard */}
