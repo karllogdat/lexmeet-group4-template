@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="w-full text-white font-sans">
+    <footer className="flex flex-col w-full text-white font-sans">
       {/* Main Footer Container */}
-      <div className="bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
+      <div className="flex items-center bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
         {/* Balanced 5-Column Grid on Large Screens */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 items-start justify-between">
-          
+        <div className="w-full flex gap-4 items-center justify-around">
+          {/* grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 */}
           {/* Brand Logo Section */}
-          <div className="flex items-center justify-start gap-3 h-full">
+          <div className="flex items-center justify-center gap-3">
             <img 
               src="/src/assets/Lex.svg" 
               alt="Lex Logo" 
