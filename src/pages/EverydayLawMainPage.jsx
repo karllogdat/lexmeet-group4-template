@@ -4,7 +4,7 @@ import Tag from "../components/Tag";
 import SubsectionCard from "../components/everyday_law/SubsectionCard";
 import Button from "../components/Button";
 
-import LatestBlog from "./src/assets/everyday_law/latest-blog.jpg";
+import LatestBlog from "../assets/everyday-law/latest-blog.jpg";
 
 export default function EverydayLawMainPage() {
   return (
