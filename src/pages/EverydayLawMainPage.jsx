@@ -1,10 +1,12 @@
 import { ArrowRight, Search } from "lucide-react";
 import IconButton from "../components/IconButton";
-import Tag from "../components/Tag";
 import SubsectionCard from "../components/everyday_law/SubsectionCard";
 import Button from "../components/Button";
 
 import LatestBlog from "../assets/everyday-law/latest-blog.jpg";
+
+import { tags } from "../components/everyday_law/EverydayLawMainData";
+import PopularTags from "../components/everyday_law/PopularTags";
 
 export default function EverydayLawMainPage() {
   return (
@@ -21,16 +23,7 @@ export default function EverydayLawMainPage() {
       </div>
 
       {/* popular tags section */}
-      <div className="flex flex-col w-full gap-4 p-2">
-        <h3 className="g4-heading-3 text-g4-900">Popular Tags</h3>
-        <div className="flex flex-wrap gap-4">
-          <Tag name="Cyberlibel" />
-          <Tag name="Annulment" />
-          <Tag name="Divorce" />
-          <Tag name="Legal Separation" />
-          <Tag name="Everyday Law" />
-        </div>
-      </div>
+      <PopularTags tags={tags} />
 
       {/*Latest Blog Section */}
       <div className="w-full flex flex-col gap-2.5">
