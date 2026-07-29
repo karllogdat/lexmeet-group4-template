@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 
-import SubsectionImage from "../assets/everyday-law/subsection-card.jpg";
+import SubsectionImage from "../../assets/everyday-law/subsection-card.jpg";
 
 export default function SubsectionCard() {
   return (
