@@ -127,4 +127,14 @@ export const members = [
     note: "Commended External Counsel of the Year",
     photo: kalixMartinezImg,
   },
+  // ── TEST DATA ONLY — remove before final release ──────────────────────────
+  // Added to verify carousel/pagination behavior with more than 3 members.
+  // Reuses louisse-martinez.png as a placeholder photo.
+  {
+    id: "member-4-test",
+    name: "Atty. Test Member",
+    note: "Test Entry — Carousel Pagination Verification",
+    photo: louisseMartinezImg,
+  },
+  // ─────────────────────────────────────────────────────────────────────────
 ];

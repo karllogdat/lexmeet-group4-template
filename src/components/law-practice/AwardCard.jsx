@@ -2,7 +2,7 @@ export default function AwardCard({ title, description, image }) {
   return (
     <div className="flex flex-col items-center text-center w-56 sm:w-64">
       {/* Image container — compact to match Figma proportions */}
-      <div className="grid place-items-center h-28 w-full rounded-xl bg-[#EAF2F8] mb-4 overflow-hidden">
+      <div className="grid place-items-center h-36 w-full rounded-xl bg-[#EAF2F8] mb-4 overflow-hidden">
         {image ? (
           <img
             src={image}
