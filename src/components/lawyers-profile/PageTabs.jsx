@@ -26,7 +26,7 @@ export default function PageTabs({ activeTab, onChange }) {
               "flex-1 py-4 px-2 text-center g4-heading-2 sm:text-lg transition-colors",
               isActive
                 ? "bg-g4-700 text-white"
-                : "bg-[#EAF6FB] text-g4-700 hover:bg-g4-50",
+                : "bg-g4-50 text-g4-700 hover:bg-g4-50",
             ].join(" ")}
           >
             {tab.label}

@@ -33,7 +33,7 @@ function ReviewCard({ review }) {
     <div className="border border-[#E4ECF3] rounded-lg p-4 flex flex-col gap-3 bg-white m-5">
       {/* Reviewer header */}
       <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-full bg-g4-50 border border-[#E4ECF3] flex items-center justify-center flex-shrink-0">
+        <div className="w-12 h-12 rounded-full bg-g4-50 border border-[#E4ECF3] flex items-center justify-center shrink-0">
           <User size={20} className="text-g4-600" />
         </div>
         <div>
@@ -68,7 +68,7 @@ export default function RatingsFeedbackTab({ reviews }) {
   }
 
   return (
-    <div className="p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[420px] overflow-y-auto">
+    <div className="p-5 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-105 overflow-y-auto">
       {reviews.map((review) => (
         <ReviewCard key={review.id} review={review} />
       ))}

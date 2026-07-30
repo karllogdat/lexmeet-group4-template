@@ -26,7 +26,7 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
       {/* ── Modal Header ───────────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row h-50 items-center gap-6 pl-10 pr-10 pb-4 justify-center ">
         {/* Avatar + status dot */}
-        <div className="relative flex-shrink-0">
+        <div className="relative shrink-0">
           <div className="w-23 h-23 rounded-full bg-g4-50 overflow-hidden border-2 border-g4-200">
             <img
               src={lawyer.photo}
@@ -44,7 +44,7 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
         </div>
 
         {/* Name / role / meta */}
-        <div className="flex flex-col flex-1 min-w-0 h-[125px] items-start justify-center">
+        <div className="flex flex-col flex-1 min-w-0 h-31.25 items-start justify-center">
           <h2 className="font-playfair font-normal sm:text-3xl text-g4-900 leading-tight">
             {lawyer.name}
           </h2>
@@ -54,22 +54,22 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
           {/* Meta row: location, consultations, rating */}
           <div className="flex flex-wrap items-center gap-x-3  gap-y-1 mt-2 text-sm font-inter text-gray-600">
             <span className="flex items-center gap-1">
-              <MapPin size={14} className="text-[#6B7C8C] flex-shrink-0" />
+              <MapPin size={14} className="text-[#6B7C8C] shrink-0" />
               {lawyer.location}
             </span>
             <span className="flex items-center gap-1">
-              <User size={14} className="text-[#6B7C8C] flex-shrink-0" />
+              <User size={14} className="text-[#6B7C8C] shrink-0" />
               {lawyer.consultationCount}
             </span>
             <span className="flex items-center gap-1">
-              <Star size={14} className="text-[#6B7C8C] fill-[#6B7C8C] flex-shrink-0" />
+              <Star size={14} className="text-[#6B7C8C] fill-[#6B7C8C] shrink-0" />
               {lawyer.rating.toFixed(1)}
             </span>
           </div>
         </div>
 
         {/* Talk to this lawyer button */}
-        <div className="flex-shrink-0 mt-2 sm:mt-0">
+        <div className="shrink-0 mt-2 sm:mt-0">
           <a
             href={`tel:${lawyer.phone}`}
             id={`talk-btn-${lawyer.id}`}

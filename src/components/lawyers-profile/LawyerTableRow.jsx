@@ -15,7 +15,7 @@ export default function LawyerTableRow({ lawyer, variant, onSeeMore }) {
       <td className="py-3 px-4">
         <div className="flex items-center gap-3">
           {/* Avatar with online/offline dot */}
-          <div className="relative flex-shrink-0">
+          <div className="relative shrink-0">
             <img
               src={lawyer.photo}
               alt={lawyer.name}
@@ -44,12 +44,12 @@ export default function LawyerTableRow({ lawyer, variant, onSeeMore }) {
       <td className="py-3 px-4">
         <div className="flex items-center gap-3 justify-start">
           {variant === "list" && (
-            <Phone size={20} className="text-g4-700 flex-shrink-0" />
+            <Phone size={20} className="text-g4-700 shrink-0" />
           )}
 
           {variant === "ratings" && (
             <div className="flex items-center gap-1">
-              <Star size={16} className="text-g4-600 flex-shrink-0" />
+              <Star size={16} className="text-g4-600 shrink-0" />
               <span className="font-inter text-sm sm:text-base text-gray-800">
                 {lawyer.rating.toFixed(1)}
               </span>

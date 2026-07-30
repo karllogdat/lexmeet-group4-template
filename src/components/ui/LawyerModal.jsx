@@ -30,7 +30,7 @@ export default function LawyerModal({ isOpen, onClose, children }) {
     >
       {/* Panel — stop click propagation so clicking inside doesn't close */}
       <div
-        className="relative bg-white rounded-xl shadow-2xl w-full max-w-[1000px] max-h-[90vh] overflow-y-auto"
+        className="relative bg-white rounded-xl shadow-2xl w-full max-w-250 max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
