@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 
 import bg1 from "../assets/Homepage/bg1.png";
 import bg2 from "../assets/Homepage/bg2.png";
@@ -8,8 +7,11 @@ import OurServices from "../components/Homepage/OurServices";
 import PracticeArea from "../components/Homepage/PracticeArea";
 import EverydayLawSection from "../components/Homepage/Everydaylaw";
 import LawUpdatesSection from "../components/Homepage/Lawupdates";
+import ContactModal from "../components/Contactus/Contact_modal"; // Path to ContactModal component
 
 export default function HomePage() {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
   return (
     <main className="bg-[#f8fafc]">
       {/* Hero Section */}
@@ -46,7 +48,8 @@ export default function HomePage() {
             <div className="pt-2">
               <button
                 type="button"
-                className="inline-flex items-center gap-2 bg-[#2d7099] hover:bg-[#235b7f]g4-button text-white font-medium px-6 py-3 rounded-md transition-colors duration-200 shadow-md"
+                onClick={() => setIsContactOpen(true)}
+                className="inline-flex items-center gap-2 bg-[#2d7099] hover:bg-[#235b7f] text-white font-medium px-6 py-3 rounded-md transition-colors duration-200 shadow-md cursor-pointer"
               >
                 <span>Talk to Us!</span>
                 <svg
@@ -85,20 +88,27 @@ export default function HomePage() {
             Get in touch with us!
           </p>
 
-          <a
-            href="#contact"
-            className="bg-[#387fa7] hover:bg-[#2d6b8e]=g4-button text-white font-medium px-6 py-3 rounded-md transition-colors duration-200 shadow-md"
+          <button
+            type="button"
+            onClick={() => setIsContactOpen(true)}
+            className="bg-[#387fa7] hover:bg-[#2d6b8e] text-white font-medium px-6 py-3 rounded-md transition-colors duration-200 shadow-md cursor-pointer"
           >
             Contact Us
-          </a>
+          </button>
         </div>
       </section>
 
       {/* Everyday Law Section */}
       <EverydayLawSection />
 
-      {/* Law Updates Section (Below Everyday Law) */}
+      {/* Law Updates Section */}
       <LawUpdatesSection />
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
     </main>
   );
 }
