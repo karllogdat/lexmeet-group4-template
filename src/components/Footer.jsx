@@ -4,12 +4,12 @@ export default function Footer() {
   return (
     <footer className="flex flex-col w-full text-white font-sans">
       {/* Main Footer Container */}
-      <div className="flex items-center bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
-        {/* Balanced 5-Column Grid on Large Screens */}
-        <div className="w-full flex gap-4 items-center justify-around">
-          {/* grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 */}
+      <div className="bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
+        {/* Equal Flexbox Container */}
+        <div className="w-full flex flex-wrap lg:flex-nowrap items-start justify-between gap-8">
+          
           {/* Brand Logo Section */}
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center justify-start gap-3 flex-1 min-w-[280px]">
             <img 
               src="/src/assets/Lex.svg" 
               alt="Lex Logo" 
@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div className="g4-subcaption text-slate-200 leading-tight space-y-1">
+          <div className="g4-subcaption text-slate-200 leading-tight space-y-1 flex-1 min-w-[200px]">
             <h3 className="font-bold font-poppins text-[24px] text-white uppercase tracking-wider mb-2">
               CONTACT US
             </h3>
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           {/* Visit Us */}
-          <div className="g4-subcaption text-slate-200 leading-tight space-y-1">
+          <div className="g4-subcaption text-slate-200 leading-tight space-y-1 flex-1 min-w-[200px]">
             <h3 className="font-bold font-poppins text-[24px] text-white uppercase tracking-wider mb-2">
               VISIT US
             </h3>
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           {/* Terms of Use */}
-          <div className="g4-subcaption text-slate-200 leading-tight">
+          <div className="g4-subcaption text-slate-200 leading-tight flex-1 min-w-[200px]">
             <h3 className="font-bold font-poppins text-[24px] text-white tracking-wider mb-2">
               Terms of Use
             </h3>
@@ -65,11 +65,11 @@ export default function Footer() {
           </div>
 
           {/* Follow Us */}
-          <div className="g4-subcaption text-slate-200 leading-tight">
+          <div className="g4-subcaption text-slate-200 leading-tight flex-1 min-w-[160px]">
             <h3 className="font-bold font-poppins text-[24px] text-white tracking-wider mb-2">
               Follow Us:
             </h3>
-            <div className="grid grid-cols-3 gap-2 w-max text-slate-900">
+            <div className="flex flex-wrap gap-2 w-max text-slate-900">
               {/* Facebook */}
               <a href="#" className="w-8 h-8 bg-g4-400 hover:bg-white text-bg-g4-50 rounded-full flex items-center justify-center transition-colors">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z"/></svg>
