@@ -17,7 +17,7 @@ function SlotCell({ slot }) {
     <td
       className={[
         "py-3 px-4 font-inter text-sm",
-        isUnavailable ? "text-gray-400 italic" : "text-gray-800",
+        isUnavailable ? "text-gray-400" : "text-g4-900",
       ].join(" ")}
     >
       {slot}
@@ -44,19 +44,19 @@ export default function LawyerScheduleTab({ schedule }) {
     <div className="p-5 overflow-x-auto">
       <table className="w-full min-w-[360px] border-collapse">
         <thead>
-          <tr className="bg-g4-700 text-white">
-            <th className="py-3 px-4 text-left font-inter font-semibold text-sm">Day</th>
-            <th className="py-3 px-4 text-left font-inter font-semibold text-sm">AM Schedule</th>
-            <th className="py-3 px-4 text-left font-inter font-semibold text-sm">PM Schedule</th>
+          <tr className="bg-transparent text-g4-900">
+            <th className="py-3 px-4 text-center font-inter font-bold text-sm">Day</th>
+            <th className="py-3 px-4 text-left font-inter font-bold text-sm">AM Schedule</th>
+            <th className="py-3 px-4 text-left font-inter font-bold text-sm">PM Schedule</th>
           </tr>
         </thead>
         <tbody>
           {orderedSchedule.map((row, idx) => (
             <tr
               key={row.day}
-              className={idx % 2 === 0 ? "bg-white" : "bg-g4-50"}
+              className={idx % 2 === 0 ? "bg-[#F2F6FA]" : "bg-white"}
             >
-              <td className="py-3 px-4 font-inter text-sm font-semibold text-gray-900">
+              <td className="py-3 px-4 font-inter text-center text-sm font-normal text-g4-900">
                 {row.day}
               </td>
               <SlotCell slot={row.am} />
