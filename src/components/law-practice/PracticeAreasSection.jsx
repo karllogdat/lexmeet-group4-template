@@ -4,9 +4,14 @@ import SeeMoreButton from "../ui/SeeMoreButton";
 import { practiceAreas } from "./lawPracticeData";
 
 const TABS = ["Law Practice", "About"];
+const INITIAL_VISIBLE = 8; // 2 rows × 4 columns — matches the Figma grid
 
 export default function PracticeAreasSection() {
   const [activeTab, setActiveTab] = useState("Law Practice");
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleAreas = showAll ? practiceAreas : practiceAreas.slice(0, INITIAL_VISIBLE);
+  const hasMore = practiceAreas.length > INITIAL_VISIBLE;
 
   return (
     <section className="bg-[#002E56] px-6 md:px-12 py-10">
@@ -28,19 +33,24 @@ export default function PracticeAreasSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pl-8 pr-8">
-          {practiceAreas.map((area) => (
+          {visibleAreas.map((area) => (
             <PracticeAreaTile
               key={area.id}
               label={area.label}
-              icon={area.icon}
-              badge={area.badge}
+              image={area.image}
             />
           ))}
         </div>
 
-        <div className="flex flex-row justify-center mt-8 ">
-          <SeeMoreButton />
-        </div>
+        {hasMore && (
+          <div className="flex flex-row justify-center mt-8">
+            <SeeMoreButton
+              onClick={() => setShowAll((prev) => !prev)}
+            >
+              {showAll ? "Show Less" : "See More"}
+            </SeeMoreButton>
+          </div>
+        )}
       </div>
     </section>
   );
