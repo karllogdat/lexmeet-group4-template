@@ -4,16 +4,16 @@ export default function Footer() {
   return (
     <footer className="flex flex-col w-full text-white font-sans">
       {/* Main Footer Container */}
-      <div className="bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
+      <div className="bg-linear-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
         {/* Equal Flexbox Container */}
         <div className="w-full flex flex-wrap lg:flex-nowrap items-start justify-between gap-8">
           
           {/* Brand Logo Section */}
-          <div className="flex items-center justify-start gap-3 flex-1 min-w-[280px]">
+          <div className="flex items-center justify-start gap-3 flex-1 min-w-70">
             <img 
               src="/src/assets/Lex.svg" 
               alt="Lex Logo" 
-              className="w-[130px] h-28 object-contain shrink-0" 
+              className="w-32.5 h-28 object-contain shrink-0" 
             />
 
             <div className="text-left font-poppins">
@@ -29,19 +29,19 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div className="g4-subcaption text-slate-200 leading-tight space-y-1 flex-1 min-w-[200px]">
+          <div className="g4-subcaption text-slate-200 leading-tight space-y-1 flex-1 min-w-50">
             <h3 className="font-bold font-poppins text-[24px] text-white uppercase tracking-wider mb-2">
               CONTACT US
             </h3>
             <p>Tel.No: (02) 8-451-1594</p>
             <p>Cel.No: 0299999</p>
+            <p>Fax: 6432341</p>
             <p>Viber: 09231231111</p>
             <p className="break-all">Email: contact@rizallawoffice.com</p>
-            <p>Fax: 6432341</p>
           </div>
 
           {/* Visit Us */}
-          <div className="g4-subcaption text-slate-200 leading-tight space-y-1 flex-1 min-w-[200px]">
+          <div className="g4-subcaption text-slate-200 leading-tight space-y-1 flex-1 min-w-50">
             <h3 className="font-bold font-poppins text-[24px] text-white uppercase tracking-wider mb-2">
               VISIT US
             </h3>
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
 
           {/* Terms of Use */}
-          <div className="g4-subcaption text-slate-200 leading-tight flex-1 min-w-[200px]">
+          <div className="g4-subcaption text-slate-200 leading-tight flex-1 min-w-50">
             <h3 className="font-bold font-poppins text-[24px] text-white tracking-wider mb-2">
               Terms of Use
             </h3>
@@ -65,7 +65,7 @@ export default function Footer() {
           </div>
 
           {/* Follow Us */}
-          <div className="g4-subcaption text-slate-200 leading-tight flex-1 min-w-[160px]">
+          <div className="g4-subcaption text-slate-200 leading-tight flex-1 min-w-40">
             <h3 className="font-bold font-poppins text-[24px] text-white tracking-wider mb-2">
               Follow Us:
             </h3>
