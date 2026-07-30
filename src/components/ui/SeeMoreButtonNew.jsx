@@ -11,7 +11,7 @@ export default function SeeMoreButton({
         <button
             type="button"
             onClick={onClick}
-            className={`min-w-[198px] h-[57px] inline-flex items-center justify-center gap-1.5 rounded-[8px] px-8 py-2.5 text-xl font-medium font-inter transition-colors ${bgColor} ${textColor} ${hoverColor}`}
+            className={`min-w-49.5 h-14.25 inline-flex items-center justify-center gap-1.5 rounded-lg px-8 py-2.5 text-xl font-medium font-inter transition-colors ${bgColor} ${textColor} ${hoverColor}`}
         >
             {text}
             <IconChevronDown size={24} stroke={2} />
