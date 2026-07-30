@@ -10,9 +10,8 @@ export default function CarouselDots({ count, activeIndex, onSelect, tone = "dar
           type="button"
           aria-label={`Go to slide ${i + 1}`}
           onClick={() => onSelect?.(i)}
-          className={`h-2 rounded-full transition-all ${
-            i === activeIndex ? `w-6 ${active}` : `w-2 ${inactive}`
-          }`}
+          className={`h-2 rounded-full transition-all ${i === activeIndex ? `w-6 ${active}` : `w-2 ${inactive}`
+            }`}
         />
       ))}
     </div>
