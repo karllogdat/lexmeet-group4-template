@@ -6,7 +6,7 @@ export default function Navbar() {
   // Routes updated to match your React Router setup in App.jsx
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Lawyers Profile', href: '/everyday-law/lawyers-blog-list' },
+    { label: 'Lawyers Profile', href: '/lawyers-profile' },
     { label: 'Law Practice', href: '/law-practice' },
     { label: 'Law Office', href: '/law-office' },
     { label: 'Everyday Law', href: '/everyday-law' },

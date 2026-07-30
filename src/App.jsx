@@ -9,7 +9,7 @@ import EverydayLawBlogListPage from "./pages/blog-list/EverydayLawBlogListPage";
 import LawUpdatesBlogListPage from "./pages/blog-list/LawUpdatesBlogListPage";
 import LawyersBlogListPage from "./pages/blog-list/LawyersBlogListPage";
 import LawOfficePage from "./pages/LawOffice";
-import LawyersProfilePage from "./pages/LawyersProfile";
+import LawyersProfile from "./pages/LawyersProfile";
 import AboutPage from "./pages/AboutPage";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
           <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} />
         </Route>
         <Route path="/law-office" element={<LawOfficePage />} />
-        <Route path="/lawyers-profile" element={<LawyersProfilePage />} />
+        <Route path="/lawyers-profile" element={<LawyersProfile />} />
         <Route path="/about" element={<AboutPage />} />
       </Route>
     </Routes>
