@@ -1,10 +1,9 @@
 export default function MemberCard({ name, note, active = false, photoSrc }) {
   return (
     <div
-      className={`w-70 rounded-xl overflow-hidden bg-white/5 ${active ? "ring-2 ring-white" : ""
-        }`}
+      className={`w-70 rounded-xl overflow-hidden bg-white/5 ${active ? "ring-2 ring-white" : ""}`}
     >
-      <div className="h-60 bg-slate-400/40">
+      <div className={`h-60 ${photoSrc ? "" : "bg-slate-400/40"}`}>
         {photoSrc && (
           <img src={photoSrc} alt={name} className="h-full w-full object-cover" />
         )}

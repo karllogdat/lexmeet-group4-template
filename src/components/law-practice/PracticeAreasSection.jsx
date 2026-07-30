@@ -32,8 +32,7 @@ export default function PracticeAreasSection() {
             <PracticeAreaTile
               key={area.id}
               label={area.label}
-              icon={area.icon}
-              badge={area.badge}
+              image={area.image}
             />
           ))}
         </div>

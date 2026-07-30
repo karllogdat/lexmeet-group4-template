@@ -31,9 +31,9 @@ export default function AwardsSection() {
             {visible.map((item) => (
               <AwardCard
                 key={item.id}
-                type={item.type}
                 title={item.title}
                 description={item.description}
+                image={item.image}
               />
             ))}
           </div>

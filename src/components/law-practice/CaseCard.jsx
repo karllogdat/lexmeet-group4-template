@@ -1,4 +1,3 @@
-import { IconQuote } from "@tabler/icons-react";
 
 export default function CaseCard({ text }) {
   return (

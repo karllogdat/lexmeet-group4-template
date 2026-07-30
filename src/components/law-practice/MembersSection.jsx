@@ -35,6 +35,7 @@ export default function MembersSection() {
                 name={member.name}
                 note={member.note}
                 active={index + i === centerAbsoluteIndex}
+                photoSrc={member.photo}
               />
             ))}
           </div>

@@ -22,7 +22,7 @@ export default function LocationSection() {
         <div className="grid md:grid-cols-[1fr_1.1fr] gap-10">
           <div className="grid grid-cols-2 gap-4 max-w-md">
             {regions.map((region) => (
-              <RegionMapCard key={region.id} label={region.label} />
+            <RegionMapCard key={region.id} label={region.label} image={region.image} />
             ))}
           </div>
 
