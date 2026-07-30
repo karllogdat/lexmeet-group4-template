@@ -34,17 +34,24 @@ export const practiceAreas = [
   { id: "civil",       label: "Civil Law",        image: civilLawImg },
   { id: "taxation",    label: "Taxation Law",     image: taxationLawImg },
   { id: "special",     label: "Special Services", image: specialServicesImg },
+  // Additional entries so the "See More" button has content to reveal
+  { id: "property",    label: "Property Law",     image: commercialLawImg },
+  { id: "corporate",   label: "Corporate Law",    image: civilLawImg },
+  { id: "environ",     label: "Environmental Law",image: specialServicesImg },
+  { id: "ip",          label: "IP Law",           image: familyLawImg },
 ];
 
-// TODO(content): rows 1 and 2 are duplicated in the wireframe. Swap in the six
-// real case categories before this ships.
 export const casesHandled = [
-  { id: "case-1", text: "Annulment of Marriage of Declaration of Nullity of Marriage" },
+  { id: "case-1", text: "Annulment of Marriage or Declaration of Nullity of Marriage" },
   { id: "case-2", text: "Contract drafting and other commercial documents" },
   { id: "case-3", text: "Actions for specific performance" },
-  { id: "case-4", text: "Annulment of Marriage of Declaration of Nullity of Marriage" },
-  { id: "case-5", text: "Contract drafting and other commercial documents" },
-  { id: "case-6", text: "Actions for specific performance" },
+  { id: "case-4", text: "Legal separation and custody arrangements" },
+  { id: "case-5", text: "Corporate registration and compliance" },
+  { id: "case-6", text: "Labor disputes and illegal dismissal cases" },
+  // Extra entries revealed by the "See More" button
+  { id: "case-7", text: "Immigration petitions and visa applications" },
+  { id: "case-8", text: "Criminal defense and prosecution assistance" },
+  { id: "case-9", text: "Trademark and intellectual property registration" },
 ];
 
 export const regions = [
@@ -64,15 +71,15 @@ export const provinces = [
   "Camarines Sur",
   "Nueva Vizcaya",
   "Zamboanga",
-  "Agusan del Sur",
-  "Cavite",
-  "Agusan del Norte",
-  "Leyte",
-  "Camarines Norte",
-  "La Union",
-  "Camarines Sur",
-  "Nueva Vizcaya",
-  "Zamboanga",
+  "Davao del Sur",
+  "Bukidnon",
+  "Misamis Oriental",
+  "Cebu",
+  "Bohol",
+  "Iloilo",
+  "Negros Occidental",
+  "Palawan",
+  "Batangas",
 ];
 
 export const recognitions = [
