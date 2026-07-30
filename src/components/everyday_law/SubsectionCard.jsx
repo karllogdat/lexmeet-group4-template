@@ -1,8 +1,11 @@
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router";
 
 import SubsectionImage from "../../assets/everyday-law/subsection-card.jpg";
 
-export default function SubsectionCard({ type, blog }) {
+export default function SubsectionCard({ type, blog, to }) {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col justify-between p-5 gap-4">
       <div className="flex flex-col gap-4">
@@ -17,10 +20,14 @@ export default function SubsectionCard({ type, blog }) {
         </p>
         <p className="g4-body text-truncate line-clamp-7">{blog.content}</p>
       </div>
-      <div className="flex w-fit py-2 items-center justify-center gap-2.5 text-g4-700">
+      <button
+        type="button"
+        onClick={() => navigate(to)}
+        className="flex w-fit py-2 items-center justify-center gap-2.5 text-g4-700"
+      >
         <span className="g4-button">View All</span>
         <ArrowRight />
-      </div>
+      </button>
     </div>
   );
 }

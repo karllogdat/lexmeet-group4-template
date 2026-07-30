@@ -5,6 +5,9 @@ import MainLayout from "./components/MainLayout";
 import LawPracticePage from "./pages/LawPracticePage";
 import EverydayLawMainPage from "./pages/EverydayLawMainPage";
 import EverydayLawBlogPage from "./pages/EverydayLawBlogPage";
+import EverydayLawBlogListPage from "./pages/blog-list/EverydayLawBlogListPage";
+import LawUpdatesBlogListPage from "./pages/blog-list/LawUpdatesBlogListPage";
+import LawyersBlogListPage from "./pages/blog-list/LawyersBlogListPage";
 import LawOfficePage from "./pages/LawOffice";
 
 function App() {
@@ -14,8 +17,19 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/design-system" element={<DesignSystemPage />} />
         <Route path="/law-practice" element={<LawPracticePage />} />
-        <Route path="/everyday-law" element={<EverydayLawMainPage />} />
-        <Route path="/everyday-law/blog" element={<EverydayLawBlogPage />} />
+        <Route path="everyday-law">
+          <Route index element={<EverydayLawMainPage />} />
+          <Route path="blog" element={<EverydayLawBlogPage />} />
+          <Route
+            path="everyday-law-blog-list"
+            element={<EverydayLawBlogListPage />}
+          />
+          <Route
+            path="law-updates-blog-list"
+            element={<LawUpdatesBlogListPage />}
+          />
+          <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} />
+        </Route>
         <Route path="/law-office" element={<LawOfficePage />} />
       </Route>
     </Routes>
