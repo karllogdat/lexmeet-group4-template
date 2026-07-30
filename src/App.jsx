@@ -9,6 +9,7 @@ import EverydayLawBlogListPage from "./pages/blog-list/EverydayLawBlogListPage";
 import LawUpdatesBlogListPage from "./pages/blog-list/LawUpdatesBlogListPage";
 import LawyersBlogListPage from "./pages/blog-list/LawyersBlogListPage";
 import LawOfficePage from "./pages/LawOffice";
+import LawyersProfilePage from "./pages/LawyersProfile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} />
         </Route>
         <Route path="/law-office" element={<LawOfficePage />} />
+        <Route path="/lawyers-profile" element={<LawyersProfilePage />} />
       </Route>
     </Routes>
   );
