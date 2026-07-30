@@ -5,6 +5,7 @@ import MainLayout from "./components/MainLayout";
 import LawPracticePage from "./pages/LawPracticePage";
 import EverydayLawMainPage from "./pages/EverydayLawMainPage";
 import EverydayLawBlogPage from "./pages/EverydayLawBlogPage";
+import LawOfficePage from "./pages/LawOffice";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/law-practice" element={<LawPracticePage />} />
         <Route path="/everyday-law" element={<EverydayLawMainPage />} />
         <Route path="/everyday-law/blog" element={<EverydayLawBlogPage />} />
+        <Route path="/law-office" element={<LawOfficePage />} />
       </Route>
     </Routes>
   );
