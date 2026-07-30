@@ -32,9 +32,21 @@ export default function EverydayLawMainPage() {
 
       {/*Three subsections*/}
       <div className="grid grid-cols-3 w-full gap-2 5">
-        <SubsectionCard type="Everyday Law" blog={latestBlogSample} />
-        <SubsectionCard type="Law Updates" blog={latestBlogSample} />
-        <SubsectionCard type="Lawyers Blog" blog={latestBlogSample} />
+        <SubsectionCard
+          type="Everyday Law"
+          blog={latestBlogSample}
+          to="/everyday-law/everyday-law-blog-list"
+        />
+        <SubsectionCard
+          type="Law Updates"
+          blog={latestBlogSample}
+          to="/everyday-law/law-updates-blog-list"
+        />
+        <SubsectionCard
+          type="Lawyers Blog"
+          blog={latestBlogSample}
+          to="/everyday-law/lawyers-blog-list"
+        />
       </div>
 
       {/* talk and standard */}
