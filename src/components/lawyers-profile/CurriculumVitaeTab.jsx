@@ -17,7 +17,7 @@ function Pill({ label }) {
  */
 function CvLabel({ children }) {
   return (
-    <p className="text-g4-600 font-inter font-semibold text-xs tracking-widest uppercase mb-1">
+    <p className="text-g4-600 font-inter font-semibold text-l tracking-widest uppercase mb-1">
       {children}
     </p>
   );
@@ -61,35 +61,35 @@ export default function CurriculumVitaeTab({ cv }) {
   } = cv;
 
   return (
-    <div className="p-5 grid grid-cols-1 sm:grid-cols-3 gap-6">
+    <div className="p-5 grid grid-cols-1 sm:grid-cols-3 gap-6 pb-10">
       {/* ── Column 1 ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-6 pl-5 pr-5">
         {/* Roll of Attorneys Number */}
         <div>
           <CvLabel>Roll of Attorneys Number</CvLabel>
-          <p className="font-inter text-sm text-gray-800">{rollNumber}</p>
+          <p className="font-inter font-semibold text-l text-g4-900">{rollNumber}</p>
         </div>
 
         {/* Date Admitted */}
         <div>
           <CvLabel>Date Admitted</CvLabel>
-          <p className="font-inter text-sm font-semibold text-gray-900">{dateAdmitted}</p>
+          <p className="font-inter font-semibold text-l text-g4-900">{dateAdmitted}</p>
         </div>
 
         {/* IBP */}
         <div>
           <CvLabel>IBP</CvLabel>
-          <p className="font-inter text-sm font-semibold text-gray-900">{ibp.number}</p>
-          <p className="font-inter text-sm text-gray-600">{ibp.date}</p>
+          <p className="font-inter font-semibold text-l text-g4-900">{ibp.number}</p>
+          <p className="font-inter font-normal text-l text-[#5B5B5B]">{ibp.date}</p>
         </div>
 
         {/* MCLE */}
         <div>
           <CvLabel>MCLE</CvLabel>
-          <p className="font-inter text-sm font-semibold text-gray-900">
+          <p className="font-inter font-semibold text-l text-g4-900">
             {mcle.status} • {mcle.number}
           </p>
-          <p className="font-inter text-sm text-gray-600">{mcle.dateRange}</p>
+          <p className="font-inter font-normal text-l text-[#5B5B5B]">{mcle.dateRange}</p>
         </div>
 
         {/* Language & Dialect */}
@@ -100,20 +100,21 @@ export default function CurriculumVitaeTab({ cv }) {
               <Pill key={lang} label={lang} />
             ))}
           </div>
+          <CvSeeMoreBtn />
         </div>
 
-        <CvSeeMoreBtn />
+
       </div>
 
       {/* ── Column 2 ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-6 pl-5 pr-5">
         {/* Work Experience */}
         <div>
           <CvLabel>Work Experience</CvLabel>
           {workExperience.map((job, i) => (
             <div key={i} className="mb-1">
-              <p className="font-inter text-sm font-semibold text-gray-900">{job.firm}</p>
-              <p className="font-inter text-sm text-gray-600">
+              <p className="font-inter font-semibold text-l text-g4-900">{job.firm}</p>
+              <p className="font-inter font-normal text-l text-[#5B5B5B]">
                 {job.role} • {job.address}
               </p>
             </div>
@@ -126,8 +127,8 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Education</CvLabel>
           {education.map((edu, i) => (
             <div key={i} className="mb-2">
-              <p className="font-inter text-sm font-semibold text-gray-900">{edu.institution}</p>
-              <p className="font-inter text-sm text-gray-600">
+              <p className="font-inter font-semibold text-l text-g4-900">{edu.institution}</p>
+              <p className="font-inter font-normal text-l text-[#5B5B5B]">
                 {edu.degree} • {edu.date}
               </p>
             </div>
@@ -147,13 +148,13 @@ export default function CurriculumVitaeTab({ cv }) {
       </div>
 
       {/* ── Column 3 ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-6 pl-5 pr-5">
         {/* Concentration of Law Practice */}
         <div>
           <CvLabel>Concentration of Law Practice</CvLabel>
           <ul className="mt-1 space-y-1">
             {concentration.map((item) => (
-              <li key={item} className="font-inter text-sm text-gray-800">
+              <li key={item} className="font-inter font-semibold text-l text-g4-900">
                 {item}
               </li>
             ))}
@@ -165,7 +166,7 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Cases Handled</CvLabel>
           <ul className="mt-1 space-y-1">
             {casesHandled.map((item) => (
-              <li key={item} className="font-inter text-sm text-gray-800">
+              <li key={item} className="font-inter font-semibold text-l text-g4-900">
                 {item}
               </li>
             ))}

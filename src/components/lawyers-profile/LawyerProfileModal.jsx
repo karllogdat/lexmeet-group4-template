@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Users, Star, Phone } from "lucide-react";
+import { MapPin, User, Star, Phone } from "lucide-react";
 import LawyerModal from "../ui/LawyerModal";
 import ModalTabs from "./ModalTabs";
 import CurriculumVitaeTab from "./CurriculumVitaeTab";
@@ -24,10 +24,10 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
   return (
     <LawyerModal isOpen={!!lawyer} onClose={onClose}>
       {/* ── Modal Header ───────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row items-start gap-4 p-6 pb-4">
+      <div className="flex flex-col sm:flex-row h-50 items-center gap-6 pl-10 pr-10 pb-4 justify-center ">
         {/* Avatar + status dot */}
         <div className="relative flex-shrink-0">
-          <div className="w-20 h-20 rounded-full bg-g4-50 overflow-hidden border-2 border-g4-200">
+          <div className="w-23 h-23 rounded-full bg-g4-50 overflow-hidden border-2 border-g4-200">
             <img
               src={lawyer.photo}
               alt={lawyer.name}
@@ -44,25 +44,25 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
         </div>
 
         {/* Name / role / meta */}
-        <div className="flex-1 min-w-0">
-          <h2 className="font-playfair text-2xl sm:text-3xl text-g4-900 font-bold leading-tight">
+        <div className="flex flex-col flex-1 min-w-0 h-[125px] items-start justify-center">
+          <h2 className="font-playfair font-normal sm:text-3xl text-g4-900 leading-tight">
             {lawyer.name}
           </h2>
-          <p className="font-inter text-g4-600 font-semibold text-base mt-0.5">
+          <p className="font-inter text-g4-600 font-medium text-base mt-0.5">
             {lawyer.position}
           </p>
           {/* Meta row: location, consultations, rating */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm font-inter text-gray-600">
+          <div className="flex flex-wrap items-center gap-x-3  gap-y-1 mt-2 text-sm font-inter text-gray-600">
             <span className="flex items-center gap-1">
-              <MapPin size={14} className="text-g4-600 flex-shrink-0" />
+              <MapPin size={14} className="text-[#6B7C8C] flex-shrink-0" />
               {lawyer.location}
             </span>
             <span className="flex items-center gap-1">
-              <Users size={14} className="text-g4-600 flex-shrink-0" />
+              <User size={14} className="text-[#6B7C8C] flex-shrink-0" />
               {lawyer.consultationCount}
             </span>
             <span className="flex items-center gap-1">
-              <Star size={14} className="text-yellow-400 fill-yellow-400 flex-shrink-0" />
+              <Star size={14} className="text-[#6B7C8C] fill-[#6B7C8C] flex-shrink-0" />
               {lawyer.rating.toFixed(1)}
             </span>
           </div>
