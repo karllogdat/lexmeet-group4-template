@@ -4,8 +4,8 @@ import LawyerTableRow from "./LawyerTableRow";
  * Column header labels per variant.
  */
 const HEADERS = {
-  list:     { third: "Action" },
-  ratings:  { third: "Ratings" },
+  list: { third: "Action" },
+  ratings: { third: "Ratings" },
   schedule: { third: "Availability" },
 };
 
@@ -22,7 +22,8 @@ export default function LawyerTable({ lawyers, variant, onSeeMore }) {
         {/* Table header — g4-700 background matching Figma */}
         <thead>
           <tr className="bg-g4-700 text-white">
-            <th className="py-3 px-4 text-left font-inter font-semibold text-sm sm:text-base">
+
+            <th className="py-3 px-4 pl-18 w-120 text-left font-inter font-semibold text-sm sm:text-base">
               Name
             </th>
             <th className="py-3 px-4 text-left font-inter font-semibold text-sm sm:text-base">
@@ -31,6 +32,8 @@ export default function LawyerTable({ lawyers, variant, onSeeMore }) {
             <th className="py-3 px-4 text-left font-inter font-semibold text-sm sm:text-base">
               {third}
             </th>
+            {/* Empty header — See More column has no label */}
+            <th className="py-3 px-4" aria-label="Actions" />
           </tr>
         </thead>
 
@@ -39,7 +42,7 @@ export default function LawyerTable({ lawyers, variant, onSeeMore }) {
           {lawyers.length === 0 ? (
             <tr>
               <td
-                colSpan={3}
+                colSpan={4}
                 className="py-12 text-center font-inter text-gray-500"
               >
                 No lawyers found.

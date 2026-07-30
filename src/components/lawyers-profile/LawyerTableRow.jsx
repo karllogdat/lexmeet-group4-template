@@ -59,24 +59,26 @@ export default function LawyerTableRow({ lawyer, variant, onSeeMore }) {
           {variant === "schedule" && (
             <span
               className={[
-                "font-inter text-sm sm:text-base font-medium",
+                "font-inter text-sm sm:text-base font-semibold",
                 lawyer.isAvailable ? "text-g4-600" : "text-g4-400",
               ].join(" ")}
             >
               {lawyer.isAvailable ? "Available" : "Not Available"}
             </span>
           )}
-
-          {/* See More link — present in all variants */}
-          <button
-            type="button"
-            id={`see-more-${lawyer.id}-${variant}`}
-            onClick={() => onSeeMore(lawyer)}
-            className="font-inter text-sm sm:text-base text-g4-700 font-semibold hover:text-g4-900 hover:underline transition-colors whitespace-nowrap ml-2"
-          >
-            See More
-          </button>
         </div>
+      </td>
+
+      {/* See More — own column, no header, always aligned */}
+      <td className="py-3 px-4 text-left">
+        <button
+          type="button"
+          id={`see-more-${lawyer.id}-${variant}`}
+          onClick={() => onSeeMore(lawyer)}
+          className="font-inter text-sm sm:text-base text-g4-700 font-semibold hover:text-g4-900 hover:underline transition-colors whitespace-nowrap"
+        >
+          See More
+        </button>
       </td>
     </tr>
   );
