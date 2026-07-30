@@ -1,7 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import LatestBlogImage from "../../assets/everyday-law/latest-blog.jpg";
+import { useNavigate } from "react-router";
 
 export default function LatestBlog({ blog }) {
+  const navigate = useNavigate();
+
   return (
     <div className="flex w-full h-fit gap-8">
       <img
@@ -14,10 +17,14 @@ export default function LatestBlog({ blog }) {
           {blog.author} • {blog.published_at.toDateString()}
         </p>
         <p className="line-clamp-7 text-truncate g4-body">{blog.content}</p>
-        <div className="flex w-fit py-2 items-center justify-center gap-2.5 text-g4-700">
+        <button
+          type="button"
+          onClick={() => navigate("/everyday-law/blog")}
+          className="cursor-pointer flex w-fit py-2 items-center justify-center gap-2.5 text-g4-700"
+        >
           <span className="g4-button">Read More</span>
           <ArrowRight />
-        </div>
+        </button>
       </div>
     </div>
   );
