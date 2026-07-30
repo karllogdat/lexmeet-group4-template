@@ -12,10 +12,10 @@ function StarRating({ rating }) {
   return (
     <div className="flex items-center gap-0.5">
       {Array.from({ length: full }).map((_, i) => (
-        <Star key={`f-${i}`} size={14} className="text-yellow-400 fill-yellow-400" />
+        <Star key={`f-${i}`} size={14} className="text-g4-700 fill-g4-700" />
       ))}
       {half === 1 && (
-        <Star key="h" size={14} className="text-yellow-400 fill-yellow-200" />
+        <Star key="h" size={14} className="text-g4-700 fill-g4-700" />
       )}
       {Array.from({ length: empty }).map((_, i) => (
         <Star key={`e-${i}`} size={14} className="text-gray-300" />
@@ -30,14 +30,14 @@ function StarRating({ rating }) {
  */
 function ReviewCard({ review }) {
   return (
-    <div className="border border-gray-200 rounded-lg p-4 flex flex-col gap-3 bg-white">
+    <div className="border border-[#E4ECF3] rounded-lg p-4 flex flex-col gap-3 bg-white m-5">
       {/* Reviewer header */}
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-full bg-g4-50 border border-g4-200 flex items-center justify-center flex-shrink-0">
+        <div className="w-12 h-12 rounded-full bg-g4-50 border border-[#E4ECF3] flex items-center justify-center flex-shrink-0">
           <User size={20} className="text-g4-600" />
         </div>
         <div>
-          <p className="font-inter font-semibold text-sm text-gray-900">{review.reviewer}</p>
+          <p className="font-inter font-semibold text-l text-g4-900">{review.reviewer}</p>
           <StarRating rating={review.rating} />
         </div>
       </div>
