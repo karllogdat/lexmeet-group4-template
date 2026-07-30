@@ -1,9 +1,17 @@
+import { useState } from "react";
 import SectionEyebrow from "../ui/SectionEyebrow";
 import SeeMoreButton from "../ui/SeeMoreButton";
 import CaseCard from "./CaseCard";
 import { casesHandled } from "./lawPracticeData";
 
+const INITIAL_VISIBLE = 6; // 2 rows × 3 cards — matches the Figma grid
+
 export default function CasesHandledSection() {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleCases = showAll ? casesHandled : casesHandled.slice(0, INITIAL_VISIBLE);
+  const hasMore = casesHandled.length > INITIAL_VISIBLE;
+
   return (
     <section className="bg-white px-6 md:px-12 py-16">
       <div className="max-w-6xl mx-auto">
@@ -13,14 +21,18 @@ export default function CasesHandledSection() {
         </h2>
 
         <div className="flex flex-row flex-wrap gap-[50px] items-center justify-center">
-          {casesHandled.map((item) => (
+          {visibleCases.map((item) => (
             <CaseCard key={item.id} text={item.text} />
           ))}
         </div>
 
-        <div className="flex justify-center mt-10">
-          <SeeMoreButton />
-        </div>
+        {hasMore && (
+          <div className="flex justify-center mt-10">
+            <SeeMoreButton onClick={() => setShowAll((prev) => !prev)}>
+              {showAll ? "Show Less" : "See More"}
+            </SeeMoreButton>
+          </div>
+        )}
       </div>
     </section>
   );

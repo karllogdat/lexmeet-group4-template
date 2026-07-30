@@ -1,20 +1,27 @@
+import React, { useState } from "react";
+import { Link } from "react-router";
+
 export default function NavLink({ href, children }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
-        color: '#FFFFFF',
+        color: '#ffffff',
         textDecoration: 'none',
-        padding: '8px 12px',
         fontSize: '14px',
-        whiteSpace: 'nowrap',
-        borderRadius: '4px',
-        transition: 'background-color 0.2s',
-        display: 'inline-block'
+        fontWeight: '500',
+        whiteSpace: 'nowrap', // Prevents text inside buttons from wrapping
+        transition: 'all 0.2s ease',
+        padding: '6px 10px',
+        borderRadius: '6px',
+        backgroundColor: isHovered ? '#387fa7' : 'transparent',
       }}
-      className="hover:bg-g4-700"
     >
       {children}
-    </a>
+    </Link>
   );
 }
