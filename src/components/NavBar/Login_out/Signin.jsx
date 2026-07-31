@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import bgImage from '../../../assets/Log_pics/log-in-outbg.jpg';
+import bgImage from '../../../assets/Log_pics/logbg.jpg';
 import lexmeetLogo from '../../../assets/LexMeetLogo.png';
 import rizalLogo from '../../../assets/Lex.svg';
 
