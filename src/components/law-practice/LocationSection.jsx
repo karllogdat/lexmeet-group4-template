@@ -42,6 +42,7 @@ export default function LocationSection() {
                   bgColor="bg-g4-700"
                   textColor="text-white"
                   hoverColor="hover:bg-g4-800"
+                  isOpen={showAll}
                 />
               </div>
             )}

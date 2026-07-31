@@ -28,7 +28,7 @@ export default function CasesHandledSection() {
 
         {hasMore && (
           <div className="flex justify-center mt-10">
-            <SeeMoreButton onClick={() => setShowAll((prev) => !prev)}>
+            <SeeMoreButton onClick={() => setShowAll((prev) => !prev)} isOpen={showAll}>
               {showAll ? "Show Less" : "See More"}
             </SeeMoreButton>
           </div>
