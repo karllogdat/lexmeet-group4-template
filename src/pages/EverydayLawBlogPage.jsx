@@ -1,12 +1,47 @@
 import BlogTags from "../components/everyday_law/BlogTags";
 import Button from "../components/Button";
 import IconButton from "../components/IconButton";
-import { ChevronLeft, ChevronRight, Heart, Search, Share } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Heart,
+  Mail,
+  MessageSquareText,
+  Search,
+  Share,
+} from "lucide-react";
 
 import BlogImage from "../assets/everyday-law/latest-blog.jpg";
 import Breadcrumbs from "../components/everyday_law/Breadcrumbs";
+import { useState } from "react";
+import ShareModal from "../components/everyday_law/ShareModal";
+import {
+  IconBrandFacebook,
+  IconBrandLinkedin,
+  IconBrandMessengerFilled,
+  IconBrandPinterestFilled,
+  IconBrandReddit,
+  IconBrandTelegram,
+  IconBrandWhatsapp,
+  IconBrandX,
+} from "@tabler/icons-react";
+import ShareLink from "../components/everyday_law/ShareLink";
 
 export default function EverydayLawBlogPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const socialMediaIcons = [
+    IconBrandFacebook,
+    IconBrandLinkedin,
+    IconBrandX,
+    IconBrandWhatsapp,
+    IconBrandTelegram,
+    IconBrandMessengerFilled,
+    IconBrandReddit,
+    IconBrandPinterestFilled,
+    Mail,
+    MessageSquareText,
+  ];
   return (
     <div className="flex flex-col items-center p-20 gap-8">
       {/* TODO: breadcrumbs */}
@@ -85,9 +120,34 @@ export default function EverydayLawBlogPage() {
           <Button>
             Like <Heart />
           </Button>
-          <Button>
+          <Button onClick={() => setIsModalOpen(true)}>
             Share <Share />
           </Button>
+
+          <ShareModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            title="Share this Blog"
+          >
+            <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-5 gap-4">
+                {socialMediaIcons.map((Icon, index) => (
+                  <button
+                    key={index}
+                    className="w-13 h-13 flex items-center justify-center rounded-full p-3 text-white bg-g4-700"
+                  >
+                    <Icon />
+                  </button>
+                ))}
+              </div>
+
+              <div className="w-full flex flex-col gap-2 g4-caption text-slate-300">
+                <p>Or copy as link</p>
+                <ShareLink />
+                <p>Click outside to close</p>
+              </div>
+            </div>
+          </ShareModal>
         </div>
         <div className="flex gap-2.5">
           <div className="h-[52px] w-[52px] flex items-center justify-center rounded-full bg-g4-700 text-white">
