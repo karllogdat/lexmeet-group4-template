@@ -7,7 +7,7 @@ import OurServices from "../components/Homepage/OurServices";
 import PracticeArea from "../components/Homepage/PracticeArea";
 import EverydayLawSection from "../components/Homepage/Everydaylaw";
 import LawUpdatesSection from "../components/Homepage/Lawupdates";
-import ContactModal from "../components/Contactus/Contact_modal"; // Path to ContactModal component
+import ContactModal from "../components/Contactus/Contact_modal";
 
 export default function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
