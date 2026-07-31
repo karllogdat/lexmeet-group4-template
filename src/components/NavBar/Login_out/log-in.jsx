@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import bgImage from '../../../assets/Log_pics/logbg.jpg';
 import lexLogo from '../../../assets/Lex.svg';
 import lexMeetLogo from '../../../assets/LexMeetName.png';
 import Signin from './Signin';
 
-// Social SVGs imported from assets/Sign_in
+
+import Button from '../../Button';
+
 import googleIcon from '../../../assets/Sign_in/google.svg';
 import facebookIcon from '../../../assets/Sign_in/facebook.svg';
 import appleIcon from '../../../assets/Sign_in/apple.svg';
@@ -15,6 +17,18 @@ export default function Login({ isOpen, onClose }) {
   const [rememberMe, setRememberMe] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
+  // Prevent background scrolling when modal is active
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
@@ -23,15 +37,22 @@ export default function Login({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md overflow-y-auto">
-      
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md overflow-y-auto"
+      onClick={onClose}
+    >
       {/* Main Login Card - Corner Radius 8px */}
-      <div className="relative z-10 w-full max-w-4xl rounded-lg overflow-hidden shadow-2xl backdrop-blur-xl bg-slate-900/40 border border-white/20 text-white my-auto">
+      <div 
+        className="relative z-10 w-full max-w-4xl rounded-lg overflow-hidden shadow-2xl backdrop-blur-xl bg-slate-900/40 border border-white/20 text-white my-auto"
+        onClick={(e) => e.stopPropagation()} // Prevent close on card click
+      >
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-white/70 hover:text-white z-20 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition"
+          type="button"
+          aria-label="Close modal"
+          className="absolute top-3 right-3 text-white/70 hover:text-white z-20 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition cursor-pointer"
         >
           ✕
         </button>
@@ -83,7 +104,7 @@ export default function Login({ isOpen, onClose }) {
                 />
               </div>
 
-              {/* Remember Me & Forgot Password (White text) */}
+              {/* Remember Me & Forgot Password */}
               <div className="flex items-center justify-between font-poppins text-[10px] text-white pt-1">
                 <label className="flex items-center space-x-2 cursor-pointer select-none text-white">
                   <input
@@ -99,13 +120,12 @@ export default function Login({ isOpen, onClose }) {
                 </a>
               </div>
 
-              {/* Sign In Button */}
-              <button
-                type="submit"
-                className="w-full py-2.5 mt-2 bg-[#1b4b72] hover:bg-[#153a59] text-white g4-button rounded-lg shadow-md transition-colors duration-200 cursor-pointer"
-              >
-                Sign In
-              </button>
+              {/* Custom Button Integration */}
+              <div className="pt-2 [&>button]:w-full [&>button]:justify-center">
+                <Button onClick={handleSubmit}>
+                  Sign In
+                </Button>
+              </div>
             </form>
 
             {/* Divider */}
@@ -117,7 +137,7 @@ export default function Login({ isOpen, onClose }) {
               <div className="border-t border-white/20 w-full" />
             </div>
 
-            {/* Social Logins (White BG -> Dark text preserved) */}
+            {/* Social Logins */}
             <div className="grid grid-cols-3 gap-2">
               <button 
                 type="button" 
@@ -144,7 +164,7 @@ export default function Login({ isOpen, onClose }) {
               </button>
             </div>
 
-            {/* Create Account Link (White text) */}
+            {/* Create Account Link */}
             <div className="text-center font-poppins text-[14px] text-white pt-2">
               Don't have an account?{' '}
               <button 
@@ -156,14 +176,14 @@ export default function Login({ isOpen, onClose }) {
               </button>
             </div>
 
-            {/* Footer Branding - Powered by text colored g4-400 */}
+            {/* Footer Branding */}
             <div className="flex items-center justify-center space-x-1.5 font-inter text-[14px] pt-3 border-t border-white/10">
               <span className="text-g4-400">Powered by</span>
               <img src={lexMeetLogo} alt="LexMeet Logo" className="h-5 object-contain" />
             </div>
           </div>
 
-          {/* Right Column: Text Content (All white text) */}
+          {/* Right Column: Text Content */}
           <div className="flex flex-col justify-center space-y-4 md:pl-6 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0">
             <h1 className="g4-heading-1 text-white">
               We are Ready to Serve for all your Legal Needs!

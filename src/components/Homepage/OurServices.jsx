@@ -43,16 +43,17 @@ export default function OurServices() {
   ];
 
   return (
-    <div className="relative max-w-6xl mx-auto px-4 z-20 -mt-24 md:-mt-32">
-      {/* Container with 32px padding on all sides */}
-      <div className="bg-white rounded-3xl shadow-2xl p-[32px] text-[#0c2a4a]">
-        {/* Header Title: Playfair Display, 64px, Bold */}
-        <h2 className="font-['Playfair_Display'] text-[64px] font-bold text-center leading-tight mb-8">
+    /* Increased horizontal margin on small screens: mx-6 sm:mx-8 md:mx-auto */
+    <div className="relative max-w-6xl mx-6 sm:mx-8 md:mx-auto px-4 sm:px-6 z-20 -mt-24 md:-mt-32">
+      {/* Container with responsive padding on all sides */}
+      <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 text-g4-900">
+        {/* Header Title: Playfair Display, Bold & Responsive */}
+        <h2 className="font-['Playfair_Display'] text-[36px] sm:text-[48px] md:text-[64px] font-extrabold text-center leading-tight mb-8">
           Our Services
         </h2>
 
-        {/* Services Flex Container with 42px gap */}
-        <div className="flex flex-col md:flex-row justify-between items-stretch gap-[42px]">
+        {/* Services Flex Container with responsive gap */}
+        <div className="flex flex-col md:flex-row justify-between items-stretch gap-8 md:gap-10.5">
           {services.map((item) => (
             <div
               key={item.id}
@@ -60,16 +61,16 @@ export default function OurServices() {
             >
               <div className="space-y-4">
                 {/* Circular Icon Container */}
-                <div className="w-[100px] h-[100px] rounded-full bg-[#89CFF1] flex items-center justify-center p-2.5">
+                <div className="w-25 h-25 rounded-full bg-[#89CFF1] flex items-center justify-center p-2.5">
                   <img
                     src={item.icon}
                     alt={`${item.title} icon`}
-                    className="w-[53px] h-[53px] object-contain"
+                    className="w-13.25 h-13.25 object-contain"
                   />
                 </div>
 
-                {/* Card Title */}
-                <h3 className="g4-large-body font-bold">
+                {/* Bolded Card Title */}
+                <h3 className="g4-large-body text-xl font-black text-g4-900 tracking-wide">
                   {item.title}
                 </h3>
 
@@ -82,7 +83,7 @@ export default function OurServices() {
               {/* Action Link */}
               <a
                 href={item.ctaLink}
-                className="g4-button inline-flex items-center gap-1.5 font-semibold text-[#0c2a4a] hover:text-[#2d7099] transition-colors duration-200 text-sm pt-2"
+                className="g4-button inline-flex items-center gap-1.5 font-bold text-[#0c2a4a] hover:text-[#2d7099] transition-colors duration-200 text-sm pt-2"
               >
                 <span>{item.ctaText}</span>
                 <span className="text-base">→</span>

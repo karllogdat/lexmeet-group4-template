@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 
-export default function NavLink({ href, children }) {
+export default function NavLink({ href, onClick, children }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Link
       to={href}
+      onClick={onClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
