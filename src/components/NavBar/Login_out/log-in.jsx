@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import bgImage from '../../../assets/Log_pics/logbg.jpg';
 import lexLogo from '../../../assets/Lex.svg';
-import lexMeetLogo from '../../../assets/LexMeetLogo.png';
+import lexMeetLogo from '../../../assets/LexMeetName.png';
 import Signin from './Signin';
 
 // Social SVGs imported from assets/Sign_in
