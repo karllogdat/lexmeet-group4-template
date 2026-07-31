@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import bgImage from '../../../assets/logs/log-in-outbg.jpg';
+import bgImage from '../../../assets/Log_pics/log-in-outbg.jpg';
 import lexmeetLogo from '../../../assets/LexMeetLogo.png';
 import rizalLogo from '../../../assets/Lex.svg';
 
@@ -53,10 +53,10 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
             {/* Logo & Branding */}
             <div className="flex flex-col items-center mb-4">
               <div className="flex items-center justify-center gap-4 mb-2 w-full">
-                <img src={rizalLogo} alt="Rizal Logo" className="w-[58px] h-[58px] object-contain shrink-0" />
+                <img src={rizalLogo} alt="Rizal Logo" className="w-14.5 h-14.5 object-contain shrink-0" />
                 <span className="g4-heading-1 tracking-wide text-white whitespace-nowrap">Rizal Law Office</span>
               </div>
-              <div className="w-full h-[1px] bg-white/20 my-1"></div>
+              <div className="w-full h-px bg-white/20 my-1"></div>
             </div>
 
             {/* Header */}
@@ -160,9 +160,9 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
             {/* Social Logins */}
             <div className="mt-4">
               <div className="relative flex py-2 items-center">
-                <div className="flex-grow border-t border-white/20"></div>
-                <span className="flex-shrink mx-2 font-inter text-[16px] text-blue-200 uppercase tracking-wider">Or Sign Up With</span>
-                <div className="flex-grow border-t border-white/20"></div>
+                <div className="grow border-t border-white/20"></div>
+                <span className="shrink mx-2 font-inter text-[16px] text-blue-200 uppercase tracking-wider">Or Sign Up With</span>
+                <div className="grow border-t border-white/20"></div>
               </div>
 
               {/* Social Buttons: Text first, SVG on the right */}
@@ -202,13 +202,13 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
         </div>
 
         {/* RIGHT CARD: Image Banner */}
-        <div className="hidden md:block md:w-1/2 relative rounded-lg overflow-hidden shadow-2xl border border-white/10 min-h-[500px]">
+        <div className="hidden md:block md:w-1/2 relative rounded-lg overflow-hidden shadow-2xl border border-white/10 min-h-125">
           <img
             src={bgImage}
             alt="Secure Legal Access"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#13426B]/80 via-black/20 to-transparent flex items-center justify-start p-8 text-left">
+          <div className="absolute inset-0 bg-linear-to-t from-[#13426B]/80 via-black/20 to-transparent flex items-center justify-start p-8 text-left">
             <h1 className="g4-heading-1 text-white uppercase tracking-widest leading-relaxed drop-shadow-md">
               Secure<br />
               Access<br />
