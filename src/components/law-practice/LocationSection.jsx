@@ -19,8 +19,8 @@ export default function LocationSection() {
           Location of Practice
         </h2>
 
-        <div className="grid md:grid-cols-[1fr_1.1fr] gap-10">
-          <div className="grid grid-cols-2 gap-4 max-w-md ">
+        <div className="grid md:grid-cols-[1fr_1.1fr] gap-10 justify-items-center md:justify-items-start">
+          <div className="grid grid-cols-2 gap-4 w-full">
             {regions.map((region) => (
               <RegionMapCard key={region.id} label={region.label} image={region.image} />
             ))}
