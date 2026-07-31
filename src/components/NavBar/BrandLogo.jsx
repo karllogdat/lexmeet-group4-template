@@ -1,14 +1,15 @@
-import DesignSystem from "../../pages/DesignSystemPage";
+import React from 'react';
+// Import the SVG directly so Vite bundles it correctly
+import lexLogo from "../../assets/Lex.svg";
 
 export default function BrandLogo() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
       <img
-        src="/src/assets/Lex.svg"
+        src={lexLogo}
         alt="Lex Logo"
         style={{ width: '59px', height: '59px', objectFit: 'contain' }}
         onError={(e) => {
-          // Fallback if image path is incorrect
           e.target.style.display = 'none';
         }}
       />

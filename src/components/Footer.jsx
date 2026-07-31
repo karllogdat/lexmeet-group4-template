@@ -1,19 +1,26 @@
 import React from 'react';
 
+// Import assets directly so Vite bundles them correctly for production/Vercel
+import lexLogo from "../assets/Lex.svg";
+import lexMeetLogo from "../assets/LexMeetName.png"; // Changed .svg to .png
+
 export default function Footer() {
   return (
     <footer className="flex flex-col w-full text-white font-sans">
       {/* Main Footer Container */}
-      <div className="bg-linear-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
+      <div className="bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
         {/* Equal Flexbox Container */}
         <div className="w-full flex flex-wrap lg:flex-nowrap items-start justify-between gap-8">
           
           {/* Brand Logo Section */}
           <div className="flex items-center justify-start gap-3 flex-1 min-w-70">
             <img 
-              src="/src/assets/Lex.svg" 
-              alt="Lex Logo" 
+              src={lexLogo} 
+              alt="Rizal Law Office Brand Logo" 
               className="w-32.5 h-28 object-contain shrink-0" 
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
             />
 
             <div className="text-left font-poppins">
@@ -105,13 +112,15 @@ export default function Footer() {
         <span>All Rights Reserved, 2022.</span>
         <span className="flex items-center gap-1">
           Powered by{' '}
-          <strong className="text-white font-semibold inline-flex items-center">
+          <strong className="text-white font-semibold inline-flex items-center gap-1">
             <img 
-              src="/src/assets/Lex.svg" 
-              alt="Lex Logo" 
-              className="w-5 h-5 inline-block mr-1 object-contain" 
+              src={lexMeetLogo} 
+              alt="LexMeet Logo" 
+              className="h-4 object-contain inline-block" 
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
             />
-            LexMeet
           </strong>
         </span>
       </div>

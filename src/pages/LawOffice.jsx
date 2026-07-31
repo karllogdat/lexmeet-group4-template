@@ -19,10 +19,10 @@ import { MapIcon } from "lucide-react";
 export default function LawOfficePage() {
   return (
     <div className="flex flex-col g4-body">
-      <div className="flex items-center justify-center h-180 py-20.5 px-32">
-        <div className="flex items-center justify-center gap-12">
+      <div className="flex items-center justify-center h-fit py-20.5 px-6 lg:px-32">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
           {/* bento box */}
-          <div className="w-1/2 grid grid-cols-2 grid-rows-2 gap-8">
+          <div className="lg:w-1/2 grid grid-cols-2 grid-rows-2 gap-8">
             <img
               src={OfficeTop}
               className="w-full h-full aspect-4/3 object-cover rounded-lg"
@@ -40,7 +40,7 @@ export default function LawOfficePage() {
             />
           </div>
 
-          <div className="flex flex-col gap-8 w-1/2">
+          <div className="flex flex-col gap-8 lg:w-1/2">
             <h1 className="g4-heading-1 font-bold">Our Law Office</h1>
             <h2 className="g4-heading-2">Built for Modern Legal Practice</h2>
             <p>
@@ -54,14 +54,14 @@ export default function LawOfficePage() {
         </div>
       </div>
 
-      <div className="h-180 grid grid-cols-4 grid-rows-2 gap-y-8 gap-x-16 bg-g4-900 text-g4-50">
+      <div className="h-fit grid lg:grid-cols-4 lg:grid-rows-2 gap-y-8 gap-x-16 bg-g4-900 text-g4-50">
         <img
           src={LawyersLarge}
-          className="w-full h-full aspect-4/3 object-cover row-span-2"
+          className="w-full h-full aspect-4/3 object-cover col-span-2 lg:col-span-1 lg:row-span-2"
           alt="Lawyers Large"
         />
 
-        <div className="row-span-2 col-span-2 flex flex-col justify-center gap-8">
+        <div className="row-span-2 col-span-2 flex flex-col justify-center gap-8 py-20 px-6 lg:px-0">
           <h1 className="g4-heading-1 font-bold">Our Lawyers</h1>
           <h2 className="g4-heading-2">
             Manned by Competent and Trustworthy Lawyers
@@ -75,7 +75,7 @@ export default function LawOfficePage() {
 
         <img
           src={LawyersTop}
-          className="w-full h-full aspect-4/3 object-cover rounded-bl-lg"
+          className="w-full h-full aspect-4/3 object-cover rounded-bl-lg sm:rounded-tr-lg"
           alt="Lawyers Top"
         />
 
@@ -86,9 +86,9 @@ export default function LawOfficePage() {
         />
       </div>
 
-      <div className="flex items-center justify-center h-180 py-20.5 px-32">
-        <div className="flex items-center justify-center gap-12">
-          <div className="flex flex-col items-end gap-8 w-1/2">
+      <div className="flex items-center justify-center h-fit py-20.5 px-6 lg:px-32">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+          <div className="flex flex-col items-end gap-8 lg:w-1/2">
             <h1 className="g4-heading-1 font-bold">Our Staffs</h1>
             <h2 className="g4-heading-2 text-right">
               Friendly and Industrious Support Staff
@@ -102,7 +102,7 @@ export default function LawOfficePage() {
           </div>
 
           {/* bento box */}
-          <div className="w-1/2 grid grid-cols-2 grid-rows-2 gap-8">
+          <div className="lg:w-1/2 grid grid-cols-2 grid-rows-2 gap-8">
             <img
               src={StaffsLarge}
               className="w-full h-full aspect-4/3 object-cover rounded-lg row-span-2"
@@ -122,8 +122,8 @@ export default function LawOfficePage() {
         </div>
       </div>
 
-      <div className="h-240 flex items-center bg-g4-900">
-        <div className="h-fit flex flex-col mx-32 rounded-lg bg-white overflow-hidden">
+      <div className="h-fit flex flex-col lg:flex-row items-center bg-g4-900 lg:p-0">
+        <div className="h-fit flex flex-col m-6 lg:mx-32 rounded-lg bg-white overflow-hidden">
           <img
             src={Office}
             className="h-64 aspect-4/3 object-cover"
@@ -144,7 +144,11 @@ export default function LawOfficePage() {
           </div>
         </div>
 
-        <img src={Map} className="w-1/2 h-full object-cover" alt="Office" />
+        <img
+          src={Map}
+          className="w-full lg:w-1/2 h-full object-cover"
+          alt="Office"
+        />
       </div>
     </div>
   );
