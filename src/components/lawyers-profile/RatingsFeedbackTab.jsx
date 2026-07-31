@@ -30,7 +30,7 @@ function StarRating({ rating }) {
  */
 function ReviewCard({ review }) {
   return (
-    <div className="border border-[#E4ECF3] rounded-lg p-4 flex flex-col gap-3 bg-white m-5">
+    <div className="border border-[#E4ECF3] rounded-lg p-4 flex flex-col gap-3 bg-white">
       {/* Reviewer header */}
       <div className="flex items-center gap-3">
         <div className="w-12 h-12 rounded-full bg-g4-50 border border-[#E4ECF3] flex items-center justify-center shrink-0">
@@ -45,7 +45,7 @@ function ReviewCard({ review }) {
       <hr className="border-gray-100" />
 
       {/* Review text */}
-      <p className="font-inter text-sm text-gray-700 leading-relaxed flex-1">
+      <p className="font-inter text-sm text-gray-700 leading-relaxed flex-1 break-words">
         {review.text}
       </p>
 

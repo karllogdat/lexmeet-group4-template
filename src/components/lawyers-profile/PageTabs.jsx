@@ -13,7 +13,7 @@ const TABS = [
 
 export default function PageTabs({ activeTab, onChange }) {
   return (
-    <div className="flex overflow-hidden border border-g4-700/30">
+    <div className="flex border border-g4-700/30">
       {TABS.map((tab) => {
         const isActive = activeTab === tab.id;
         return (
@@ -23,7 +23,8 @@ export default function PageTabs({ activeTab, onChange }) {
             id={`page-tab-${tab.id}`}
             onClick={() => onChange(tab.id)}
             className={[
-              "flex-1 py-4 px-2 text-center g4-heading-2 sm:text-lg transition-colors",
+              "flex-1 min-w-0 py-3 px-1 sm:px-2 text-center font-playfair",
+              "text-xs sm:text-sm md:text-base lg:text-2xl leading-snug transition-colors",
               isActive
                 ? "bg-g4-700 text-white"
                 : "bg-g4-50 text-g4-700 hover:bg-g4-50",

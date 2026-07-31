@@ -23,7 +23,8 @@ export default function ModalTabs({ activeTab, onChange }) {
             id={`modal-tab-${tab.id}`}
             onClick={() => onChange(tab.id)}
             className={[
-              "flex-1 py-3 px-2 text-center font-playfair font-normal sm:text-2xl  transition-colors",
+              "flex-1 min-w-0 py-3 px-1 sm:px-2 text-center font-playfair font-normal",
+              "text-xs sm:text-sm md:text-base lg:text-2xl leading-snug transition-colors",
               isActive
                 ? "bg-g4-900 text-white"
                 : "bg-[#F2F6FA] text-g4-700 hover:bg-g4-50",
