@@ -26,19 +26,19 @@ import kalixMartinezImg from "../../assets/law-practice/members/kalix-martinez.p
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const practiceAreas = [
-  { id: "family",      label: "Family Law",       image: familyLawImg },
-  { id: "labor",       label: "Labor Law",        image: laborLawImg },
-  { id: "immigration", label: "Immigration Law",  image: immigrationLawImg },
-  { id: "criminal",    label: "Criminal Law",     image: criminalLawImg },
-  { id: "commercial",  label: "Commercial Law",   image: commercialLawImg },
-  { id: "civil",       label: "Civil Law",        image: civilLawImg },
-  { id: "taxation",    label: "Taxation Law",     image: taxationLawImg },
-  { id: "special",     label: "Special Services", image: specialServicesImg },
+  { id: "family", label: "Family Law", image: familyLawImg },
+  { id: "labor", label: "Labor Law", image: laborLawImg },
+  { id: "immigration", label: "Immigration Law", image: immigrationLawImg },
+  { id: "criminal", label: "Criminal Law", image: criminalLawImg },
+  { id: "commercial", label: "Commercial Law", image: commercialLawImg },
+  { id: "civil", label: "Civil Law", image: civilLawImg },
+  { id: "taxation", label: "Taxation Law", image: taxationLawImg },
+  { id: "special", label: "Special Services", image: specialServicesImg },
   // Additional entries so the "See More" button has content to reveal
-  { id: "property",    label: "Property Law",     image: commercialLawImg },
-  { id: "corporate",   label: "Corporate Law",    image: civilLawImg },
-  { id: "environ",     label: "Environmental Law",image: specialServicesImg },
-  { id: "ip",          label: "IP Law",           image: familyLawImg },
+  { id: "family", label: "Family Law", image: familyLawImg },
+  { id: "labor", label: "Labor Law", image: laborLawImg },
+  { id: "immigration", label: "Immigration Law", image: immigrationLawImg },
+  { id: "criminal", label: "Criminal Law", image: criminalLawImg },
 ];
 
 export const casesHandled = [
@@ -49,16 +49,16 @@ export const casesHandled = [
   { id: "case-5", text: "Corporate registration and compliance" },
   { id: "case-6", text: "Labor disputes and illegal dismissal cases" },
   // Extra entries revealed by the "See More" button
-  { id: "case-7", text: "Immigration petitions and visa applications" },
-  { id: "case-8", text: "Criminal defense and prosecution assistance" },
-  { id: "case-9", text: "Trademark and intellectual property registration" },
+  { id: "case-7", text: "Annulment of Marriage or Declaration of Nullity of Marriage" },
+  { id: "case-8", text: "Contract drafting and other commercial documents" },
+  { id: "case-9", text: "Actions for specific performance" },
 ];
 
 export const regions = [
   { id: "nationwide", label: "Nationwide", image: nationwideImg },
-  { id: "luzon",      label: "Luzon",      image: luzonImg },
-  { id: "visayas",    label: "Visayas",    image: visayasImg },
-  { id: "mindanao",   label: "Mindanao",   image: mindanaoImg },
+  { id: "luzon", label: "Luzon", image: luzonImg },
+  { id: "visayas", label: "Visayas", image: visayasImg },
+  { id: "mindanao", label: "Mindanao", image: mindanaoImg },
 ];
 
 export const provinces = [
@@ -132,8 +132,8 @@ export const members = [
   // Reuses louisse-martinez.png as a placeholder photo.
   {
     id: "member-4-test",
-    name: "Atty. Test Member",
-    note: "Test Entry — Carousel Pagination Verification",
+    name: "Atty. Louisse V. Martinez",
+    note: "Top 100 Lawyers of the Philippines",
     photo: louisseMartinezImg,
   },
   // ─────────────────────────────────────────────────────────────────────────

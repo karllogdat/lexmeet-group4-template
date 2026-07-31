@@ -63,6 +63,7 @@ export default function PracticeAreasSection() {
           <div className="flex flex-row justify-center mt-8">
             <SeeMoreButton
               onClick={() => setShowAll((prev) => !prev)}
+              isOpen={showAll}
             >
               {showAll ? "Show Less" : "See More"}
             </SeeMoreButton>
