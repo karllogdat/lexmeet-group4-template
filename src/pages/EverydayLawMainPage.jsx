@@ -12,7 +12,7 @@ import PopularTags from "../components/everyday_law/PopularTags";
 
 export default function EverydayLawMainPage() {
   return (
-    <div className="flex flex-col items-center p-20 gap-2.5">
+    <div className="flex flex-col items-center p-6 lg:p-20 gap-2.5">
       <h1 className="w-full h-16 text-center g4-heading-1 text-g4-700">
         Everyday Law
       </h1>
@@ -31,7 +31,7 @@ export default function EverydayLawMainPage() {
       <LatestBlog blog={latestBlogSample} />
 
       {/*Three subsections*/}
-      <div className="grid grid-cols-3 w-full gap-2 5">
+      <div className="grid lg:grid-cols-3 w-full gap-2 5">
         <SubsectionCard
           type="Everyday Law"
           blog={latestBlogSample}
@@ -50,8 +50,8 @@ export default function EverydayLawMainPage() {
       </div>
 
       {/* talk and standard */}
-      <div className="flex w-214.5 gap-21.5">
-        <div className="flex flex-col gap-4 p-8 w-1/2 bg-g4-50 rounded-lg">
+      <div className="flex flex-col lg:flex-row lg:w-214.5 gap-21.5 py-8">
+        <div className="flex flex-col gap-4 p-8 lg:w-1/2 bg-g4-50 rounded-lg">
           <h3 className="g4-heading-3 text-g4-900">Need Legal Help?</h3>
           <p className="g4-body text-g4-900">
             Talk to a lawyer for legal advice on your specific concern. Get
@@ -62,7 +62,7 @@ export default function EverydayLawMainPage() {
           </Button>
         </div>
 
-        <div className="flex flex-col w-1/2 gap-4 justify-center text-g4-900">
+        <div className="flex flex-col lg:w-1/2 gap-4 p-8 justify-center text-g4-900">
           <h3 className="g4-heading-3 text-g4-900">Editorial Standard</h3>
           <p className="g4-body text-g4-900">
             Articles are reviewed for legal accuracy and updated as laws and
