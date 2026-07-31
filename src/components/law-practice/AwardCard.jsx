@@ -13,7 +13,7 @@ export default function AwardCard({ title, description, image }) {
           <div className="h-10 w-10 rounded-full bg-[#0F4C75]/20" />
         )}
       </div>
-      <h3 className="font-serif text-xl text-[#002E56] mb-1">{title}</h3>
+      <h3 className="font-playfair font-medium text-xl text-[#002E56] mb-1">{title}</h3>
       <p className="font-inter text-sm text-slate-600 leading-snug">{description}</p>
     </div>
   );
