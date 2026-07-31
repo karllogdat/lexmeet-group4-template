@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router";
 
-export default function ProfileDropdown() {
+export default function ProfileDropdown({ onOpenLogin }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isAvatarHovered, setIsAvatarHovered] = useState(false);
   const [isArrowHovered, setIsArrowHovered] = useState(false);
@@ -17,6 +17,16 @@ export default function ProfileDropdown() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleLoginClick = () => {
+    setIsOpen(false);
+    if (onOpenLogin) onOpenLogin(); // Opens the Signin modal
+  };
+
+  const handleLogoutClick = () => {
+    setIsOpen(false);
+    alert('Logging out...');
+  };
+
   return (
     <div 
       ref={dropdownRef} 
@@ -28,8 +38,6 @@ export default function ProfileDropdown() {
     >
       {/* Trigger Buttons */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        
-        {/* CIRCULAR Avatar Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           onMouseEnter={() => setIsAvatarHovered(true)}
@@ -56,7 +64,6 @@ export default function ProfileDropdown() {
           </svg>
         </button>
 
-        {/* Chevron Toggle Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           onMouseEnter={() => setIsArrowHovered(true)}
@@ -123,11 +130,21 @@ export default function ProfileDropdown() {
 
             <hr style={{ border: 'none', borderTop: '1px solid #c5d6dd', margin: '6px 0' }} />
 
-            <DropdownItem to="/login" icon={<><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></>}>
+            {/* Log-in Button */}
+            <DropdownItem 
+              isButton 
+              onClick={handleLoginClick} 
+              icon={<><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></>}
+            >
               Log-in
             </DropdownItem>
 
-            <DropdownItem isButton onClick={() => alert('Logging out...')} icon={<><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></>}>
+            {/* Log-out Button */}
+            <DropdownItem 
+              isButton 
+              onClick={handleLogoutClick} 
+              icon={<><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></>}
+            >
               Log-out
             </DropdownItem>
           </ul>
@@ -155,7 +172,7 @@ function DropdownItem({ to, children, icon, isButton = false, onClick }) {
     width: '100%',
     border: 'none',
     textAlign: 'left',
-    fontFamily: "'g4-caption', sans-serif", // Quotes around font name
+    fontFamily: "'g4-caption', sans-serif",
   };
 
   return (

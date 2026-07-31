@@ -1,9 +1,12 @@
+import React, { useState } from "react";
 import ProfileDropdown from "./NavBar/ProfileDropdown.jsx";
 import BrandLogo from "./NavBar/BrandLogo.jsx";
 import NavLink from "./NavBar/NavLink.jsx";
+import Login from "./NavBar/Login_out/log-in.jsx"; // Correct path to your Login modal
 
 export default function Navbar() {
-  // Routes updated to match your React Router setup in App.jsx
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Lawyers Profile', href: '/everyday-law/lawyers-blog-list' },
@@ -15,55 +18,63 @@ export default function Navbar() {
   ];
 
   return (
-    <header
-      style={{
-        width: '100%',
-        padding: '20px', // Added 20px padding around header
-        minHeight: '70px',
-        backgroundColor: '#0F2338',
-        color: '#FFFFFF',
-        boxSizing: 'border-box',
-      }}
-    >
-      <nav
+    <>
+      <header
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '20px', // Added 20px gap between Brand, Links, and Profile
-          maxWidth: '1280px',
-          margin: '0 auto',
           width: '100%',
+          padding: '20px',
+          minHeight: '70px',
+          backgroundColor: '#0F2338',
+          color: '#FFFFFF',
+          boxSizing: 'border-box',
         }}
       >
-        {/* Brand Logo */}
-        <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-          <BrandLogo />
-        </div>
-
-        {/* Links */}
-        <div
+        <nav
           style={{
-            flex: 1,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'around',
-            gap: '20px', // Added 20px gap between navigation items
-            overflowX: 'auto',
-            minWidth: 0,
+            gap: '20px',
+            maxWidth: '1280px',
+            margin: '0 auto',
+            width: '100%',
           }}
         >
-          {navItems.map((item) => (
-            <NavLink key={item.label} href={item.href}>
-              {item.label}
-            </NavLink>
-          ))}
-        </div>
+          {/* Brand Logo */}
+          <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+            <BrandLogo />
+          </div>
 
-        {/* Profile Dropdown */}
-        <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-          <ProfileDropdown />
-        </div>
-      </nav>
-    </header>
+          {/* Links */}
+          <div
+            style={{
+              flex: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-around',
+              gap: '20px',
+              overflowX: 'auto',
+              minWidth: 0,
+            }}
+          >
+            {navItems.map((item) => (
+              <NavLink key={item.label} href={item.href}>
+                {item.label}
+              </NavLink>
+            ))}
+          </div>
+
+          {/* Profile Dropdown */}
+          <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+            <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
+          </div>
+        </nav>
+      </header>
+
+      {/* Login Modal */}
+      <Login
+        isOpen={isLoginOpen}
+        onClose={() => setIsLoginOpen(false)}
+      />
+    </>
   );
 }

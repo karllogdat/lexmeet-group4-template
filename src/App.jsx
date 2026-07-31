@@ -10,6 +10,7 @@ import LawUpdatesBlogListPage from "./pages/blog-list/LawUpdatesBlogListPage";
 import LawyersBlogListPage from "./pages/blog-list/LawyersBlogListPage";
 import LawOfficePage from "./pages/LawOffice";
 
+
 function App() {
   return (
     <Routes>
