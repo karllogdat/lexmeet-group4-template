@@ -1,4 +1,11 @@
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
+/**
+ * How many items to show before the "See More" button appears.
+ * Applies uniformly across Languages, Work Experience, Education, and Cases Handled.
+ */
+const PREVIEW_COUNT = 2;
 
 /**
  * Pill tag — used for Languages & Dialects, Location of Practice.
@@ -24,17 +31,18 @@ function CvLabel({ children }) {
 }
 
 /**
- * "See More" button — matches the solid navy button from Figma modal.
+ * "See More / See Less" toggle button.
+ * Hidden when there is nothing beyond the preview (total <= PREVIEW_COUNT).
  */
-function CvSeeMoreBtn({ onClick }) {
+function CvToggleBtn({ expanded, onToggle }) {
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={onToggle}
       className="mt-3 w-full flex items-center justify-center gap-1.5 bg-g4-700 hover:bg-g4-900 text-white font-inter font-medium text-sm px-4 py-2.5 rounded-lg transition-colors"
     >
-      See More
-      <ChevronDown size={16} />
+      {expanded ? "See Less" : "See More"}
+      {expanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
     </button>
   );
 }
@@ -42,9 +50,12 @@ function CvSeeMoreBtn({ onClick }) {
 /**
  * CurriculumVitaeTab — 3-column layout matching the Figma CV tab.
  *
- * Col 1: Roll #, Date Admitted, IBP, MCLE, Language & Dialect + See More
- * Col 2: Work Experience + See More, Education + See More, Location of Practice
- * Col 3: Concentration of Law Practice, Cases Handled + See More
+ * Col 1: Roll #, Date Admitted, IBP, MCLE, Language & Dialect + See More/Less
+ * Col 2: Work Experience + See More/Less, Education + See More/Less, Location of Practice
+ * Col 3: Concentration of Law Practice, Cases Handled + See More/Less
+ *
+ * "See More" sections collapse to PREVIEW_COUNT items; clicking the button
+ * reveals the remainder and relabels it "See Less".
  */
 export default function CurriculumVitaeTab({ cv }) {
   const {
@@ -60,14 +71,26 @@ export default function CurriculumVitaeTab({ cv }) {
     casesHandled,
   } = cv;
 
+  // Per-section expanded state
+  const [langsExpanded, setLangsExpanded] = useState(false);
+  const [workExpanded, setWorkExpanded] = useState(false);
+  const [eduExpanded, setEduExpanded] = useState(false);
+  const [casesExpanded, setCasesExpanded] = useState(false);
+
+  // Slice helpers
+  const visibleLangs = langsExpanded ? languages : languages.slice(0, PREVIEW_COUNT);
+  const visibleWork = workExpanded ? workExperience : workExperience.slice(0, PREVIEW_COUNT);
+  const visibleEdu = eduExpanded ? education : education.slice(0, PREVIEW_COUNT);
+  const visibleCases = casesExpanded ? casesHandled : casesHandled.slice(0, PREVIEW_COUNT);
+
   return (
     <div className="p-5 grid grid-cols-1 sm:grid-cols-3 gap-6 pb-10">
-      {/* ── Column 1 ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-6 pl-5 pr-5">
+      {/* —— Column 1 ——————————————————————————————————————————————— */}
+      <div className="flex flex-col gap-6 px-2 sm:px-3">
         {/* Roll of Attorneys Number */}
         <div>
           <CvLabel>Roll of Attorneys Number</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900">{rollNumber}</p>
+          <p className="font-inter font-semibold text-l text-g4-900 break-words">{rollNumber}</p>
         </div>
 
         {/* Date Admitted */}
@@ -79,14 +102,14 @@ export default function CurriculumVitaeTab({ cv }) {
         {/* IBP */}
         <div>
           <CvLabel>IBP</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900">{ibp.number}</p>
+          <p className="font-inter font-semibold text-l text-g4-900 break-words">{ibp.number}</p>
           <p className="font-inter font-normal text-l text-[#5B5B5B]">{ibp.date}</p>
         </div>
 
         {/* MCLE */}
         <div>
           <CvLabel>MCLE</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900">
+          <p className="font-inter font-semibold text-l text-g4-900 break-words">
             {mcle.status} • {mcle.number}
           </p>
           <p className="font-inter font-normal text-l text-[#5B5B5B]">{mcle.dateRange}</p>
@@ -96,44 +119,57 @@ export default function CurriculumVitaeTab({ cv }) {
         <div>
           <CvLabel>Language &amp; Dialect</CvLabel>
           <div className="flex flex-wrap gap-2 mt-1">
-            {languages.map((lang) => (
+            {visibleLangs.map((lang) => (
               <Pill key={lang} label={lang} />
             ))}
           </div>
-          <CvSeeMoreBtn />
+          {languages.length > PREVIEW_COUNT && (
+            <CvToggleBtn
+              expanded={langsExpanded}
+              onToggle={() => setLangsExpanded((v) => !v)}
+            />
+          )}
         </div>
-
-
       </div>
 
-      {/* ── Column 2 ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-6 pl-5 pr-5">
+      {/* —— Column 2 ——————————————————————————————————————————————— */}
+      <div className="flex flex-col gap-6 px-2 sm:px-3">
         {/* Work Experience */}
         <div>
           <CvLabel>Work Experience</CvLabel>
-          {workExperience.map((job, i) => (
+          {visibleWork.map((job, i) => (
             <div key={i} className="mb-1">
-              <p className="font-inter font-semibold text-l text-g4-900">{job.firm}</p>
-              <p className="font-inter font-normal text-l text-[#5B5B5B]">
+              <p className="font-inter font-semibold text-l text-g4-900 break-words">{job.firm}</p>
+              <p className="font-inter font-normal text-l text-[#5B5B5B] break-words">
                 {job.role} • {job.address}
               </p>
             </div>
           ))}
-          <CvSeeMoreBtn />
+          {workExperience.length > PREVIEW_COUNT && (
+            <CvToggleBtn
+              expanded={workExpanded}
+              onToggle={() => setWorkExpanded((v) => !v)}
+            />
+          )}
         </div>
 
         {/* Education */}
         <div>
           <CvLabel>Education</CvLabel>
-          {education.map((edu, i) => (
+          {visibleEdu.map((edu, i) => (
             <div key={i} className="mb-2">
-              <p className="font-inter font-semibold text-l text-g4-900">{edu.institution}</p>
-              <p className="font-inter font-normal text-l text-[#5B5B5B]">
+              <p className="font-inter font-semibold text-l text-g4-900 break-words">{edu.institution}</p>
+              <p className="font-inter font-normal text-l text-[#5B5B5B] break-words">
                 {edu.degree} • {edu.date}
               </p>
             </div>
           ))}
-          <CvSeeMoreBtn />
+          {education.length > PREVIEW_COUNT && (
+            <CvToggleBtn
+              expanded={eduExpanded}
+              onToggle={() => setEduExpanded((v) => !v)}
+            />
+          )}
         </div>
 
         {/* Location of Practice */}
@@ -147,14 +183,14 @@ export default function CurriculumVitaeTab({ cv }) {
         </div>
       </div>
 
-      {/* ── Column 3 ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-6 pl-5 pr-5">
-        {/* Concentration of Law Practice */}
+      {/* —— Column 3 ——————————————————————————————————————————————— */}
+      <div className="flex flex-col gap-6 px-2 sm:px-3">
+        {/* Concentration of Law Practice — no See More (shown in full per design) */}
         <div>
           <CvLabel>Concentration of Law Practice</CvLabel>
           <ul className="mt-1 space-y-1">
             {concentration.map((item) => (
-              <li key={item} className="font-inter font-semibold text-l text-g4-900">
+              <li key={item} className="font-inter font-semibold text-l text-g4-900 break-words">
                 {item}
               </li>
             ))}
@@ -165,13 +201,18 @@ export default function CurriculumVitaeTab({ cv }) {
         <div>
           <CvLabel>Cases Handled</CvLabel>
           <ul className="mt-1 space-y-1">
-            {casesHandled.map((item) => (
-              <li key={item} className="font-inter font-semibold text-l text-g4-900">
+            {visibleCases.map((item) => (
+              <li key={item} className="font-inter font-semibold text-l text-g4-900 break-words">
                 {item}
               </li>
             ))}
           </ul>
-          <CvSeeMoreBtn />
+          {casesHandled.length > PREVIEW_COUNT && (
+            <CvToggleBtn
+              expanded={casesExpanded}
+              onToggle={() => setCasesExpanded((v) => !v)}
+            />
+          )}
         </div>
       </div>
     </div>

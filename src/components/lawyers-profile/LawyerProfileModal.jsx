@@ -24,7 +24,7 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
   return (
     <LawyerModal isOpen={!!lawyer} onClose={onClose}>
       {/* ── Modal Header ───────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row h-50 items-center gap-6 pl-10 pr-10 pb-4 justify-center ">
+      <div className="flex flex-col sm:flex-row h-fit items-center gap-4 sm:gap-6 pt-10 px-4 sm:px-8 lg:px-10 pb-10 justify-center">
         {/* Avatar + status dot */}
         <div className="relative shrink-0">
           <div className="w-23 h-23 rounded-full bg-g4-50 overflow-hidden border-2 border-g4-200">
@@ -44,15 +44,15 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
         </div>
 
         {/* Name / role / meta */}
-        <div className="flex flex-col flex-1 min-w-0 h-31.25 items-start justify-center">
-          <h2 className="font-playfair font-normal sm:text-3xl text-g4-900 leading-tight">
+        <div className="flex flex-col flex-1 min-w-0 items-center sm:items-start justify-center text-center sm:text-left">
+          <h2 className="font-playfair font-normal text-2xl sm:text-3xl text-g4-900 leading-tight">
             {lawyer.name}
           </h2>
           <p className="font-inter text-g4-600 font-medium text-base mt-0.5">
             {lawyer.position}
           </p>
           {/* Meta row: location, consultations, rating */}
-          <div className="flex flex-wrap items-center gap-x-3  gap-y-1 mt-2 text-sm font-inter text-gray-600">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 mt-2 text-sm font-inter text-gray-600">
             <span className="flex items-center gap-1">
               <MapPin size={14} className="text-[#6B7C8C] shrink-0" />
               {lawyer.location}

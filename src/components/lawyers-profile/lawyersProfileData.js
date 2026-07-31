@@ -28,12 +28,27 @@ export const lawyers = [
         number: "324212345678",
         dateRange: "May 5, 2021 – July 7, 2021",
       },
-      languages: ["Bicolano", "Cebuano", "Chinese"],
+      languages: ["Bicolano", "Cebuano", "Chinese", "English", "Filipino", "Tagalog"],
       workExperience: [
         {
           firm: "Valderma Law Office",
           role: "Associate Lawyer",
           address: "Unit G 10th Floor, Strata 100, Ortigas Center, Pasig City",
+        },
+        {
+          firm: "Bermudez & Cruz Legal Consultancy",
+          role: "Legal Consultant",
+          address: "20th Floor, Antel Corporate Centre, 139 Valero St., Salcedo Village, Makati City",
+        },
+        {
+          firm: "Office of the Solicitor General",
+          role: "State Solicitor II",
+          address: "134 Amorsolo St., Legaspi Village, Makati City",
+        },
+        {
+          firm: "Supreme Court of the Philippines",
+          role: "Court Attorney IV",
+          address: "Padre Faura St., Ermita, Manila",
         },
       ],
       education: [
@@ -47,6 +62,16 @@ export const lawyers = [
           degree: "Doctor of Jurisprudence",
           date: "March 15, 2001",
         },
+        {
+          institution: "Ateneo de Manila University",
+          degree: "Master of Laws (LL.M.) – Business Law",
+          date: "October 18, 2006",
+        },
+        {
+          institution: "National University of Singapore",
+          degree: "Certificate in International Commercial Arbitration",
+          date: "August 5, 2010",
+        },
       ],
       locationOfPractice: ["Nationwide", "Luzon wide", "Mindanao wide", "Visayas wide"],
       concentration: [
@@ -58,6 +83,10 @@ export const lawyers = [
         "Abatement of nuisance",
         "Act of lasciviousness",
         "Actions for specific performance",
+        "Administrative appeal before the Office of the President",
+        "Bank receivership and liquidation proceedings",
+        "Certiorari petitions before the Court of Appeals",
+        "Corporate rehabilitation under FRIA",
       ],
     },
     reviews: [
@@ -121,12 +150,27 @@ export const lawyers = [
         number: "412312345679",
         dateRange: "January 10, 2022 – March 12, 2022",
       },
-      languages: ["Filipino", "English", "Ilocano"],
+      languages: ["Filipino", "English", "Ilocano", "Kapampangan", "Spanish"],
       workExperience: [
         {
           firm: "Cruz & Santos Law Offices",
           role: "Senior Associate",
           address: "28th Floor, One San Miguel Avenue, Ortigas, Pasig City",
+        },
+        {
+          firm: "Rizal Law Office",
+          role: "Associate Lawyer",
+          address: "Unit 608, 6th Floor, AIC Burgundy Empire Tower, ADB Avenue, Ortigas",
+        },
+        {
+          firm: "Securities and Exchange Commission",
+          role: "Supervising Legal Officer",
+          address: "SEC Bldg., Roxas Boulevard, Pasay City",
+        },
+        {
+          firm: "Martinez & Gonzalez Arbitration Chambers",
+          role: "Arbitration Counsel",
+          address: "Suite 1203, RCBC Plaza Tower I, Ayala Avenue, Makati City",
         },
       ],
       education: [
@@ -140,6 +184,16 @@ export const lawyers = [
           degree: "Juris Doctor",
           date: "April 15, 2004",
         },
+        {
+          institution: "University of Melbourne",
+          degree: "Master of Commercial Law",
+          date: "November 30, 2007",
+        },
+        {
+          institution: "Philippine Judicial Academy",
+          degree: "Diploma in ADR and Mediation",
+          date: "June 15, 2015",
+        },
       ],
       locationOfPractice: ["Nationwide", "Luzon wide"],
       concentration: [
@@ -151,6 +205,9 @@ export const lawyers = [
         "Corporate mergers and acquisitions",
         "Illegal dismissal cases",
         "Contract disputes",
+        "SEC enforcement proceedings",
+        "PEZA and BOI incentive applications",
+        "International commercial arbitration (ICC Rules)",
       ],
     },
     reviews: [
@@ -200,12 +257,27 @@ export const lawyers = [
         number: "512345678901",
         dateRange: "February 1, 2022 – April 30, 2022",
       },
-      languages: ["Filipino", "English", "Cebuano"],
+      languages: ["Filipino", "English", "Cebuano", "Waray", "Hiligaynon"],
       workExperience: [
         {
           firm: "Rizal Law Office",
           role: "Associate Lawyer",
           address: "Unit 608, 6th Floor, AIC Burgundy Empire Tower, ADB Avenue, Ortigas",
+        },
+        {
+          firm: "Public Attorney's Office – NCR",
+          role: "Public Attorney II",
+          address: "DOJ Agencies Bldg., NIA Road, Quezon City",
+        },
+        {
+          firm: "Martinez & Briones Family Law Specialists",
+          role: "Junior Partner",
+          address: "3rd Floor, Zeta Building, 191 Salcedo St., Legaspi Village, Makati City",
+        },
+        {
+          firm: "Bureau of Immigration",
+          role: "Legal Officer II",
+          address: "Magallanes Drive, Intramuros, Manila",
         },
       ],
       education: [
@@ -219,6 +291,16 @@ export const lawyers = [
           degree: "Juris Doctor",
           date: "April 20, 2010",
         },
+        {
+          institution: "University of the Philippines",
+          degree: "Master of Laws – International Law (LL.M.)",
+          date: "July 25, 2014",
+        },
+        {
+          institution: "International Institute of Family Law – London",
+          degree: "Certificate in Cross-Border Family Disputes",
+          date: "September 10, 2018",
+        },
       ],
       locationOfPractice: ["Nationwide", "Luzon wide", "Visayas wide"],
       concentration: [
@@ -230,6 +312,10 @@ export const lawyers = [
         "Annulment of marriage",
         "Child custody disputes",
         "Immigration petitions",
+        "Recognition of foreign divorce",
+        "Adoption under RA 11642 (Domestic Administrative Adoption)",
+        "Support enforcement and protection orders (VAWC)",
+        "9(g) alien employment permit applications",
       ],
     },
     reviews: [
@@ -279,12 +365,27 @@ export const lawyers = [
         number: "612456789012",
         dateRange: "March 1, 2022 – May 31, 2022",
       },
-      languages: ["Filipino", "English"],
+      languages: ["Filipino", "English", "Tagalog", "Ilocano"],
       workExperience: [
         {
           firm: "Rizal Law Office",
           role: "Junior Associate",
           address: "Unit 608, 6th Floor, AIC Burgundy Empire Tower, ADB Avenue, Ortigas",
+        },
+        {
+          firm: "Dela Cruz & Bautista Law Firm",
+          role: "Legal Intern",
+          address: "Room 402, Solidbank Building, Paseo de Roxas, Makati City",
+        },
+        {
+          firm: "Metropolitan Trial Court – Branch 58",
+          role: "Legal Researcher",
+          address: "City Hall Complex, San Fernando St., Mandaluyong City",
+        },
+        {
+          firm: "Integrated Bar of the Philippines – MM Chapter",
+          role: "Legal Aid Volunteer Lawyer",
+          address: "IBP Building, Julia Vargas Ave., Ortigas Center, Pasig City",
         },
       ],
       education: [
@@ -298,6 +399,16 @@ export const lawyers = [
           degree: "Juris Doctor",
           date: "April 24, 2016",
         },
+        {
+          institution: "Philippine Judicial Academy",
+          degree: "Certificate in Criminal Justice Administration",
+          date: "February 20, 2019",
+        },
+        {
+          institution: "De La Salle University",
+          degree: "Graduate Diploma in Dispute Resolution",
+          date: "March 10, 2021",
+        },
       ],
       locationOfPractice: ["Luzon wide"],
       concentration: [
@@ -308,6 +419,9 @@ export const lawyers = [
         "Criminal defense",
         "Property disputes",
         "Contract drafting",
+        "Ejectment and unlawful detainer",
+        "Estafa and qualified theft",
+        "Petition for bail and habeas corpus",
       ],
     },
     reviews: [
@@ -357,7 +471,7 @@ export const lawyers = [
         number: "712567890123",
         dateRange: "April 5, 2022 – June 30, 2022",
       },
-      languages: ["Filipino", "English", "Spanish"],
+      languages: ["Filipino", "English", "Spanish", "French", "Mandarin"],
       workExperience: [
         {
           firm: "Rizal Law Office",
@@ -368,6 +482,21 @@ export const lawyers = [
           firm: "Global Legal Partners",
           role: "Associate",
           address: "15th Floor, Philamlife Tower, Paseo de Roxas, Makati City",
+        },
+        {
+          firm: "Bureau of Internal Revenue – Large Taxpayers Division",
+          role: "Special Counsel",
+          address: "9th Floor, BIR National Office Bldg., Diliman, Quezon City",
+        },
+        {
+          firm: "Philippine Stock Exchange",
+          role: "Legal and Compliance Officer",
+          address: "6th Floor, PSE Centre, Exchange Road, Ortigas Center, Pasig City",
+        },
+        {
+          firm: "Bangko Sentral ng Pilipinas",
+          role: "Bank Examiner – Legal Affairs",
+          address: "BSP Complex, Roxas Boulevard, Manila",
         },
       ],
       education: [
@@ -381,6 +510,21 @@ export const lawyers = [
           degree: "Juris Doctor",
           date: "April 2, 1998",
         },
+        {
+          institution: "Harvard Law School",
+          degree: "LL.M. in International Tax Program",
+          date: "June 15, 2003",
+        },
+        {
+          institution: "Chartered Institute of Taxation – United Kingdom",
+          degree: "Chartered Tax Adviser (CTA)",
+          date: "November 20, 2005",
+        },
+        {
+          institution: "Asian Institute of Management",
+          degree: "Certificate in Corporate Governance",
+          date: "August 8, 2012",
+        },
       ],
       locationOfPractice: ["Nationwide", "Luzon wide", "Visayas wide", "Mindanao wide"],
       concentration: [
@@ -393,6 +537,10 @@ export const lawyers = [
         "Tax compliance and planning",
         "Corporate acquisitions",
         "Securities regulation",
+        "BIR deficiency assessment disputes",
+        "Transfer pricing documentation",
+        "Anti-money laundering (AMLC) proceedings",
+        "Initial public offering (IPO) legal counsel",
       ],
     },
     reviews: [
@@ -442,12 +590,27 @@ export const lawyers = [
         number: "812678901234",
         dateRange: "May 3, 2022 – July 28, 2022",
       },
-      languages: ["Filipino", "English", "Mandarin"],
+      languages: ["Filipino", "English", "Mandarin", "Japanese", "Korean"],
       workExperience: [
         {
           firm: "Reyes & Partners Law Firm",
           role: "Associate",
           address: "Suite 500, Robinsons Equitable Tower, ADB Avenue, Ortigas Center",
+        },
+        {
+          firm: "Bureau of Immigration – Legal Division",
+          role: "Immigration Officer III",
+          address: "Magallanes Drive, Intramuros, Manila",
+        },
+        {
+          firm: "Department of Labor and Employment – NLRC",
+          role: "Legal Assistant",
+          address: "NLRC Bldg., Banawe Ave., Quezon City",
+        },
+        {
+          firm: "Asia Pacific Immigration Consultants",
+          role: "Legal Adviser",
+          address: "10th Floor, Jollibee Plaza, Emerald Ave., Ortigas Center, Pasig City",
         },
       ],
       education: [
@@ -461,6 +624,16 @@ export const lawyers = [
           degree: "Juris Doctor",
           date: "April 30, 2012",
         },
+        {
+          institution: "University of the Philippines",
+          degree: "Diploma in Immigration and Nationality Law",
+          date: "October 5, 2015",
+        },
+        {
+          institution: "Kyushu University – Japan",
+          degree: "Certificate in Labor and Employment Law (Asia)",
+          date: "March 22, 2019",
+        },
       ],
       locationOfPractice: ["Luzon wide", "Visayas wide"],
       concentration: [
@@ -472,6 +645,10 @@ export const lawyers = [
         "Visa applications",
         "Labor disputes",
         "Damages claims",
+        "Special investor's resident visa (SIRV) applications",
+        "Alien Certificate of Registration (ACR) compliance",
+        "Illegal recruitment cases",
+        "OFW contract disputes and POEA complaints",
       ],
     },
     reviews: [
@@ -521,12 +698,27 @@ export const lawyers = [
         number: "912789012345",
         dateRange: "June 1, 2022 – August 31, 2022",
       },
-      languages: ["Filipino", "English", "French"],
+      languages: ["Filipino", "English", "French", "Cebuano", "Bicolano"],
       workExperience: [
         {
           firm: "Lim & Associates",
           role: "Founding Partner",
           address: "Suite 700, Hanston Building, F. Ortigas Jr. Road, Pasig City",
+        },
+        {
+          firm: "Commission on Human Rights – Region IV-A",
+          role: "Legal Officer III",
+          address: "CHR Building, Kalayaan Avenue, Diliman, Quezon City",
+        },
+        {
+          firm: "Women's Legal Bureau Inc.",
+          role: "Staff Attorney",
+          address: "Unit 201, Sunrise Condominium, Ortigas Ave., Pasig City",
+        },
+        {
+          firm: "Ateneo Human Rights Center",
+          role: "Research Fellow",
+          address: "Ateneo de Manila University, Katipunan Ave., Loyola Heights, Quezon City",
         },
       ],
       education: [
@@ -540,6 +732,16 @@ export const lawyers = [
           degree: "Juris Doctor",
           date: "April 5, 2001",
         },
+        {
+          institution: "Université Paris I – Panthéon-Sorbonne",
+          degree: "D.E.A. in Human Rights and Humanitarian Law",
+          date: "July 10, 2005",
+        },
+        {
+          institution: "University of the Philippines",
+          degree: "Certificate in Gender and Law",
+          date: "May 28, 2009",
+        },
       ],
       locationOfPractice: ["Nationwide", "Luzon wide"],
       concentration: [
@@ -551,6 +753,10 @@ export const lawyers = [
         "Domestic violence cases (VAWC)",
         "Child support enforcement",
         "Adoption proceedings",
+        "Trafficking in persons cases (RA 9208)",
+        "Protection orders under RA 9262",
+        "Psychological violence claims",
+        "Solo parent benefit disputes",
       ],
     },
     reviews: [
@@ -600,12 +806,27 @@ export const lawyers = [
         number: "N/A",
         dateRange: "N/A",
       },
-      languages: ["Filipino", "English"],
+      languages: ["Filipino", "English", "Tagalog", "Pangasinense"],
       workExperience: [
         {
           firm: "Rizal Law Office",
           role: "Junior Associate",
           address: "Unit 608, 6th Floor, AIC Burgundy Empire Tower, ADB Avenue, Ortigas",
+        },
+        {
+          firm: "Department of Labor and Employment – Parañaque Field Office",
+          role: "Legal Clerk",
+          address: "DOLE Parañaque Office, Dr. A. Santos Ave., Sucat, Parañaque City",
+        },
+        {
+          firm: "National Labor Relations Commission – Second Division",
+          role: "Process Server / Legal Aide",
+          address: "NLRC Bldg., Banawe Ave., Quezon City",
+        },
+        {
+          firm: "Civil Service Commission – Region IV",
+          role: "Legal Assistant",
+          address: "CSC Regional Office IV, Maynila St., Parian, San Pedro, Laguna",
         },
       ],
       education: [
@@ -619,6 +840,16 @@ export const lawyers = [
           degree: "Juris Doctor",
           date: "April 21, 2020",
         },
+        {
+          institution: "Philippine Judicial Academy",
+          degree: "Certificate in Labor Law and Social Legislation",
+          date: "September 12, 2021",
+        },
+        {
+          institution: "Ateneo de Manila University",
+          degree: "Diploma in Labor Relations and Human Resource Management",
+          date: "July 4, 2022",
+        },
       ],
       locationOfPractice: ["Luzon wide"],
       concentration: [
@@ -629,6 +860,9 @@ export const lawyers = [
         "Illegal dismissal",
         "Administrative hearings",
         "NLRC complaints",
+        "Monetary claims (unpaid wages, 13th month)",
+        "Constructive dismissal and forced resignation",
+        "Civil service eligibility disputes",
       ],
     },
     reviews: [
