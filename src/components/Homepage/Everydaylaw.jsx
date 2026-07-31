@@ -20,7 +20,7 @@ export default function EverydayLawSection() {
   return (
     <section className="w-full bg-[#053258] text-white">
       {/* Top Background Image Header */}
-      <div className="w-full h-[220px] sm:h-[300px] md:h-[360px] relative overflow-hidden">
+      <div className="w-full h-55 sm:h-75 md:h-90 relative overflow-hidden">
         <img
           src={libraryBg}
           alt="Library Bookshelf Background"
@@ -32,7 +32,7 @@ export default function EverydayLawSection() {
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-14 space-y-6">
         {/* Category Badge locked to 340x79 px */}
         <div>
-          <span className="w-[340px] h-[79px] bg-[#ebf3f8] text-g4-900 g4-heading-2 px-5 py-2 rounded-md font-medium shadow-sm flex items-center justify-center">
+          <span className="w-85 h-19.75 bg-[#ebf3f8] text-g4-900 g4-heading-2 px-5 py-2 rounded-md font-medium shadow-sm flex items-center justify-center">
             {article.category}
           </span>
         </div>
@@ -58,10 +58,12 @@ export default function EverydayLawSection() {
         <div className="pt-4">
           <a
             href={article.link}
-            className="g4-button text-white hover:text-slate-300 transition-colors text-base"
+            className="group inline-flex items-center gap-2.5 g4-button text-white hover:text-slate-300 transition-colors text-base font-semibold"
           >
             <span>Read More</span>
-            <span className="text-lg">→</span>
+            <span className="text-xl transition-transform duration-200 group-hover:translate-x-1">
+              →
+            </span>
           </a>
         </div>
       </div>

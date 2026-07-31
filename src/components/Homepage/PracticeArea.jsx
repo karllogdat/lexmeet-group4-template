@@ -1,5 +1,8 @@
 import React from "react";
 
+// Import custom Button component
+import Button from "../Button";
+
 // Import custom SVGs from assets/Practice Areas/
 import civilIcon from "../../assets/Practice Areas/Civil.svg";
 import commercialIcon from "../../assets/Practice Areas/Commercial.svg";
@@ -64,7 +67,7 @@ export default function PracticeArea() {
 
   return (
     <section className="justify-center w-full pt-20 pb-24 px-[32px] bg-[#f8fafc]">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-2">
           <span className="text-[#0c2a4a] text-sm md:text-base font-semibold tracking-wider uppercase">
@@ -93,18 +96,15 @@ export default function PracticeArea() {
                 </div>
 
                 {/* Title */}
-                <h3 className="g4-large-body text-g4-900">
+                <h3 className="g4-large-body text-g4-900 font-semibold">
                   {area.title}
                 </h3>
               </div>
 
-              {/* Learn More Button */}
-              <a
-                href={area.link}
-                className="inline-block bg-[#6baed6] hover:bg-[#5297c1]g4-button text-white font-medium px-4 py-2 rounded-md transition-colors duration-200 shadow-md "
-              >
+              {/* Custom Button */}
+              <Button onClick={() => (window.location.href = area.link)}>
                 Learn More
-              </a>
+              </Button>
             </div>
           ))}
         </div>
