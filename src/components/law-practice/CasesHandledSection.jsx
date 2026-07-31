@@ -16,11 +16,11 @@ export default function CasesHandledSection() {
     <section className="bg-white px-6 md:px-12 py-16">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow>What We Handle</SectionEyebrow>
-        <h2 className="font-serif text-3xl md:text-4xl text-[#002E56] mb-10">
+        <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-[#002E56] mb-10">
           Cases Handled
         </h2>
 
-        <div className="flex flex-row flex-wrap gap-[50px] items-center justify-center">
+        <div className="flex flex-row flex-wrap gap-12.5 items-center justify-center">
           {visibleCases.map((item) => (
             <CaseCard key={item.id} text={item.text} />
           ))}

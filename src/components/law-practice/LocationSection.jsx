@@ -15,19 +15,19 @@ export default function LocationSection() {
     <section className="bg-g4-900 px-6 md:px-12 py-16">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow tone="light">Where We Operate</SectionEyebrow>
-        <h2 className="font-serif text-3xl md:text-4xl text-white mb-10">
+        <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-white mb-10">
           Location of Practice
         </h2>
 
         <div className="grid md:grid-cols-[1fr_1.1fr] gap-10">
-          <div className="grid grid-cols-2 gap-4 max-w-md">
+          <div className="grid grid-cols-2 gap-4 max-w-md ">
             {regions.map((region) => (
-            <RegionMapCard key={region.id} label={region.label} image={region.image} />
+              <RegionMapCard key={region.id} label={region.label} image={region.image} />
             ))}
           </div>
 
           <div>
-            <p className="text-white font-medium mb-4 text-xl font-bold font-inter">Provinces Served</p>
+            <p className="text-white mb-4 text-xl font-medium font-inter">Provinces Served</p>
             <div className="flex flex-wrap gap-3">
               {visibleProvinces.map((province) => (
                 <ProvincePill key={province} label={province} />

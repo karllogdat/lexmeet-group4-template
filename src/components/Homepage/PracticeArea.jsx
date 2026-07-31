@@ -66,7 +66,7 @@ export default function PracticeArea() {
   ];
 
   return (
-    <section className="justify-center w-full pt-20 pb-24 px-[32px] bg-[#f8fafc]">
+    <section className="justify-center w-full pt-20 pb-24 px-8 bg-[#f8fafc]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-2">

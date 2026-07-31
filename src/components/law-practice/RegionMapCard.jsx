@@ -12,7 +12,7 @@ export default function RegionMapCard({ label, image }) {
         />
       ) : (
         <div className="absolute inset-0 grid place-items-center pointer-events-none">
-          <div className="h-16 w-16 rounded-full bg-[#89CFF1]/40 blur-md" />
+          <div className="h-16 w-16 rounded-full bg-g4-400/40 blur-md" />
         </div>
       )}
     </div>

@@ -30,7 +30,7 @@ export default function MembersSection() {
     <section className="bg-[#002E56] px-4 sm:px-6 md:px-12 py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow tone="light">Who We Are</SectionEyebrow>
-        <h2 className="font-serif text-3xl md:text-4xl text-white mb-10">
+        <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-white mb-10">
           Notable Members
         </h2>
 
