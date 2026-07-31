@@ -1,26 +1,23 @@
-import React from 'react';
+import React from "react";
 // Import the SVG directly so Vite bundles it correctly
 import lexLogo from "../../assets/Lex.svg";
 
 export default function BrandLogo() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
+    <div className="flex items-center gap-3 cursor-pointer">
       <img
         src={lexLogo}
         alt="Lex Logo"
-        style={{ width: '59px', height: '59px', objectFit: 'contain' }}
+        className="w-6 h-6 lg:w-13 lg:h-13 object-contain"
         onError={(e) => {
-          e.target.style.display = 'none';
+          e.target.style.display = "none";
         }}
       />
-      <span 
-        style={{ 
+      <span
+        style={{
           fontFamily: "'Poppins', sans-serif",
-          fontSize: '32px',
-          fontWeight: 'bold', 
-          whiteSpace: 'nowrap',
-          color: '#FFFFFF'
         }}
+        className="text-xl lg:text-3xl font-bold whitespace-nowrap text-white"
       >
         Rizal Law Office
       </span>
