@@ -108,7 +108,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright Sub-Footer Bar */}
-      <div className="bg-[#00192F] py-3 px-4 text-center text-sm text-slate-400 flex flex-wrap justify-center items-center gap-2">
+      <div className="bg-[#00192F] py-3 px-4 text-center text-sm text-g4-400 flex flex-wrap justify-center items-center gap-2">
         <span>All Rights Reserved, 2022.</span>
         <span className="flex items-center gap-1">
           Powered by{' '}

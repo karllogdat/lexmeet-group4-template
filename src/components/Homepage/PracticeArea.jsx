@@ -79,7 +79,7 @@ export default function PracticeArea() {
         </div>
 
         {/* Practice Cards Grid with 26px gap */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[26px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6.5">
           {practiceAreas.map((area) => (
             <div
               key={area.id}
@@ -87,11 +87,11 @@ export default function PracticeArea() {
             >
               <div className="space-y-4">
                 {/* SVG Container locked to 50x50px */}
-                <div className="w-[50px] h-[50px]">
+                <div className="w-12.5 h-12.5">
                   <img
                     src={area.icon}
                     alt={`${area.title} icon`}
-                    className="w-[50px] h-[50px] object-contain"
+                    className="w-12.5 h-12.5 object-contain"
                   />
                 </div>
 
