@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import bgImage from '../../../assets/Log_pics/logbg.jpg';
-import lexmeetLogo from '../../../assets/LexMeetLogo.png';
+import lexmeetLogo from '../../../assets/LexMeetName.png';
 import rizalLogo from '../../../assets/Lex.svg';
 
 // Social SVGs
