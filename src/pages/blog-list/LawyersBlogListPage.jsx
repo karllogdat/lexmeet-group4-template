@@ -9,9 +9,11 @@ import { latestBlogSample } from "../../components/everyday_law/EverydayLawMainD
 export default function LawyersBlogListPage() {
   const navigate = useNavigate();
 
+  const crumbs = [{ name: "Everyday Law", to: "/everyday-law" }];
+
   return (
     <div className="flex flex-col gap-8 p-8 lg:p-20">
-      <Breadcrumbs />
+      <Breadcrumbs items={crumbs} />
 
       <div className="flex w-full h-shrink gap-2.5">
         <button type="button" onClick={() => navigate("/everyday-law")}>

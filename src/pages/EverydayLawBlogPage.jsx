@@ -28,6 +28,14 @@ import {
 import ShareLink from "../components/everyday_law/ShareLink";
 
 export default function EverydayLawBlogPage() {
+  const crumbs = [
+    { name: "Everyday Law", to: "/everyday-law" },
+    {
+      name: "Behind the Case: Practical Lessons from Real Client Experiences",
+      to: "/everyday-law/blog",
+    },
+  ];
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const socialMediaIcons = [
@@ -43,9 +51,9 @@ export default function EverydayLawBlogPage() {
     MessageSquareText,
   ];
   return (
-    <div className="flex flex-col items-center p-20 gap-8">
+    <div className="flex flex-col items-center p-6 lg:p-20 gap-8">
       {/* TODO: breadcrumbs */}
-      <Breadcrumbs />
+      <Breadcrumbs items={crumbs} />
 
       {/* search bar */}
       <div className="flex w-full h-shrink gap-2.5">
