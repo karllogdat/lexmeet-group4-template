@@ -51,7 +51,7 @@ export default function EverydayLawBlogPage() {
     MessageSquareText,
   ];
   return (
-    <div className="flex flex-col items-center p-6 lg:p-20 gap-8">
+    <div className="flex flex-col items-center p-6 lg:px-20 gap-8">
       {/* TODO: breadcrumbs */}
       <Breadcrumbs items={crumbs} />
 
