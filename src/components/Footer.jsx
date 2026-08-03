@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col w-full text-white font-sans">
       {/* Main Footer Container */}
-      <div className="bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
+      <div className="bg-linear-to-r from-[#3776A1] to-[#142B3B] px-6 sm:px-10 py-12">
         {/* Equal Flexbox Container */}
         <div className="w-full flex flex-wrap lg:flex-nowrap items-start justify-between gap-8">
           

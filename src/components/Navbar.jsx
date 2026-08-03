@@ -78,7 +78,7 @@ export default function Navbar() {
         {/* Mobile Menu */}
         <div
           className={`overflow-hidden transition-all duration-300 lg:hidden ${
-            isMenuOpen ? "max-h-[500px] border-t border-white/20" : "max-h-0"
+            isMenuOpen ? "max-h-125 border-t border-white/20" : "max-h-0"
           }`}
         >
           <div className="flex flex-col px-6 py-4">
