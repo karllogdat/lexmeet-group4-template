@@ -10,16 +10,18 @@ export default function ValueCard({ value, index }) {
       }`}
     >
       <div
-        className={`flex items-center justify-center p-16 ${
+        className={`flex items-center justify-center p-8 lg:p-16 ${
           isOdd
-            ? "pr-8 rounded-tl-full rounded-bl-full"
-            : "pl-8 rounded-tr-full rounded-br-full"
+            ? "lg:pr-8 rounded-tl-full rounded-bl-full"
+            : "lg:pl-8 rounded-tr-full rounded-br-full"
         } bg-g4-50`}
       >
         <img src={value.icon} alt="Logo" className="w-32 h-auto" />
       </div>
 
-      <div className={`flex flex-col gap-4 ${isOdd ? "text-right" : ""}`}>
+      <div
+        className={`w-full flex flex-col gap-4 ${isOdd ? "text-right pl-4" : ""}`}
+      >
         <p className="g4-large-body font-bold!">{value.title}</p>
         <p className="g4-body">{value.description}</p>
       </div>
