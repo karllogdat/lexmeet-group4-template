@@ -90,7 +90,7 @@ export default function CurriculumVitaeTab({ cv }) {
         {/* Roll of Attorneys Number */}
         <div>
           <CvLabel>Roll of Attorneys Number</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900 break-words">{rollNumber}</p>
+          <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{rollNumber}</p>
         </div>
 
         {/* Date Admitted */}
@@ -102,14 +102,14 @@ export default function CurriculumVitaeTab({ cv }) {
         {/* IBP */}
         <div>
           <CvLabel>IBP</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900 break-words">{ibp.number}</p>
+          <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{ibp.number}</p>
           <p className="font-inter font-normal text-l text-[#5B5B5B]">{ibp.date}</p>
         </div>
 
         {/* MCLE */}
         <div>
           <CvLabel>MCLE</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900 break-words">
+          <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">
             {mcle.status} • {mcle.number}
           </p>
           <p className="font-inter font-normal text-l text-[#5B5B5B]">{mcle.dateRange}</p>
@@ -139,8 +139,8 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Work Experience</CvLabel>
           {visibleWork.map((job, i) => (
             <div key={i} className="mb-1">
-              <p className="font-inter font-semibold text-l text-g4-900 break-words">{job.firm}</p>
-              <p className="font-inter font-normal text-l text-[#5B5B5B] break-words">
+              <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{job.firm}</p>
+              <p className="font-inter font-normal text-l text-[#5B5B5B] wrap-break-word">
                 {job.role} • {job.address}
               </p>
             </div>
@@ -158,8 +158,8 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Education</CvLabel>
           {visibleEdu.map((edu, i) => (
             <div key={i} className="mb-2">
-              <p className="font-inter font-semibold text-l text-g4-900 break-words">{edu.institution}</p>
-              <p className="font-inter font-normal text-l text-[#5B5B5B] break-words">
+              <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{edu.institution}</p>
+              <p className="font-inter font-normal text-l text-[#5B5B5B] wrap-break-word">
                 {edu.degree} • {edu.date}
               </p>
             </div>
@@ -190,7 +190,7 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Concentration of Law Practice</CvLabel>
           <ul className="mt-1 space-y-1">
             {concentration.map((item) => (
-              <li key={item} className="font-inter font-semibold text-l text-g4-900 break-words">
+              <li key={item} className="font-inter font-semibold text-l text-g4-900 wrap-break-word">
                 {item}
               </li>
             ))}
@@ -202,7 +202,7 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Cases Handled</CvLabel>
           <ul className="mt-1 space-y-1">
             {visibleCases.map((item) => (
-              <li key={item} className="font-inter font-semibold text-l text-g4-900 break-words">
+              <li key={item} className="font-inter font-semibold text-l text-g4-900 wrap-break-word">
                 {item}
               </li>
             ))}

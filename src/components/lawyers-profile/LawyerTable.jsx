@@ -18,18 +18,18 @@ export default function LawyerTable({ lawyers, variant, onSeeMore }) {
 
   return (
     <div className="overflow-x-auto">
-      <table className="w-full min-w-[520px] border-collapse">
+      <table className="w-full min-w-130 border-collapse">
         {/* Table header — g4-700 background matching Figma */}
         <thead>
           <tr className="bg-g4-700 text-white">
 
-            <th className="py-3 px-4 text-left font-inter font-semibold text-sm sm:text-base">
+            <th className="py-3 px-4 text-left font-inter font-semibold text-xs sm:text-sm">
               Name
             </th>
-            <th className="py-3 px-4 text-left font-inter font-semibold text-sm sm:text-base">
+            <th className="py-3 px-4 text-left font-inter font-semibold text-xs sm:text-sm">
               Position
             </th>
-            <th className="py-3 px-4 text-left font-inter font-semibold text-sm sm:text-base">
+            <th className="py-3 px-4 text-left font-inter font-semibold text-xs sm:text-sm">
               {third}
             </th>
             {/* Empty header — See More column has no label */}

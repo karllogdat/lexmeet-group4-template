@@ -16,7 +16,7 @@ function SlotCell({ slot }) {
   return (
     <td
       className={[
-        "py-3 px-4 font-inter text-sm break-words",
+        "py-3 px-4 font-inter text-sm wrap-break-word",
         isUnavailable ? "text-gray-400" : "text-g4-900",
       ].join(" ")}
     >
@@ -56,7 +56,7 @@ export default function LawyerScheduleTab({ schedule }) {
               key={row.day}
               className={idx % 2 === 0 ? "bg-[#F2F6FA]" : "bg-white"}
             >
-              <td className="py-3 px-4 font-inter text-center text-sm font-normal text-g4-900">
+              <td className="py-3 px-4 font-inter text-center text-sm font-bold text-g4-900">
                 {row.day}
               </td>
               <SlotCell slot={row.am} />
