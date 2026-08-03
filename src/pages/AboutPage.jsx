@@ -74,7 +74,7 @@ export default function AboutPage() {
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 58, 107, 1), rgba(0, 58, 107, 0.75), rgba(0, 58, 107, 0.5)), url(${AboutImage})`,
         }}
-        className="w-full h-fit flex flex-col items-center gap-32 px-16 py-10 bg-cover bg-center"
+        className="w-full h-fit flex flex-col items-center gap-32 p-6 lg:px-16 lg:py-10 bg-cover bg-center"
       >
         <div className="w-full max-w-6xl mx-auto">
           <div className="flex gap-8 border-b border-g4-700 mb-8">
@@ -95,12 +95,12 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="w-lg flex flex-col gap-2 text-g4-50">
+        <div className="w-full lg:w-lg flex flex-col gap-2 text-g4-50">
           <h2 className="g4-heading-2 font-bold">About Us</h2>
           <h3 className="g4-heading-3">
             LexMeet: Bridging the Gap to Accessible Legal Help
           </h3>
-          <p className="g4-large-body text-justify">
+          <p className="g4-body text-justify">
             LexMeet combines the Latin word "Lex," meaning law, with "Meet,"
             representinhg connection and conversation. Together, they embody our
             mission: bringing lawyers and clients together through a modern
@@ -116,14 +116,10 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="w-full px-20 py-14 flex flex-col lg:flex-row gap-24 bg-linear-4 from-white from-[49.9%] to-g4-900 to-[50.1%]">
+      <div className="w-full px-6 lg:px-20 py-14 flex flex-col lg:flex-row gap-24 bg-linear-4 from-white from-[49.9%] to-g4-900 to-[50.1%]">
         <div className="w-full lg:w-1/2 flex flex-col rounded-lg bg-g4-50 text-g4-900 shadow-black/10 shadow-[4px_4px_32px]">
           <div className="relative">
-            <img
-              src={AboutImage}
-              alt="About"
-              className="w-full h-64 object-cover rounded-t-lg"
-            />
+            <div className="w-full h-48 object-cover rounded-t-lg bg-g4-700" />
 
             <div className="flex items-center justify-center text-g4-50 absolute inset-0 rounded-t-lg bg-linear-to-t from-g4-50 to-transparent">
               <Target size={128} />
@@ -133,7 +129,7 @@ export default function AboutPage() {
           <div className="p-8 flex flex-col items-center gap-4">
             <h1 className="g4-heading-1 font-bold">Our Mission</h1>
             <h2 className="g4-heading-2">Mission Title</h2>
-            <p className="g4-large-body">
+            <p className="g4-body">
               Our mission is to bridge the gap between clients and lawyers by
               giving them the facility and technology to meet and solve their
               problems. We want to make legal services more accessible and
@@ -144,11 +140,7 @@ export default function AboutPage() {
 
         <div className="w-full lg:w-1/2 flex flex-col rounded-lg bg-g4-50 text-g4-900 shadow-black/10 shadow-[4px_4px_32px]">
           <div className="relative">
-            <img
-              src={AboutImage}
-              alt="About"
-              className="w-full h-64 object-cover rounded-t-lg"
-            />
+            <div className="w-full h-48 object-cover rounded-t-lg bg-g4-700" />
 
             <div className="flex items-center justify-center text-g4-50 absolute inset-0 rounded-t-lg bg-linear-to-t from-g4-50 to-transparent">
               <ClipboardPen size={128} />
@@ -158,7 +150,7 @@ export default function AboutPage() {
           <div className="p-8 flex flex-col items-center gap-4">
             <h1 className="g4-heading-1 font-bold">Our Vision</h1>
             <h2 className="g4-heading-2">Vision Title</h2>
-            <p className="g4-large-body">
+            <p className="g4-body">
               Our vision is to see people seeking legal services without leaving
               the comforts of their home through technology. Our aim is to make
               legal services readily available and affordable to our OFWs, SMEs,
@@ -183,7 +175,7 @@ export default function AboutPage() {
         </Button>
       </div>
 
-      <div className="w-full px-20 py-64 flex flex-col lg:flex-row items-center gap-24 bg-linear-358 from-g4-900 from-[89.9%] to-g4-white to-[90.1%] text-g4-50">
+      <div className="w-full p-6 lg:px-20 py-64 flex flex-col lg:flex-row items-center gap-24 bg-linear-358 from-g4-900 from-[89.9%] to-g4-white to-[90.1%] text-g4-50">
         <div className="w-full lg:w-1/2 flex flex-col gap-6">
           <h1 className="g4-heading-1 font-bold">Our Promise</h1>
           <h2 className="g4-heading-2">Making Legal Help Accessible</h2>
