@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import bg1 from "../assets/Homepage/bg1.png";
 import bg2 from "../assets/Homepage/bg2.png";
@@ -15,6 +15,15 @@ import Button from "../components/Button";
 export default function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const servicesRef = useRef(null);
+
+  const handleScroll = () => {
+    // 2. Trigger the native scroll API
+    servicesRef.current?.scrollIntoView({
+      behavior: "smooth", // Smooth animation
+      block: "start", // Vertically aligns element to the top
+    });
+  };
 
   return (
     /* Idinagdag ang overflow-x-hidden at w-full dito sa main container */
@@ -39,7 +48,6 @@ export default function HomePage() {
 
         {/* Hero Content Wrapper */}
         <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24 w-full flex flex-col md:flex-row items-start justify-between gap-8 z-10">
-          
           {/* Text Content */}
           <div className="w-full md:w-7/12 space-y-5 max-w-xl">
             <h1 className="g4-heading-1 tracking-tight text-white">
@@ -53,9 +61,7 @@ export default function HomePage() {
             </p>
 
             <div className="pt-3">
-              <Button onClick={() => setIsLoginOpen(true)}>
-                Talk to Us!
-              </Button>
+              <Button onClick={() => setIsLoginOpen(true)}>Talk to Us!</Button>
             </div>
           </div>
 
@@ -64,7 +70,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Component */}
-      <OurServices />
+      <OurServices ref={servicesRef} />
 
       {/* Practice Areas Component */}
       <PracticeArea />
@@ -80,9 +86,7 @@ export default function HomePage() {
             Get in touch with us!
           </p>
 
-          <Button onClick={() => setIsContactOpen(true)}>
-            Contact Us
-          </Button>
+          <Button onClick={() => setIsContactOpen(true)}>Contact Us</Button>
         </div>
       </section>
 
@@ -99,10 +103,7 @@ export default function HomePage() {
       />
 
       {/* Login Modal */}
-      <LoginModal
-        isOpen={isLoginOpen}
-        onClose={() => setIsLoginOpen(false)}
-      />
+      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </main>
   );
 }

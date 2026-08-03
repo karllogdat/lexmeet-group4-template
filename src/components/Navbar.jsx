@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 
 import ProfileDropdown from "./NavBar/ProfileDropdown";
@@ -6,11 +7,15 @@ import BrandLogo from "./NavBar/BrandLogo";
 import NavLink from "./NavBar/NavLink";
 import Login from "./NavBar/Login_out/login";
 import ContactModal from "./Contactus/Contact_modal";
+import { ScrollContext } from "../contexts/ScrollContext";
 
 export default function Navbar() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { scrollToServices } = useContext(ScrollContext);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { label: "Home", href: "/" },
@@ -30,6 +35,17 @@ export default function Navbar() {
     if (item.isModalTrigger) {
       e.preventDefault();
       setIsContactOpen(true);
+    }
+    if (item.label === "Our Services") {
+      e.preventDefault();
+      // If we're not on the home page, navigate there first. ScrollProvider
+      // will perform the scroll when the section registers.
+      if (location.pathname !== "/") {
+        scrollToServices();
+        navigate("/");
+      } else {
+        scrollToServices();
+      }
     }
     setIsMenuOpen(false);
   };
