@@ -8,11 +8,11 @@
 }
 
 .g4-heading-1 {
-  @apply font-playfair text-[24px];
+  @apply font-playfair text-5xl;
 }
 
 .g4-heading-2 {
-  @apply font-playfair text-[22px];
+  @apply font-playfair text-[42px];
 }
 
 .g4-heading-3 {
@@ -20,7 +20,7 @@
 }
 
 .g4-large-body {
-  @apply font-inter font-medium text-[20px];
+  @apply font-inter font-medium text-[24px];
 }
 
 .g4-body {
@@ -32,11 +32,11 @@
 }
 
 .g4-caption {
-  @apply font-inter text-[14px];
+  @apply font-inter text-[22px];
 }
 
 .g4-subcaption {
-  @apply font-inter text-[14px];
+  @apply font-inter text-[20px];
 }
 
 @theme {
