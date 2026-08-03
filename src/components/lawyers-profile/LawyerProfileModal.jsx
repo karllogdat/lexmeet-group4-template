@@ -13,8 +13,8 @@ import LawyerScheduleTab from "./LawyerScheduleTab";
  *   lawyer  — the full lawyer data object (or null when closed)
  *   onClose — callback to clear selection
  */
-export default function LawyerProfileModal({ lawyer, onClose }) {
-  const [activeTab, setActiveTab] = useState("cv");
+export default function LawyerProfileModal({ lawyer, initialTab = "cv", onClose }) {
+  const [activeTab, setActiveTab] = useState(initialTab);
 
   // Reset tab to CV whenever a new lawyer is opened
   // (keeps state reset cheap — only runs on prop change via key in parent)

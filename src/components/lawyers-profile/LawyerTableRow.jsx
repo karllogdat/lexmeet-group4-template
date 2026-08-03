@@ -74,7 +74,7 @@ export default function LawyerTableRow({ lawyer, variant, onSeeMore }) {
         <button
           type="button"
           id={`see-more-${lawyer.id}-${variant}`}
-          onClick={() => onSeeMore(lawyer)}
+          onClick={() => onSeeMore(lawyer, variant)}
           className="font-inter text-sm sm:text-base text-g4-700 font-semibold hover:text-g4-900 hover:underline transition-colors whitespace-nowrap"
         >
           See More

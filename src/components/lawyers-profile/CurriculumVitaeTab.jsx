@@ -24,7 +24,7 @@ function Pill({ label }) {
  */
 function CvLabel({ children }) {
   return (
-    <p className="text-g4-600 font-inter font-semibold text-l tracking-widest uppercase mb-1">
+    <p className="text-g4-900 font-inter font-semibold text-l tracking-widest uppercase mb-1">
       {children}
     </p>
   );
@@ -90,29 +90,29 @@ export default function CurriculumVitaeTab({ cv }) {
         {/* Roll of Attorneys Number */}
         <div>
           <CvLabel>Roll of Attorneys Number</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{rollNumber}</p>
+          <p className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">{rollNumber}</p>
         </div>
 
         {/* Date Admitted */}
         <div>
           <CvLabel>Date Admitted</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900">{dateAdmitted}</p>
+          <p className="font-inter font-semibold text-sm text-g4-600">{dateAdmitted}</p>
         </div>
 
         {/* IBP */}
         <div>
           <CvLabel>IBP</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{ibp.number}</p>
-          <p className="font-inter font-normal text-l text-[#5B5B5B]">{ibp.date}</p>
+          <p className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">{ibp.number}</p>
+          <p className="font-inter font-normal text-sm text-[#5B5B5B]">{ibp.date}</p>
         </div>
 
         {/* MCLE */}
         <div>
           <CvLabel>MCLE</CvLabel>
-          <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">
+          <p className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">
             {mcle.status} • {mcle.number}
           </p>
-          <p className="font-inter font-normal text-l text-[#5B5B5B]">{mcle.dateRange}</p>
+          <p className="font-inter font-normal text-sm text-[#5B5B5B]">{mcle.dateRange}</p>
         </div>
 
         {/* Language & Dialect */}
@@ -138,9 +138,9 @@ export default function CurriculumVitaeTab({ cv }) {
         <div>
           <CvLabel>Work Experience</CvLabel>
           {visibleWork.map((job, i) => (
-            <div key={i} className="mb-1">
-              <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{job.firm}</p>
-              <p className="font-inter font-normal text-l text-[#5B5B5B] wrap-break-word">
+            <div key={i} className="mb-3">
+              <p className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">{job.firm}</p>
+              <p className="font-inter font-normal text-sm text-[#5B5B5B] wrap-break-word">
                 {job.role} • {job.address}
               </p>
             </div>
@@ -157,9 +157,9 @@ export default function CurriculumVitaeTab({ cv }) {
         <div>
           <CvLabel>Education</CvLabel>
           {visibleEdu.map((edu, i) => (
-            <div key={i} className="mb-2">
-              <p className="font-inter font-semibold text-l text-g4-900 wrap-break-word">{edu.institution}</p>
-              <p className="font-inter font-normal text-l text-[#5B5B5B] wrap-break-word">
+            <div key={i} className="mb-3">
+              <p className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">{edu.institution}</p>
+              <p className="font-inter font-normal text-sm text-[#5B5B5B] wrap-break-word">
                 {edu.degree} • {edu.date}
               </p>
             </div>
@@ -190,7 +190,7 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Concentration of Law Practice</CvLabel>
           <ul className="mt-1 space-y-1">
             {concentration.map((item) => (
-              <li key={item} className="font-inter font-semibold text-l text-g4-900 wrap-break-word">
+              <li key={item} className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">
                 {item}
               </li>
             ))}
@@ -202,7 +202,7 @@ export default function CurriculumVitaeTab({ cv }) {
           <CvLabel>Cases Handled</CvLabel>
           <ul className="mt-1 space-y-1">
             {visibleCases.map((item) => (
-              <li key={item} className="font-inter font-semibold text-l text-g4-900 wrap-break-word">
+              <li key={item} className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">
                 {item}
               </li>
             ))}
