@@ -37,13 +37,15 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="w-full bg-[#0F2338] text-white">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-          {/* Logo */}
-          <BrandLogo />
+      <header className="sticky top-0 z-50 w-full bg-[#0F2338] text-white">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-center px-6 lg:px-8">
+          {/* Logo - shrink-0 prevents links from bleeding into logo bounds */}
+          <div className="shrink-0 mr-8">
+            <BrandLogo />
+          </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+          <div className="hidden flex-1 items-center justify-end gap-4 lg:flex xl:gap-6">
             {navItems.map((item) => (
               <NavLink
                 key={item.label}
@@ -56,12 +58,12 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Profile */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block lg:ml-6 shrink-0">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
           </div>
 
           {/* Mobile Right Side */}
-          <div className="flex items-center gap-4 lg:hidden">
+          <div className="flex items-center gap-3 lg:hidden">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
 
             <button
@@ -86,7 +88,7 @@ export default function Navbar() {
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
               >
-                <div className="py-3">{item.label}</div>
+                <div className="py-2.5">{item.label}</div>
               </NavLink>
             ))}
           </div>
