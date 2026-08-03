@@ -3,7 +3,6 @@ import BrandLogo from "./NavBar/BrandLogo.jsx";
 import NavLink from "./NavBar/NavLink.jsx";
 
 export default function Navbar() {
-  // Routes updated to match your React Router setup in App.jsx
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Lawyers Profile', href: '/everyday-law/lawyers-blog-list' },
@@ -18,8 +17,7 @@ export default function Navbar() {
     <header
       style={{
         width: '100%',
-        padding: '20px', // Added 20px padding around header
-        minHeight: '70px',
+        padding: '20px',
         backgroundColor: '#0F2338',
         color: '#FFFFFF',
         boxSizing: 'border-box',
@@ -29,10 +27,11 @@ export default function Navbar() {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '20px', // Added 20px gap between Brand, Links, and Profile
+          justifyContent: 'space-between',
           maxWidth: '1280px',
           margin: '0 auto',
           width: '100%',
+          gap: '16px', // Prevents elements from overlapping each other
         }}
       >
         {/* Brand Logo */}
@@ -46,10 +45,12 @@ export default function Navbar() {
             flex: 1,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'around',
-            gap: '20px', // Added 20px gap between navigation items
-            overflowX: 'auto',
+            justifyContent: 'center',
+            gap: '16px', // Balanced gap between items
+            overflow: 'hidden', // Replaced overflowX: 'auto' to kill the grey scrollbar line
+            whiteSpace: 'nowrap',
             minWidth: 0,
+            padding: '0 8px',
           }}
         >
           {navItems.map((item) => (

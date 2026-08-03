@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router";
+import lexmeetLogo from '../../assets/Lexmeet.svg';
 
 export default function ProfileDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function ProfileDropdown() {
       }}
     >
       {/* Trigger Buttons */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
         
         {/* CIRCULAR Avatar Button */}
         <button
@@ -69,7 +70,7 @@ export default function ProfileDropdown() {
             color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
-            padding: '6px',
+            padding: '4px',
             transition: 'background 0.2s ease',
             fontFamily: "'g4-caption', sans-serif",
           }}
@@ -96,7 +97,7 @@ export default function ProfileDropdown() {
         <div
           style={{
             position: 'absolute',
-            top: 'calc(100% + 12px)',
+            top: 'calc(100% + 8px)',
             right: 0,
             backgroundColor: '#EBF4F6',
             borderRadius: '8px',
@@ -109,7 +110,21 @@ export default function ProfileDropdown() {
           }}
         >
           <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-            <DropdownItem to="/lexmeet" icon={<path d="M12 3v18M3 12h18"/>}>
+            <DropdownItem 
+              to="/lexmeet" 
+              customIcon={
+                <img 
+                  src={lexmeetLogo} 
+                  alt="Lexmeet" 
+                  style={{ 
+                    width: '18px', 
+                    height: '18px', 
+                    objectFit: 'contain',
+                    filter: 'brightness(0) saturate(100%) invert(10%) sepia(26%) saturate(2421%) hue-rotate(180deg) brightness(96%) contrast(96%)'
+                  }} 
+                />
+              }
+            >
               Go to Lexmeet
             </DropdownItem>
 
@@ -121,7 +136,7 @@ export default function ProfileDropdown() {
               Settings
             </DropdownItem>
 
-            <hr style={{ border: 'none', borderTop: '1px solid #c5d6dd', margin: '6px 0' }} />
+            <hr style={{ border: 'none', borderTop: '1px solid #c5d6dd', margin: '4px 0' }} />
 
             <DropdownItem to="/login" icon={<><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></>}>
               Log-in
@@ -137,14 +152,14 @@ export default function ProfileDropdown() {
   );
 }
 
-function DropdownItem({ to, children, icon, isButton = false, onClick }) {
+function DropdownItem({ to, children, icon, customIcon, isButton = false, onClick }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const style = {
     display: 'flex',
     alignItems: 'center',
-    gap: '10px',
-    padding: '10px 16px',
+    gap: '8px', // Reduced gap between icon and text from 10px to 8px
+    padding: '10px 16px', // Kept original padding intact
     color: '#0F2338',
     textDecoration: 'none',
     fontSize: '14px',
@@ -155,7 +170,17 @@ function DropdownItem({ to, children, icon, isButton = false, onClick }) {
     width: '100%',
     border: 'none',
     textAlign: 'left',
-    fontFamily: "'g4-caption', sans-serif", // Quotes around font name
+    fontFamily: "'g4-caption', sans-serif",
+    boxSizing: 'border-box',
+  };
+
+  const renderIcon = () => {
+    if (customIcon) return <span style={{ display: 'flex', width: '18px', height: '18px', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}>{customIcon}</span>;
+    return (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0 }}>
+        {icon}
+      </svg>
+    );
   };
 
   return (
@@ -167,7 +192,7 @@ function DropdownItem({ to, children, icon, isButton = false, onClick }) {
           onMouseLeave={() => setIsHovered(false)}
           style={style}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">{icon}</svg>
+          {renderIcon()}
           {children}
         </button>
       ) : (
@@ -177,7 +202,7 @@ function DropdownItem({ to, children, icon, isButton = false, onClick }) {
           onMouseLeave={() => setIsHovered(false)}
           style={style}
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">{icon}</svg>
+          {renderIcon()}
           {children}
         </Link>
       )}
