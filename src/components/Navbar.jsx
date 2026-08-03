@@ -38,12 +38,12 @@ export default function Navbar() {
     <>
       <header className="sticky top-0 z-50 w-full bg-[#0F2338] text-white">
         <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <div className="shrink-0">
+          {/* Logo with expanded right margin */}
+          <div className="shrink-0 mr-10 xl:mr-12">
             <BrandLogo />
           </div>
 
-          {/* Desktop Navigation (Switched to xl to prevent crowding at intermediate widths) */}
+          {/* Desktop Navigation */}
           <div className="hidden items-center justify-end gap-3 xl:gap-5 xl:flex">
             {navItems.map((item) => (
               <NavLink
@@ -56,8 +56,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Profile */}
-          <div className="hidden shrink-0 xl:block xl:ml-4">
+          {/* Desktop Profile with expanded left margin */}
+          <div className="hidden shrink-0 xl:block xl:ml-10 xl:mr-2">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
           </div>
 
