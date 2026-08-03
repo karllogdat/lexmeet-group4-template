@@ -27,7 +27,7 @@ export default function MembersSection() {
   const desktopVisible = members.slice(desktopIndex, desktopIndex + DESKTOP_PER_VIEW);
 
   return (
-    <section className="bg-[#002E56] px-4 sm:px-6 md:px-12 py-16 overflow-hidden">
+    <section className="bg-[#002E56] px-4 sm:px-6 md:px-12 py-12 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow tone="light">Who We Are</SectionEyebrow>
         <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-white mb-10">
