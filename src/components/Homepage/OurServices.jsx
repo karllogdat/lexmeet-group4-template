@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useContext } from "react";
 
 // Import custom SVGs from src/assets/Homepage/OurService/
 import worksIcon from "../../assets/Homepage/OurService/Works.svg";
@@ -6,7 +6,16 @@ import assistIcon from "../../assets/Homepage/OurService/Assist.svg";
 import documentsIcon from "../../assets/Homepage/OurService/Documents.svg";
 import consultIcon from "../../assets/Homepage/OurService/Consult.svg";
 
+import { ScrollContext } from "../../contexts/ScrollContext";
+
 export default function OurServices() {
+  const { registerServicesRef } = useContext(ScrollContext);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    registerServicesRef(ref);
+  }, [registerServicesRef]);
+
   const services = [
     {
       id: "assist",
@@ -43,10 +52,12 @@ export default function OurServices() {
   ];
 
   return (
-    <div className="relative max-w-6xl mx-6 sm:mx-8 md:mx-auto px-4 sm:px-6 z-20 -mt-24 md:-mt-32">
+    <div
+      ref={ref}
+      className="relative max-w-6xl mx-6 sm:mx-8 md:mx-auto px-4 sm:px-6 z-20 -mt-24 md:-mt-32 scroll-mt-50"
+    >
       {/* Container with responsive padding */}
       <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 text-g4-900">
-        
         {/* Header Title: Playfair Display */}
         <h2 className="font-['Playfair_Display'] text-[36px] sm:text-[48px] md:text-[64px] font-extrabold text-center leading-tight mb-8">
           Our Services
@@ -75,9 +86,7 @@ export default function OurServices() {
                 </h3>
 
                 {/* Card Description */}
-                <p className="g4-body font-color-g4-50">
-                  {item.description}
-                </p>
+                <p className="g4-body font-color-g4-50">{item.description}</p>
               </div>
 
               {/* Action Link */}
