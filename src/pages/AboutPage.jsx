@@ -119,11 +119,7 @@ export default function AboutPage() {
       <div className="w-full px-6 lg:px-20 py-14 flex flex-col lg:flex-row gap-24 bg-linear-4 from-white from-[49.9%] to-g4-900 to-[50.1%]">
         <div className="w-full lg:w-1/2 flex flex-col rounded-lg bg-g4-50 text-g4-900 shadow-black/10 shadow-[4px_4px_32px]">
           <div className="relative">
-            <img
-              src={AboutImage}
-              alt="About"
-              className="w-full h-64 object-cover rounded-t-lg"
-            />
+            <div className="w-full h-48 object-cover rounded-t-lg bg-g4-700" />
 
             <div className="flex items-center justify-center text-g4-50 absolute inset-0 rounded-t-lg bg-linear-to-t from-g4-50 to-transparent">
               <Target size={128} />
@@ -144,11 +140,7 @@ export default function AboutPage() {
 
         <div className="w-full lg:w-1/2 flex flex-col rounded-lg bg-g4-50 text-g4-900 shadow-black/10 shadow-[4px_4px_32px]">
           <div className="relative">
-            <img
-              src={AboutImage}
-              alt="About"
-              className="w-full h-64 object-cover rounded-t-lg"
-            />
+            <div className="w-full h-48 object-cover rounded-t-lg bg-g4-700" />
 
             <div className="flex items-center justify-center text-g4-50 absolute inset-0 rounded-t-lg bg-linear-to-t from-g4-50 to-transparent">
               <ClipboardPen size={128} />
