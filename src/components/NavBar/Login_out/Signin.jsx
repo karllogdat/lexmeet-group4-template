@@ -221,7 +221,7 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
 
                 <button type="button" className="flex items-center justify-center gap-1.5 py-1.5 sm:py-2 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
                   <span className="font-poppins text-[9px] sm:text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign up</span>
-                  <AppleIcon className="w-4 h-4 sm:w-[18px] sm:h-[18px] shrink-0 text-gray-800 fill-gray-800" />
+                  <AppleIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 shrink-0 text-gray-800 fill-gray-800" />
                 </button>
               </div>
             </div>
