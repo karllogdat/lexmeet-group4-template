@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import ProfileDropdown from "./NavBar/ProfileDropdown";
 import BrandLogo from "./NavBar/BrandLogo";
 import NavLink from "./NavBar/NavLink";
-import Login from "./NavBar/Login_out/log-in";
+import Login from "./NavBar/Login_out/login";
 import ContactModal from "./Contactus/Contact_modal";
 
 export default function Navbar() {
@@ -37,10 +37,11 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Inalis ang overflow-x-hidden dito para hindi ma-clip/matakpan ang ProfileDropdown */}
       <header className="sticky top-0 z-50 w-full bg-[#0F2338] text-white">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-center px-6 lg:px-8">
-          {/* Logo - shrink-0 prevents links from bleeding into logo bounds */}
-          <div className="shrink-0 mr-8">
+        <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 lg:px-8">
+          {/* Logo */}
+          <div className="shrink-0">
             <BrandLogo />
           </div>
 
@@ -58,7 +59,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Profile */}
-          <div className="hidden lg:block lg:ml-6 shrink-0">
+          <div className="hidden shrink-0 lg:block lg:ml-6">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
           </div>
 
@@ -69,6 +70,7 @@ export default function Navbar() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="rounded-md p-2 transition hover:bg-white/10"
+              aria-label="Toggle Menu"
             >
               {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
