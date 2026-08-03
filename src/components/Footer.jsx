@@ -8,29 +8,30 @@ export default function Footer() {
   return (
     <footer className="flex flex-col w-full text-white font-sans">
       {/* Main Footer Container */}
-      <div className="bg-gradient-to-r from-[#3776A1] to-[#142B3B] px-4 sm:px-8 lg:px-12 py-10 sm:py-12">
+      <div className="bg-linear-to-r from-[#3776A1] to-[#142B3B] px-4 sm:px-8 lg:px-12 py-10 sm:py-12">
         
         {/* Responsive Grid Layout */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 items-start">
           
-          {/* Brand Logo Section - Enlarged */}
-          <div className="flex items-center justify-start gap-4 sm:col-span-2 lg:col-span-2 min-w-0">
+          {/* Brand Logo Section - Reduced Size */}
+          <div className="flex items-center justify-start gap-3 sm:col-span-2 lg:col-span-2 min-w-0">
             <img 
               src={lexLogo} 
               alt="Rizal Law Office Brand Logo" 
-              className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 object-contain shrink-0" 
+              className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain shrink-0" 
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
             />
 
             <div className="text-left font-poppins min-w-0">
-              <h2 className="text-2xl sm:text-3xl lg:text-3xl xl:text-4xl font-extrabold tracking-wider leading-none uppercase break-words">
-                RIZAL LAW
-                <br />
-                OFFICE
+              <h2 className="text-xl sm:text-2xl lg:text-2xl font-bold tracking-wide leading-tight uppercase wrap-break-word">
+                Rizal Law Office
               </h2>
-              <p className="text-sm sm:text-base font-semibold tracking-wide text-slate-200 mt-2">
+              <p className="text-[11px] sm:text-xs font-medium tracking-wide text-slate-300 mt-0.5">
+                Valderama Valderama and Buenaventure Law Offices
+              </p>
+              <p className="text-xs sm:text-sm font-normal tracking-wide text-slate-200 mt-1">
                 Legal Help Simplified
               </p>
             </div>
