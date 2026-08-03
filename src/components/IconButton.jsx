@@ -1,7 +1,10 @@
-export default function IconButton({ children }) {
+export default function IconButton({ children, onClick }) {
   return (
-    <div className="w-shrink h-shrink p-3.5 bg-g4-700 text-white rounded-lg">
+    <button
+      onClick={onClick}
+      className="w-shrink h-shrink p-3.5 bg-g4-700 hover:bg-g4-500 text-white rounded-lg transition-colors transiiton-300"
+    >
       {children}
-    </div>
+    </button>
   );
 }

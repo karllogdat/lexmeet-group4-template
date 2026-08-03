@@ -51,7 +51,7 @@ export default function EverydayLawBlogPage() {
     MessageSquareText,
   ];
   return (
-    <div className="flex flex-col items-center p-6 lg:p-20 gap-8">
+    <div className="flex flex-col items-center p-6 lg:px-20 gap-8">
       {/* TODO: breadcrumbs */}
       <Breadcrumbs items={crumbs} />
 
@@ -123,7 +123,7 @@ export default function EverydayLawBlogPage() {
         unexpected obstacles.
       </p>
 
-      <div className="w-full flex items-center justify-between">
+      <div className="w-full flex flex-col md:flex-row gap-4 items-center justify-between">
         <div className="flex gap-2.5">
           <Button>
             Like <Heart />
@@ -152,7 +152,6 @@ export default function EverydayLawBlogPage() {
               <div className="w-full flex flex-col gap-2 g4-caption text-slate-300">
                 <p>Or copy as link</p>
                 <ShareLink />
-                <p>Click outside to close</p>
               </div>
             </div>
           </ShareModal>

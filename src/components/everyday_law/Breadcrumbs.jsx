@@ -6,11 +6,13 @@ function Crumb({ name, to, isLast }) {
     <>
       <Link
         to={to ? to : "#"}
-        className={`g4-body ${isLast ? "text-g4-900" : "text-g4-700"}`}
+        className={`whitespace-nowrap truncate g4-body ${isLast ? "text-g4-900" : "text-g4-700"}`}
       >
         {name}
       </Link>
-      {!isLast && <ChevronRight size={18} className="text-g4-700" />}
+      {!isLast && (
+        <ChevronRight size={18} className="self-center text-g4-700" />
+      )}
     </>
   );
 }
@@ -21,7 +23,7 @@ export default function Breadcrumbs({ items }) {
   const crumbs = items;
 
   return (
-    <div className="w-full flex items-center gap-2.5">
+    <div className="w-full flex items-start gap-2.5">
       <Crumb name="Home" to="/" isLast={crumbs.length === 0} />
       {crumbs.map((crumb, index) => (
         <Crumb
