@@ -123,7 +123,7 @@ export default function EverydayLawBlogPage() {
         unexpected obstacles.
       </p>
 
-      <div className="w-full flex items-center justify-between">
+      <div className="w-full flex flex-col md:flex-row gap-4 items-center justify-between">
         <div className="flex gap-2.5">
           <Button>
             Like <Heart />
