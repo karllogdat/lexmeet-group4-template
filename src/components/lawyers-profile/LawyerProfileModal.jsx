@@ -76,7 +76,7 @@ export default function LawyerProfileModal({ lawyer, onClose }) {
             className="inline-flex items-center gap-2 bg-g4-700 hover:bg-g4-900 text-white font-inter font-semibold text-sm px-5 py-3 rounded-lg transition-colors"
           >
             <Phone size={16} />
-            Talk to this lawyer
+            Talk to this Lawyer
           </a>
         </div>
       </div>
