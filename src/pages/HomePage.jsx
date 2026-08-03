@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <main className="bg-[#f8fafc]">
       {/* Hero Section - Anchor point para sa right-0 */}
-      <section className="relative w-full min-h-[750px] bg-[#0c2a4a] text-white overflow-hidden flex items-center">
+      <section className="relative w-full min-h-187.5 bg-[#0c2a4a] text-white overflow-hidden flex items-center">
         {/* Background Layer 1: Architectural Texture */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
@@ -27,16 +27,12 @@ export default function HomePage() {
         />
 
         {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b243f] via-[#0b243f]/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#0b243f] via-[#0b243f]/80 to-transparent" />
 
-        {/* Background Layer 2: Lady Justice
-            - right-0: Dikit na dikit sa kanang border ng screen/browser
-            - top-16 md:top-20: Sumasabay sa eksaktong pt-16 / md:pt-20 ng text container para pantay na pantay sa H1
-            - object-right-top: Sinisigurong ang mismong tuktok ng imahe ang nakalinya */}
         <img
           src={bg2}
           alt="Lady Justice"
-          className="hidden md:block absolute right-0 top-16 md:top-20 w-[710px] h-[1065px] max-w-none object-contain object-right-top z-0 pointer-events-none"
+          className="hidden md:block absolute right-0 top-16 md:top-20 w-177.5 h-266.25 max-w-none object-contain object-top-right z-0 pointer-events-none"
         />
 
         {/* Hero Content Wrapper */}

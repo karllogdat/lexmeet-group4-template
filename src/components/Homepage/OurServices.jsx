@@ -9,20 +9,20 @@ import consultIcon from "../../assets/Homepage/OurService/Consult.svg";
 export default function OurServices() {
   const services = [
     {
-      id: "works",
-      title: "Works",
-      description: "Free legal fee proposals and paid legal works delivery",
-      ctaText: "Ask Lawyers",
-      ctaLink: "#",
-      icon: worksIcon,
-    },
-    {
       id: "assist",
       title: "Assist",
       description: "Free online legal assessment and guidance",
       ctaText: "Talk to Lawyers",
       ctaLink: "#",
       icon: assistIcon,
+    },
+    {
+      id: "consult",
+      title: "Consult",
+      description: "Paid online consultation",
+      ctaText: "Talk to Lawyers",
+      ctaLink: "#",
+      icon: consultIcon,
     },
     {
       id: "documents",
@@ -33,12 +33,12 @@ export default function OurServices() {
       icon: documentsIcon,
     },
     {
-      id: "consult",
-      title: "Consult",
-      description: "Paid online consultation",
-      ctaText: "Talk to Lawyers",
+      id: "works",
+      title: "Works",
+      description: "Free legal fee proposals and paid legal works delivery",
+      ctaText: "Ask Lawyers",
       ctaLink: "#",
-      icon: consultIcon,
+      icon: worksIcon,
     },
   ];
 
