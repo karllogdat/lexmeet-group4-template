@@ -20,11 +20,11 @@
 }
 
 .g4-large-body {
-  @apply font-inter font-medium text-2xl;
+  @apply font-inter font-medium text-[24px];
 }
 
 .g4-body {
-  @apply font-inter text-2xl;
+  @apply font-inter text-[16px];
 }
 
 .g4-button {
