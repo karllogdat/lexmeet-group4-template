@@ -31,40 +31,38 @@ export default function Navbar() {
       e.preventDefault();
       setIsContactOpen(true);
     }
-
     setIsMenuOpen(false);
   };
 
   return (
     <>
-      {/* Inalis ang overflow-x-hidden dito para hindi ma-clip/matakpan ang ProfileDropdown */}
       <header className="sticky top-0 z-50 w-full bg-[#0F2338] text-white">
-        <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6 lg:px-8">
+        <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <div className="shrink-0">
             <BrandLogo />
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden flex-1 items-center justify-end gap-4 lg:flex xl:gap-6">
+          {/* Desktop Navigation (Switched to xl to prevent crowding at intermediate widths) */}
+          <div className="hidden items-center justify-end gap-3 xl:gap-5 xl:flex">
             {navItems.map((item) => (
               <NavLink
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item)}
               >
-                {item.label}
+                <span className="text-sm xl:text-base">{item.label}</span>
               </NavLink>
             ))}
           </div>
 
           {/* Desktop Profile */}
-          <div className="hidden shrink-0 lg:block lg:ml-6">
+          <div className="hidden shrink-0 xl:block xl:ml-4">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
           </div>
 
-          {/* Mobile Right Side */}
-          <div className="flex items-center gap-3 lg:hidden">
+          {/* Mobile/Tablet Right Side (Triggers below xl) */}
+          <div className="flex items-center gap-3 xl:hidden">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
 
             <button
@@ -77,9 +75,9 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* Mobile Menu */}
+        {/* Mobile/Tablet Menu */}
         <div
-          className={`overflow-hidden transition-all duration-300 lg:hidden ${
+          className={`overflow-hidden transition-all duration-300 xl:hidden ${
             isMenuOpen ? "max-h-125 border-t border-white/20" : "max-h-0"
           }`}
         >
