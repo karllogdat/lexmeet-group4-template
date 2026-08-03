@@ -8,7 +8,7 @@ export default function PracticeAreaTile({ label, image }) {
         className="h-8.75 w-8.75 object-contain"
 
       />
-      <span className="text-xl font-inter text-white">{label}</span>
+      <span className="text-s md:text-lg lg:text-xl font-inter text-white">{label}</span>
     </div>
   );
 }
