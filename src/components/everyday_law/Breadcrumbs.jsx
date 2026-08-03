@@ -6,11 +6,11 @@ function Crumb({ name, to, isLast }) {
     <>
       <Link
         to={to ? to : "#"}
-        className={`g4-large-body ${isLast ? "text-g4-900" : "text-g4-700"}`}
+        className={`g4-body ${isLast ? "text-g4-900" : "text-g4-700"}`}
       >
         {name}
       </Link>
-      {!isLast && <ChevronRight className="text-g4-700" />}
+      {!isLast && <ChevronRight size={18} className="text-g4-700" />}
     </>
   );
 }
