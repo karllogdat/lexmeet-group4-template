@@ -12,7 +12,7 @@ export default function LocationSection() {
   const visibleProvinces = showAll ? provinces : provinces.slice(0, INITIAL_VISIBLE);
 
   return (
-    <section className="bg-g4-900 px-6 md:px-12 py-16">
+    <section className="bg-g4-900 px-6 md:px-12 py-12">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow tone="light">Where We Operate</SectionEyebrow>
         <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-white mb-10">

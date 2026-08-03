@@ -23,7 +23,7 @@ export default function AwardsSection() {
   const mobileVisible = recognitions.slice(index, index + MOBILE_PER_VIEW);
 
   return (
-    <section className="bg-white px-6 md:px-12 py-16 overflow-hidden">
+    <section className="bg-white px-6 md:px-12 py-12 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow>Recognition</SectionEyebrow>
         <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-[#002E56] mb-10">

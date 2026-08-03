@@ -13,7 +13,7 @@ export default function CasesHandledSection() {
   const hasMore = casesHandled.length > INITIAL_VISIBLE;
 
   return (
-    <section className="bg-white px-6 md:px-12 py-16">
+    <section className="bg-white px-6 md:px-12 py-12">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow>What We Handle</SectionEyebrow>
         <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-[#002E56] mb-10">
