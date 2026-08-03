@@ -122,8 +122,8 @@ export default function LawOfficePage() {
         </div>
       </div>
 
-      <div className="h-fit flex flex-col lg:flex-row items-center bg-g4-900 lg:p-0">
-        <div className="h-fit flex flex-col m-6 lg:mx-32 rounded-lg bg-white overflow-hidden">
+      <div className="h-fit flex flex-col p-6 lg:p-32 gap-32 lg:flex-row items-center bg-g4-900">
+        <div className="h-fit flex flex-col rounded-lg bg-white overflow-hidden">
           <img
             src={Office}
             className="h-64 aspect-4/3 object-cover"
@@ -144,11 +144,7 @@ export default function LawOfficePage() {
           </div>
         </div>
 
-        <img
-          src={Map}
-          className="w-full lg:w-1/2 h-full object-cover"
-          alt="Office"
-        />
+        <img src={Map} className="w-1/2 object-cover rounded-lg" alt="Office" />
       </div>
     </div>
   );
