@@ -19,6 +19,7 @@ export default function LawyersProfilePage() {
   const [activeTab, setActiveTab] = useState("list");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedLawyer, setSelectedLawyer] = useState(null);
+  const [initialModalTab, setInitialModalTab] = useState("cv");
 
   // Filter lawyers by name (case-insensitive)
   const filteredLawyers = useMemo(() => {
@@ -35,6 +36,19 @@ export default function LawyersProfilePage() {
     ratings: "ratings",
     schedule: "schedule",
   };
+
+  // Map page-tab variant → matching modal tab id
+  const MODAL_TAB_MAP = {
+    list: "cv",
+    ratings: "ratings",
+    schedule: "schedule",
+  };
+
+  // Open the modal on the correct tab based on which page tab triggered the click
+  function handleSeeMore(lawyer, variant) {
+    setInitialModalTab(MODAL_TAB_MAP[variant] ?? "cv");
+    setSelectedLawyer(lawyer);
+  }
 
   return (
     <>
@@ -73,7 +87,7 @@ export default function LawyersProfilePage() {
               <LawyerTable
                 lawyers={filteredLawyers}
                 variant={variantMap[activeTab]}
-                onSeeMore={setSelectedLawyer}
+                onSeeMore={handleSeeMore}
               />
             </div>
           </div>
@@ -83,8 +97,9 @@ export default function LawyersProfilePage() {
       {/* ── Lawyer detail modal ────────────────────────────────────── */}
       {/* key forces tab state reset when a different lawyer is selected */}
       <LawyerProfileModal
-        key={selectedLawyer?.id ?? "closed"}
+        key={selectedLawyer ? `${selectedLawyer.id}-${initialModalTab}` : "closed"}
         lawyer={selectedLawyer}
+        initialTab={initialModalTab}
         onClose={() => setSelectedLawyer(null)}
       />
     </>
