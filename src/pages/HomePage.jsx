@@ -8,7 +8,7 @@ import PracticeArea from "../components/Homepage/PracticeArea";
 import EverydayLawSection from "../components/Homepage/Everydaylaw";
 import LawUpdatesSection from "../components/Homepage/Lawupdates";
 import ContactModal from "../components/Contactus/Contact_modal";
-import LoginModal from "../components/NavBar/Login_out/log-in";
+import LoginModal from "../components/NavBar/Login_out/login";
 
 import Button from "../components/Button";
 
@@ -17,8 +17,9 @@ export default function HomePage() {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
 
   return (
-    <main className="bg-[#f8fafc]">
-      {/* Hero Section - Anchor point para sa right-0 */}
+    /* Idinagdag ang overflow-x-hidden at w-full dito sa main container */
+    <main className="w-full bg-[#f8fafc] overflow-x-hidden relative">
+      {/* Hero Section */}
       <section className="relative w-full min-h-187.5 bg-[#0c2a4a] text-white overflow-hidden flex items-center">
         {/* Background Layer 1: Architectural Texture */}
         <div
@@ -29,10 +30,11 @@ export default function HomePage() {
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-[#0b243f] via-[#0b243f]/80 to-transparent" />
 
+        {/* Lady Justice Image (Inalis ang max-w-none para responsive or ginawaran ng inline clip) */}
         <img
           src={bg2}
           alt="Lady Justice"
-          className="hidden md:block absolute right-0 top-16 md:top-20 w-177.5 h-266.25 max-w-none object-contain object-top-right z-0 pointer-events-none"
+          className="hidden md:block absolute right-0 top-16 md:top-20 w-177.5 max-w-full h-auto object-contain object-top-right z-0 pointer-events-none"
         />
 
         {/* Hero Content Wrapper */}

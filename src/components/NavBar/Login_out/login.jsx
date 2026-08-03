@@ -1,14 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import bgImage from '../../../assets/Log_pics/logbg.jpg';
 import lexLogo from '../../../assets/Lex.svg';
-import lexMeetLogo from '../../../assets/LexMeetName.png';
+import lexMeetLogo from '../../../assets/LexMeetName.svg';
 import Signin from './Signin';
 
 import Button from '../../Button';
 
-import googleIcon from '../../../assets/Sign_in/google.svg';
-import facebookIcon from '../../../assets/Sign_in/facebook.svg';
-import appleIcon from '../../../assets/Sign_in/apple.svg';
+const GoogleIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+  </svg>
+);
+
+const FacebookIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+  </svg>
+);
+
+const AppleIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 3.91c.64-.78 1.08-1.85.96-2.91-.93.04-2.06.62-2.72 1.4-.59.68-1.1 1.77-.96 2.83 1.04.08 2.08-.54 2.72-1.32z"/>
+  </svg>
+);
 
 export default function Login({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
@@ -16,7 +30,6 @@ export default function Login({ isOpen, onClose }) {
   const [rememberMe, setRememberMe] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
-  // Prevent background scrolling when modal is active
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -37,19 +50,15 @@ export default function Login({ isOpen, onClose }) {
 
   return (
     <>
-      {/* 1. LOGIN MODAL - Only rendered when Sign In is NOT active */}
       {!isSignUpOpen && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md overflow-y-auto"
           onClick={onClose}
         >
-          {/* Main Login Card */}
           <div 
             className="relative z-10 w-full max-w-4xl rounded-lg overflow-hidden shadow-2xl backdrop-blur-xl bg-slate-900/40 border border-white/20 text-white my-auto"
-            onClick={(e) => e.stopPropagation()} // Prevent close on card click
+            onClick={(e) => e.stopPropagation()}
           >
-            
-            {/* Close Button */}
             <button
               onClick={onClose}
               type="button"
@@ -59,7 +68,6 @@ export default function Login({ isOpen, onClose }) {
               ✕
             </button>
 
-            {/* Card Background Overlay with Blur */}
             <div 
               className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none backdrop-blur-[50%]"
               style={{ backgroundImage: `url(${bgImage})` }}
@@ -67,10 +75,8 @@ export default function Login({ isOpen, onClose }) {
 
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 p-6 sm:p-10 md:p-12 gap-8 items-center">
               
-              {/* Left Column: Form Section */}
               <div className="flex flex-col space-y-5">
                 
-                {/* Logo & Header */}
                 <div className="flex items-center space-x-3">
                   <img src={lexLogo} alt="Rizal Logo" className="w-12 h-12 shrink-0 object-contain" />
 
@@ -82,7 +88,6 @@ export default function Login({ isOpen, onClose }) {
                   </div>
                 </div>  
 
-                {/* Login Form */}
                 <form onSubmit={handleSubmit} className="space-y-3 pt-2">
                   <div>
                     <input
@@ -99,14 +104,13 @@ export default function Login({ isOpen, onClose }) {
                     <input
                       type="password"
                       required
-                      placeholder="••••••••••••••••"
+                      placeholder="Password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="w-full px-4 py-2.5 rounded-lg bg-white text-gray-800 placeholder-gray-400 font-poppins text-[12px] focus:outline-none focus:ring-2 focus:ring-sky-600 shadow-inner"
                     />
                   </div>
 
-                  {/* Remember Me & Forgot Password */}
                   <div className="flex items-center justify-between font-poppins text-[10px] text-white pt-1">
                     <label className="flex items-center space-x-2 cursor-pointer select-none text-white">
                       <input
@@ -122,7 +126,6 @@ export default function Login({ isOpen, onClose }) {
                     </a>
                   </div>
 
-                  {/* Custom Button Integration */}
                   <div className="pt-2 [&>button]:w-full [&>button]:justify-center">
                     <Button onClick={handleSubmit}>
                       Sign In
@@ -130,7 +133,6 @@ export default function Login({ isOpen, onClose }) {
                   </div>
                 </form>
 
-                {/* Divider */}
                 <div className="relative flex items-center justify-center my-2">
                   <div className="border-t border-white/20 w-full" />
                   <span className="bg-transparent px-2 font-inter text-[12px] tracking-widest text-white uppercase shrink-0">
@@ -139,14 +141,13 @@ export default function Login({ isOpen, onClose }) {
                   <div className="border-t border-white/20 w-full" />
                 </div>
 
-                {/* Social Logins */}
                 <div className="grid grid-cols-3 gap-2">
                   <button 
                     type="button" 
                     className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer"
                   >
                     <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign in with</span>
-                    <img src={googleIcon} alt="Google" className="w-3.5 h-3.5 object-contain shrink-0" />
+                    <GoogleIcon className="w-3.5 h-3.5 shrink-0 text-g4-900 fill-g4-900" />
                   </button>
 
                   <button 
@@ -154,7 +155,7 @@ export default function Login({ isOpen, onClose }) {
                     className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer"
                   >
                     <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign in with</span>
-                    <img src={facebookIcon} alt="Facebook" className="w-3.5 h-3.5 object-contain shrink-0" />
+                    <FacebookIcon className="w-3.5 h-3.5 shrink-0 text-g4-900 fill-g4-900" />
                   </button>
 
                   <button 
@@ -162,11 +163,10 @@ export default function Login({ isOpen, onClose }) {
                     className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer"
                   >
                     <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign in with</span>
-                    <img src={appleIcon} alt="Apple" className="w-3.5 h-3.5 object-contain shrink-0" />
+                    <AppleIcon className="w-4 h-4 shrink-0 text-g4-900 fill-g4-900" />
                   </button>
                 </div>
 
-                {/* Create Account Link */}
                 <div className="text-center font-poppins text-[14px] text-white pt-2">
                   Don't have an account?{' '}
                   <button 
@@ -178,14 +178,24 @@ export default function Login({ isOpen, onClose }) {
                   </button>
                 </div>
 
-                {/* Footer Branding */}
-                <div className="flex items-center justify-center space-x-1.5 font-inter text-[14px] pt-3 border-t border-white/10">
-                  <span className="text-g4-400">Powered by</span>
-                  <img src={lexMeetLogo} alt="LexMeet Logo" className="h-5 object-contain" />
+                <div className="flex items-center justify-center space-x-2 font-inter text-[14px] pt-3 border-t border-white/10 text-g4-400">
+                  <span className="leading-none">Powered by</span>
+                  <div 
+                    className="h-4 w-24 bg-current shrink-0 inline-block align-middle"
+                    style={{
+                      maskImage: `url(${lexMeetLogo})`,
+                      WebkitMaskImage: `url(${lexMeetLogo})`,
+                      maskRepeat: 'no-repeat',
+                      WebkitMaskRepeat: 'no-repeat',
+                      maskSize: 'contain',
+                      WebkitMaskSize: 'contain',
+                      maskPosition: 'center',
+                      WebkitMaskPosition: 'center'
+                    }}
+                  />
                 </div>
               </div>
 
-              {/* Right Column: Text Content */}
               <div className="flex flex-col justify-center space-y-4 md:pl-6 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0">
                 <h1 className="g4-heading-1 text-white">
                   We are Ready to Serve for all your Legal Needs!
@@ -200,11 +210,10 @@ export default function Login({ isOpen, onClose }) {
         </div>
       )}
 
-      {/* 2. SIGNIN MODAL - Rendered independently when active */}
       <Signin 
         isOpen={isSignUpOpen} 
-        onClose={onClose} // Closing Signin also closes the main modal overlay entirely
-        onSwitchToLogin={() => setIsSignUpOpen(false)} // Switching back re-displays Login
+        onClose={onClose}
+        onSwitchToLogin={() => setIsSignUpOpen(false)}
       />
     </>
   );
