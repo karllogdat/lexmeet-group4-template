@@ -17,8 +17,8 @@ export default function Navbar() {
     { label: "Lawyers Profile", href: "/lawyers-profile" },
     { label: "Law Practice", href: "/law-practice" },
     { label: "Law Office", href: "/law-office" },
-    { label: "Everyday Law", href: "/everyday-law" },
     { label: "Our Services", href: "/#our-services" },
+    { label: "Everyday Law", href: "/everyday-law" },
     {
       label: "Contact Us",
       href: "/#contact-us",
