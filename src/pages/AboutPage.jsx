@@ -201,7 +201,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <p className="">
+          <p className="g4-body">
             A meeting place for clients seeking legal advice online! A webspace
             for lawyers making their services available to the public! Come on!
             LexMeet!

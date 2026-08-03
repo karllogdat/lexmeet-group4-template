@@ -26,8 +26,11 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 import ShareLink from "../components/everyday_law/ShareLink";
+import { useNavigate } from "react-router";
 
 export default function EverydayLawBlogPage() {
+  const navigate = useNavigate();
+
   const crumbs = [
     { name: "Everyday Law", to: "/everyday-law" },
     {
@@ -57,7 +60,7 @@ export default function EverydayLawBlogPage() {
 
       {/* search bar */}
       <div className="flex w-full h-shrink gap-2.5">
-        <IconButton>
+        <IconButton onClick={() => navigate("/everyday-law")}>
           <ChevronLeft />
         </IconButton>
         <IconButton>
