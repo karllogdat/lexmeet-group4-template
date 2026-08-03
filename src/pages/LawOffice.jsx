@@ -15,30 +15,25 @@ import Office from "../assets/law-office/office.jpg";
 
 import Button from "../components/Button";
 import { MapIcon } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import LawOfficeCarousel from "../components/law-office/LawOfficeCarousel";
 
 export default function LawOfficePage() {
+  const IMAGES = [
+    "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
+
   return (
     <div className="flex flex-col g4-body">
       <div className="flex items-center justify-center h-fit py-20.5 px-6 lg:px-32">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-          {/* bento box */}
-          <div className="lg:w-1/2 grid grid-cols-2 grid-rows-2 gap-8">
-            <img
-              src={OfficeTop}
-              className="w-full h-full aspect-4/3 object-cover rounded-lg"
-              alt="Office Top"
-            />
-            <img
-              src={OfficeLarge}
-              className="w-full h-full aspect-4/3 object-cover rounded-lg row-span-2"
-              alt="Office Large"
-            />
-            <img
-              src={OfficeBottom}
-              className="w-full h-full aspect-4/3 object-cover rounded-lg"
-              alt="Office Bottom"
-            />
-          </div>
+          <LawOfficeCarousel
+            className="lg:w-1/2"
+            imageClassName="rounded-lg"
+            images={IMAGES}
+          />
 
           <div className="flex flex-col gap-8 lg:w-1/2">
             <h1 className="g4-heading-1 font-bold">Our Law Office</h1>
@@ -54,7 +49,7 @@ export default function LawOfficePage() {
         </div>
       </div>
 
-      <div className="h-fit grid lg:grid-cols-4 lg:grid-rows-2 gap-y-8 gap-x-16 bg-g4-900 text-g4-50">
+      <div className="h-fit grid lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-y-8 lg:gap-x-16 bg-g4-900 text-g4-50">
         <img
           src={LawyersLarge}
           className="w-full h-full aspect-4/3 object-cover col-span-2 lg:col-span-1 lg:row-span-2"
@@ -101,34 +96,17 @@ export default function LawOfficePage() {
             <Button>Read More</Button>
           </div>
 
-          {/* bento box */}
-          <div className="lg:w-1/2 grid grid-cols-2 grid-rows-2 gap-8">
-            <img
-              src={StaffsLarge}
-              className="w-full h-full aspect-4/3 object-cover rounded-lg row-span-2"
-              alt="Staffs Large"
-            />
-            <img
-              src={StaffsTop}
-              className="w-full h-full aspect-4/3 object-cover rounded-lg"
-              alt="Staffs Top"
-            />
-            <img
-              src={StaffsBottom}
-              className="w-full h-full aspect-4/3 object-cover rounded-lg"
-              alt="Staffs Bottom"
-            />
-          </div>
+          <LawOfficeCarousel
+            className="lg:w-1/2"
+            imageClassName="rounded-lg"
+            images={IMAGES}
+          />
         </div>
       </div>
 
       <div className="h-fit flex flex-col p-6 lg:p-32 gap-32 lg:flex-row items-center bg-g4-900">
         <div className="h-fit flex flex-col rounded-lg bg-white overflow-hidden">
-          <img
-            src={Office}
-            className="h-64 aspect-4/3 object-cover"
-            alt="Office"
-          />
+          <LawOfficeCarousel images={IMAGES} />
 
           <div className="flex flex-col gap-6.5 px-10.5 py-16">
             <h2 className="g4-heading-2">Office Location</h2>
@@ -144,7 +122,11 @@ export default function LawOfficePage() {
           </div>
         </div>
 
-        <img src={Map} className="w-1/2 object-cover rounded-lg" alt="Office" />
+        <img
+          src={Map}
+          className="lg:w-1/2 object-cover rounded-lg"
+          alt="Office"
+        />
       </div>
     </div>
   );

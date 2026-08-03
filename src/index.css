@@ -49,3 +49,17 @@
   --color-g4-800: #1b5886;
   --color-g4-900: #003a6b;
 }
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
