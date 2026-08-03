@@ -152,7 +152,6 @@ export default function EverydayLawBlogPage() {
               <div className="w-full flex flex-col gap-2 g4-caption text-slate-300">
                 <p>Or copy as link</p>
                 <ShareLink />
-                <p>Click outside to close</p>
               </div>
             </div>
           </ShareModal>
