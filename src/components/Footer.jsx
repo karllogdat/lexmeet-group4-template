@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col w-full text-white font-sans">
       {/* Main Footer Container */}
-      <div className="bg-linear-to-r from-[#3776A1] to-[#142B3B] px-4 sm:px-8 lg:px-12 py-10 sm:py-12">
+      <div className="bg-linear-to-r from-[#3776A1] to-[#142B3B] px-8 py-10 sm:py-12">
         
         {/* Responsive Grid Layout */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 items-start">
@@ -110,7 +110,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright Sub-Footer Bar */}
-      <div className="bg-[#00192F] py-3 px-4 text-center text-xs sm:text-sm text-slate-400 flex flex-wrap justify-center items-center gap-2">
+      <div className="bg-[#00192F] py-3 px-8 text-center text-xs sm:text-sm text-slate-400 flex flex-wrap justify-center items-center gap-2">
         <span>All Rights Reserved, 2022.</span>
         <span className="flex items-center gap-1">
           Powered by{' '}
