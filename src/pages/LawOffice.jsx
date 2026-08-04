@@ -104,11 +104,11 @@ export default function LawOfficePage() {
         </div>
       </div>
 
-      <div className="h-fit flex flex-col p-6 lg:p-32 gap-32 lg:flex-row items-center bg-g4-900">
+      <div className="h-fit flex flex-col p-6 lg:p-32 gap-16 lg:gap-32 lg:flex-row items-center bg-g4-900">
         <div className="h-fit flex flex-col rounded-lg bg-white overflow-hidden">
           <LawOfficeCarousel images={IMAGES} />
 
-          <div className="flex flex-col gap-6.5 px-10.5 py-16">
+          <div className="flex flex-col gap-6.5 p-6 lg:px-10.5 lg:py-16">
             <h2 className="g4-heading-2">Office Location</h2>
             <p>
               123 Kalayaan Avenue, Barangay San Antonio, Makati City, 1205 Metro
