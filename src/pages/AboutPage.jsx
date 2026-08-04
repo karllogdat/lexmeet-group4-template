@@ -164,7 +164,7 @@ export default function AboutPage() {
         <h1 className="w-full text-center g4-heading-1 font-bold">
           Values We Live By
         </h1>
-        <div className="w-full flex flex-col gap-6">
+        <div className="w-full flex flex-col gap-10 lg:gap-4">
           {visibleValues.map((value, index) => (
             <ValueCard key={index} value={value} index={index} />
           ))}

@@ -5,12 +5,12 @@ export default function ValueCard({ value, index }) {
 
   return (
     <div
-      className={`w-full flex items-center gap-10.5 ${
+      className={`w-full flex items-center gap-4 lg:gap-10.5 ${
         isOdd ? "flex-row-reverse justify-end" : ""
       }`}
     >
       <div
-        className={`flex items-center justify-center p-8 lg:p-16 ${
+        className={`flex items-center justify-center p-6 lg:p-16 ${
           isOdd
             ? "lg:pr-8 rounded-tl-full rounded-bl-full"
             : "lg:pl-8 rounded-tr-full rounded-br-full"
@@ -20,7 +20,7 @@ export default function ValueCard({ value, index }) {
       </div>
 
       <div
-        className={`w-full flex flex-col gap-4 ${isOdd ? "text-right pl-4" : ""}`}
+        className={`w-full flex flex-col gap-2 ${isOdd ? "text-right pl-4" : ""}`}
       >
         <p className="g4-large-body font-bold!">{value.title}</p>
         <p className="g4-body">{value.description}</p>
