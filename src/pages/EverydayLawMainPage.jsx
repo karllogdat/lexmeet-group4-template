@@ -24,11 +24,11 @@ export default function EverydayLawMainPage() {
         <div className="w-full h-13 rounded-lg border border-g4-700"></div>
       </div>
 
-      {/* popular tags section */}
-      <PopularTags tags={tags} />
-
       {/*Latest Blog Section */}
       <LatestBlog blog={latestBlogSample} />
+
+      {/* popular tags section */}
+      <PopularTags tags={tags} />
 
       {/*Three subsections*/}
       <div className="grid lg:grid-cols-3 w-full gap-2 5">
