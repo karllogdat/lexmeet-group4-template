@@ -38,7 +38,6 @@ export default function HomePage() {
 
         {/* Hero Content Wrapper */}
         <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24 w-full flex flex-col md:flex-row items-center justify-between gap-8 z-10">
-          
           <div className="w-full md:w-7/12 space-y-3 max-w-xl pt-0 -mt-20 md:-mt-24">
             <h1 className="font-['Playfair_Display'] text-[36px] sm:text-[48px] md:text-[48px] font-extrabold text-white leading-tight">
               The Digital Environment for Modern Legal Services
@@ -75,17 +74,15 @@ export default function HomePage() {
       {/* Got A Legal Question Banner */}
       <section className="w-full bg-[#033b67] text-white py-16 md:py-20 px-4 text-center flex items-center justify-center">
         <div className="max-w-xl mx-auto flex flex-col items-center justify-center space-y-6 w-full">
-          <h2 className="font-[#Playfair_Display] text-3xl sm:text-4xl md:text-5xl font-normal tracking-wide uppercase leading-tight">
+          <h2 className="g4-heading-1 font-bold tracking-wide leading-tight">
             Got a Legal <br className="hidden sm:inline" /> Question?
           </h2>
 
-          <p className="text-lg md:text-xl font-normal text-slate-100">
+          <p className="g4-body md:text-xl text-slate-100">
             Get in touch with us!
           </p>
 
-          <Button onClick={() => setIsContactOpen(true)}>
-            Contact Us
-          </Button>
+          <Button onClick={() => setIsContactOpen(true)}>Contact Us</Button>
         </div>
       </section>
 
@@ -102,10 +99,7 @@ export default function HomePage() {
       />
 
       {/* Login Modal */}
-      <LoginModal
-        isOpen={isLoginOpen}
-        onClose={() => setIsLoginOpen(false)}
-      />
+      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </main>
   );
 }
