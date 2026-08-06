@@ -31,7 +31,7 @@ export default function EverydayLawMainPage() {
       <PopularTags tags={tags} />
 
       {/*Three subsections*/}
-      <div className="grid lg:grid-cols-3 w-full gap-2 5">
+      <div className="grid lg:grid-cols-3 w-full gap-10">
         <SubsectionCard
           type="Everyday Law"
           blog={latestBlogSample}
