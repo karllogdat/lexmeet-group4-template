@@ -37,7 +37,7 @@ export default function EverydayLawBlogListPage() {
         />
       </div>
 
-      <h1 className="w-full text-center g4-heading-1 text-g4-900">
+      <h1 className="w-full font-bold text-center g4-heading-1 text-g4-900">
         Everyday Law
       </h1>
 
