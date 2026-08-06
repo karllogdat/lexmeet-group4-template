@@ -74,7 +74,7 @@ export default function AboutPage() {
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 58, 107, 1), rgba(0, 58, 107, 0.75), rgba(0, 58, 107, 0.5)), url(${AboutImage})`,
         }}
-        className="w-full h-fit flex flex-col items-center gap-32 p-6 lg:px-16 lg:py-10 bg-cover bg-center"
+        className="w-full h-fit flex flex-col items-center gap-16 p-6 lg:px-16 lg:py-10 bg-cover bg-center"
       >
         <div className="w-full max-w-6xl mx-auto">
           <div className="flex gap-8 border-b border-g4-700 mb-8">
@@ -95,12 +95,25 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="w-full lg:w-lg flex flex-col gap-2 text-g4-50">
+        <div className="w-full lg:w-4xl flex flex-col gap-2 text-g4-50">
           <h2 className="g4-heading-2 font-bold">About Us</h2>
           <h3 className="g4-heading-3">
             LexMeet: Bridging the Gap to Accessible Legal Help
           </h3>
-          <p className="g4-body text-justify">
+          <p className="h-48 overflow-y-auto scrollbar-thin g4-body text-justify">
+            LexMeet combines the Latin word "Lex," meaning law, with "Meet,"
+            representinhg connection and conversation. Together, they embody our
+            mission: bringing lawyers and clients together through a modern
+            digital platform to make legal help more accessible, efficient, and
+            convenient.
+            <br />
+            <br />
+            With our tagline, "Legal help in a click," LexMeet leverages
+            technology to simplify legal services—making it easier for
+            individuals, businesses, and communities to connect with trusted
+            legal professionals anytime, anywhere.
+            <br />
+            <br />
             LexMeet combines the Latin word "Lex," meaning law, with "Meet,"
             representinhg connection and conversation. Together, they embody our
             mission: bringing lawyers and clients together through a modern
