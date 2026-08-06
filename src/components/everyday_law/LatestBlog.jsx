@@ -24,7 +24,8 @@ export default function LatestBlog({ blog }) {
         <div className="lg:w-1/2 h-full flex flex-col justify-center gap-2.5">
           <h3 className="g4-heading-3 text-g4-900">{blog.title}</h3>
           <p className="g4-body text-g4-600">
-            {blog.author} • {blog.published_at.toDateString()}
+            {blog.author} • {blog.published_at.toDateString()} •{" "}
+            {blog.read_time} min read
           </p>
           <p className="line-clamp-7 text-truncate g4-body">{blog.content}</p>
           <button
