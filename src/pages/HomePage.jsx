@@ -10,6 +10,8 @@ import LawUpdatesSection from "../components/Homepage/Lawupdates";
 import ContactModal from "../components/Contactus/Contact_modal";
 import LoginModal from "../components/NavBar/Login_out/log-in";
 
+import Button from "../components/Button";
+
 export default function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
@@ -17,7 +19,7 @@ export default function HomePage() {
   return (
     <main className="bg-[#f8fafc]">
       {/* Hero Section */}
-      <section className="relative w-full min-h-187.5 bg-[#0c2a4a] text-white overflow-hidden flex items-start">
+      <section className="relative w-full min-h-[650px] bg-[#0c2a4a] text-white overflow-hidden flex items-center">
         {/* Background Layer 1: Architectural Texture */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
@@ -25,34 +27,35 @@ export default function HomePage() {
         />
 
         {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-[#0b243f] via-[#0b243f]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b243f] via-[#0b243f]/80 to-transparent" />
 
         {/* Background Layer 2: Lady Justice */}
         <img
           src={bg2}
           alt="Lady Justice"
-          className="hidden md:block absolute right-0 top-6 md:top-8 w-177.5 h-266.25 max-w-none object-contain object-top-right z-0 pointer-events-none"
+          className="hidden md:block absolute right-0 top-12 md:top-16 w-[710px] h-[1065px] max-w-none object-contain object-right-top z-0 pointer-events-none"
         />
 
         {/* Hero Content Wrapper */}
-        <div className="relative max-w-7xl mx-auto px-6 pt-8 pb-20 md:pt-10 md:pb-24 w-full flex flex-col md:flex-row items-start justify-between gap-8 z-10">
+        <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24 w-full flex flex-col md:flex-row items-center justify-between gap-8 z-10">
           
-          {/* Text Content */}
-          <div className="w-full md:w-7/12 space-y-5 max-w-xl">
-            <h1 className="g4-heading-1 tracking-tight text-white">
+          <div className="w-full md:w-7/12 space-y-3 max-w-xl pt-0 -mt-20 md:-mt-24">
+            <h1 className="font-['Playfair_Display'] text-[36px] sm:text-[48px] md:text-[48px] font-extrabold text-white leading-tight">
               The Digital Environment for Modern Legal Services
             </h1>
 
-            <p className="g4-caption leading-relaxed text-slate-200">
+            <p className="g4-body leading-relaxed text-slate-200">
               Consult with Philippine attorneys and manage your legal documents
               through our secure virtual platform. Experience efficient counsel
               tailored for your busy schedule, entirely from your screen.
             </p>
 
+            {/* Long full-width button */}
             <div className="pt-4 w-full">
-              <button 
+              <button
+                type="button"
                 onClick={() => setIsLoginOpen(true)}
-                className="w-full text-lg md:text-xl px-8 py-4 font-semibold text-center bg-g4-700 hover:opacity-90 text-white rounded-lg transition-all cursor-pointer shadow-md"
+                className="w-full block bg-[#1b4e85] hover:bg-[#153f6c] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-md text-center text-base sm:text-lg tracking-wide cursor-pointer"
               >
                 Talk to Us!
               </button>
@@ -70,9 +73,9 @@ export default function HomePage() {
       <PracticeArea />
 
       {/* Got A Legal Question Banner */}
-      <section className="w-full bg-[#033b67] text-white py-8 md:py-10 px-4 text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-4">
-          <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-normal tracking-wide uppercase leading-tight">
+      <section className="w-full bg-[#033b67] text-white py-16 md:py-20 px-4 text-center flex items-center justify-center">
+        <div className="max-w-xl mx-auto flex flex-col items-center justify-center space-y-6 w-full">
+          <h2 className="font-[#Playfair_Display] text-3xl sm:text-4xl md:text-5xl font-normal tracking-wide uppercase leading-tight">
             Got a Legal <br className="hidden sm:inline" /> Question?
           </h2>
 
@@ -80,14 +83,9 @@ export default function HomePage() {
             Get in touch with us!
           </p>
 
-          <div>
-            <button 
-              onClick={() => setIsContactOpen(true)}
-              className="text-lg md:text-xl px-8 py-4 font-semibold bg-g4-700 hover:opacity-90 text-white rounded-lg transition-all cursor-pointer shadow-md"
-            >
-              Contact Us
-            </button>
-          </div>
+          <Button onClick={() => setIsContactOpen(true)}>
+            Contact Us
+          </Button>
         </div>
       </section>
 

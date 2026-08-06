@@ -16,9 +16,7 @@ import AboutPage from "./pages/AboutPage";
 import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
-  const { pathname } = useLocation(); // 3. Kunin ang kasalukuyang URL path
-
-  // 4. I-trigger ang scroll to top sa bawat pagbabago ng pathname
+  const { pathname } = useLocation(); 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);

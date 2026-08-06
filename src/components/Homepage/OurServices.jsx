@@ -48,7 +48,7 @@ export default function OurServices() {
       {/* Container with responsive padding on all sides */}
       <div className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 text-g4-900">
         {/* Header Title: Playfair Display, Bold & Responsive */}
-        <h2 className="font-['Playfair_Display'] text-[36px] sm:text-[48px] md:text-[64px] font-extrabold text-center leading-tight mb-8">
+        <h2 className="font-['Playfair_Display'] text-[36px] sm:text-[40px] md:text-[48px] font-extrabold text-center text-g4-900leading-tight mb-8">
           Our Services
         </h2>
 
@@ -83,7 +83,7 @@ export default function OurServices() {
               {/* Action Link */}
               <a
                 href={item.ctaLink}
-                className="g4-button inline-flex items-center gap-1.5 font-bold text-[#0c2a4a] hover:text-[#2d7099] transition-colors duration-200 text-sm pt-2"
+                className="g4-button inline-flex items-center gap-1.5 font-bold text-g4-900 hover:text-[#2d7099] transition-colors duration-200 text-sm pt-2"
               >
                 <span>{item.ctaText}</span>
                 <span className="text-base">→</span>
