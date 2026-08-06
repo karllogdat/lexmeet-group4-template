@@ -7,7 +7,7 @@ export default function SubsectionCard({ type, blog, to }) {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col justify-between p-5 gap-4">
+    <div className="flex flex-col justify-between gap-4">
       <div className="flex flex-col gap-4">
         <h3 className="g4-heading-3 text-g4-900">{type}</h3>
         <img
