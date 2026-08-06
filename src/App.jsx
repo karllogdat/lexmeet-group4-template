@@ -13,6 +13,7 @@ import LawyersBlogListPage from "./pages/blog-list/LawyersBlogListPage";
 import LawOfficePage from "./pages/LawOffice";
 import LawyersProfile from "./pages/LawyersProfile";
 import AboutPage from "./pages/AboutPage";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   const { pathname } = useLocation(); // 3. Kunin ang kasalukuyang URL path
@@ -23,29 +24,32 @@ function App() {
   }, [pathname]);
 
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route index element={<HomePage />} />
-        <Route path="/design-system" element={<DesignSystemPage />} />
-        <Route path="/law-practice" element={<LawPracticePage />} />
-        <Route path="everyday-law">
-          <Route index element={<EverydayLawMainPage />} />
-          <Route path="blog" element={<EverydayLawBlogPage />} />
-          <Route
-            path="everyday-law-blog-list"
-            element={<EverydayLawBlogListPage />}
-          />
-          <Route
-            path="law-updates-blog-list"
-            element={<LawUpdatesBlogListPage />}
-          />
-          <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} />
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/design-system" element={<DesignSystemPage />} />
+          <Route path="/law-practice" element={<LawPracticePage />} />
+          <Route path="everyday-law">
+            <Route index element={<EverydayLawMainPage />} />
+            <Route path="blog" element={<EverydayLawBlogPage />} />
+            <Route
+              path="everyday-law-blog-list"
+              element={<EverydayLawBlogListPage />}
+            />
+            <Route
+              path="law-updates-blog-list"
+              element={<LawUpdatesBlogListPage />}
+            />
+            <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} />
+          </Route>
+          <Route path="/law-office" element={<LawOfficePage />} />
+          <Route path="/lawyers-profile" element={<LawyersProfile />} />
+          <Route path="/about" element={<AboutPage />} />
         </Route>
-        <Route path="/law-office" element={<LawOfficePage />} />
-        <Route path="/lawyers-profile" element={<LawyersProfile />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }
 

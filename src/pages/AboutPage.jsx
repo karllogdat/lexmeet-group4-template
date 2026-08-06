@@ -77,18 +77,18 @@ export default function AboutPage() {
         className="w-full h-fit flex flex-col items-center gap-8 p-6 lg:px-16 lg:py-10 bg-cover bg-center"
       >
         <div className="w-full max-w-6xl mx-auto">
-          <div className="flex gap-8 border-b border-g4-700">
+          <div className="flex gap-8 border-b border-g4-700 g4-heading-3 font-bold">
             <button
               type="button"
               onClick={() => navigate("/law-practice")}
-              className="border-transparent text-g4-700 g4-heading-3 pb-3 text-sm font-medium border-b-2 -mb-px transition-colors hover:text-white/70"
+              className="border-transparent text-g4-700 pb-3 border-b-2 -mb-px transition-colors hover:text-white/70"
             >
               Law Practice
             </button>
             <button
               type="button"
               onClick={() => navigate("/about")}
-              className="g4-heading-3 pb-3 text-sm font-medium border-b-2 -mb-px transition-colors border-g4-400 text-g4-400 hover:text-white/70"
+              className="pb-3 border-b-2 -mb-px transition-colors border-g4-400 text-g4-400 hover:text-white/70"
             >
               About
             </button>
@@ -100,7 +100,7 @@ export default function AboutPage() {
           <h3 className="g4-heading-3">
             LexMeet: Bridging the Gap to Accessible Legal Help
           </h3>
-          <p className="h-48 overflow-y-auto scrollbar-thin g4-body text-justify">
+          <p className="h-48 overflow-y-auto scrollbar-thin scrollbar-gutter-stable scrollbar-thumb-g4-50 g4-body text-justify">
             LexMeet combines the Latin word "Lex," meaning law, with "Meet,"
             representinhg connection and conversation. Together, they embody our
             mission: bringing lawyers and clients together through a modern
