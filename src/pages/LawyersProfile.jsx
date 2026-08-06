@@ -57,7 +57,7 @@ export default function LawyersProfilePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
           {/* Page title */}
-          <h1 className="g4-heading-1 text-g4-900 text-center mb-15 mt-5">
+          <h1 className="g4-heading-1 font-medium text-g4-900 text-center mb-10">
             Lawyers Profile
           </h1>
 
