@@ -15,17 +15,26 @@ export default function LawyersBlogListPage() {
     <div className="flex flex-col gap-8 p-8 lg:p-20">
       <Breadcrumbs items={crumbs} />
 
-      <div className="flex w-full h-shrink gap-2.5">
-        <button type="button" onClick={() => navigate("/everyday-law")}>
-          <IconButton>
-            <ChevronLeft />
-          </IconButton>
-        </button>
-        <IconButton>
-          <Search />
-        </IconButton>
-        {/* Search bar not working yet */}
-        <div className="w-full h-13 rounded-lg border border-g4-700"></div>
+      {/* Search input */}
+      <div className="flex w-full items-center gap-2.5 mb-6">
+        <div
+          onClick={() => navigate("/everyday-law")}
+          className="flex items-center justify-center w-13 h-13 bg-g4-700 rounded-[10px] shrink-0"
+        >
+          <ChevronLeft size={20} className="text-white" />
+        </div>
+        <div className="flex items-center justify-center w-13 h-13 bg-g4-700 rounded-[10px] shrink-0">
+          <Search size={20} className="text-white" />
+        </div>
+        <input
+          id="lawyers-search"
+          type="search"
+          placeholder="Search blog posts..."
+          // value={searchQuery}
+          // onChange={(e) => setSearchQuery(e.target.value)}
+          className="flex-1 h-13 px-4 border bg-white border-g4-700 rounded-lg font-inter text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-g4-600 focus:border-transparent"
+          aria-label="Search blog posts"
+        />
       </div>
 
       <h1 className="w-full text-center g4-heading-1 text-g4-900">
