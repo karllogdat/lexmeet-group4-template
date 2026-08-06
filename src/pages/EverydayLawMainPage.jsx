@@ -13,7 +13,7 @@ import PopularTags from "../components/everyday_law/PopularTags";
 export default function EverydayLawMainPage() {
   return (
     <div className="flex flex-col items-center p-6 lg:px-20 gap-2.5">
-      <h1 className="w-full h-16 text-center g4-heading-1 text-g4-700">
+      <h1 className="w-full h-16 text-center g4-heading-1 font-bold text-g4-700">
         Everyday Law
       </h1>
       <div className="flex w-full h-shrink gap-2.5">
