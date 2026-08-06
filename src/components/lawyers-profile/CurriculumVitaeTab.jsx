@@ -24,7 +24,7 @@ function Pill({ label }) {
  */
 function CvLabel({ children }) {
   return (
-    <p className="text-g4-900 font-inter font-semibold text-l tracking-widest uppercase mb-1">
+    <p className="text-g4-900 font-inter font-semibold text-l tracking-normal uppercase mb-1">
       {children}
     </p>
   );
