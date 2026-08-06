@@ -26,7 +26,7 @@ export default function AwardsSection() {
     <section className="bg-white px-6 md:px-12 py-12 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow>Recognition</SectionEyebrow>
-        <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-[#002E56] mb-10">
+        <h2 className="g4-heading-2 md:text-[56px] font-bold text-[#002E56] mb-10">
           Special Awards and Citations
         </h2>
 
