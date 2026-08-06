@@ -16,7 +16,7 @@ export default function CasesHandledSection() {
     <section className="bg-white px-6 md:px-12 py-12">
       <div className="max-w-6xl mx-auto">
         <SectionEyebrow>What We Handle</SectionEyebrow>
-        <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-[#002E56] mb-10">
+        <h2 className="g4-heading-2 md:text-[56px] font-bold text-[#002E56] mb-10">
           Cases Handled
         </h2>
 
