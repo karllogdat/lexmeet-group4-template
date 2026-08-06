@@ -100,7 +100,7 @@ export default function AboutPage() {
           <h3 className="g4-heading-3">
             LexMeet: Bridging the Gap to Accessible Legal Help
           </h3>
-          <p className="h-48 overflow-y-auto scrollbar-thin g4-body text-justify">
+          <p className="h-48 overflow-y-auto scrollbar-thin scrollbar-gutter-stable scrollbar-thumb-g4-50 g4-body text-justify">
             LexMeet combines the Latin word "Lex," meaning law, with "Meet,"
             representinhg connection and conversation. Together, they embody our
             mission: bringing lawyers and clients together through a modern
