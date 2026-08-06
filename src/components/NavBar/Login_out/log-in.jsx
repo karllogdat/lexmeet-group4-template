@@ -178,10 +178,10 @@ export default function Login({ isOpen, onClose }) {
                   </button>
                 </div>
 
-                <div className="flex items-center justify-center space-x-2 font-inter text-[14px] pt-3 border-t border-white/10 text-g4-400">
+                <div className="flex items-center justify-center space-x-0.5 font-inter text-[10px] pt-2 border-t border-white/10 text-g4-400 opacity-80">
                   <span className="leading-none">Powered by</span>
                   <div 
-                    className="h-4 w-24 bg-current shrink-0 inline-block align-middle"
+                    className="h-2.5 w-14 bg-current shrink-0 inline-block align-middle"
                     style={{
                       maskImage: `url(${lexMeetLogo})`,
                       WebkitMaskImage: `url(${lexMeetLogo})`,
@@ -189,8 +189,8 @@ export default function Login({ isOpen, onClose }) {
                       WebkitMaskRepeat: 'no-repeat',
                       maskSize: 'contain',
                       WebkitMaskSize: 'contain',
-                      maskPosition: 'center',
-                      WebkitMaskPosition: 'center'
+                      maskPosition: 'left center',
+                      WebkitMaskPosition: 'left center'
                     }}
                   />
                 </div>

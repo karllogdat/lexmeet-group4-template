@@ -32,7 +32,8 @@ export default function ContactModal({ isOpen, onClose }) {
         onClick={(e) => e.stopPropagation()} // Prevent close on modal content click
       >
         {/* Main Light Blue Outer Container */}
-        <div className="relative bg-[#edf4f9] rounded-2xl shadow-xl p-6 sm:p-16 md:pl-0">
+        {/* Modified padding from p-6 sm:p-16 md:pl-0 to p-4 sm:p-8 md:pl-0 */}
+        <div className="relative bg-[#edf4f9] rounded-2xl shadow-xl p-4 sm:p-8 md:pl-0">
           
           {/* Top-Right Close Button */}
           <button
@@ -49,26 +50,28 @@ export default function ContactModal({ isOpen, onClose }) {
           {/* Grid Layout with 15px Gap */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3.75 items-center">
             
-            {/* Dark Blue Overlapping Card with 64px Padding */}
-            <div className="md:col-span-5 bg-[#003865] text-white p-6 sm:p-16 rounded-xl shadow-2xl relative md:-ml-8 md:-my-8 z-10 border border-white/10">
+            {/* Dark Blue Overlapping Card */}
+            {/* Modified padding from p-6 sm:p-16 to p-4 sm:p-8 */}
+            <div className="md:col-span-5 bg-[#003865] text-white p-4 sm:p-8 rounded-xl shadow-2xl relative md:-ml-8 md:-my-8 z-10 border border-white/10">
               <div>
                 {/* Logo & Title Header */}
                 <div className="flex items-center gap-3.75 mb-8">
                   {/* Lex.svg asset */}
+                  {/* Reduced logo size from w-8 h-8 sm:w-14.75 sm:h-14.75 to w-6 h-6 sm:w-10 sm:h-10 */}
                   <img 
                     src={LexLogo} 
                     alt="Lex Logo" 
-                    className="w-8 h-8 sm:w-14.75 sm:h-14.75 object-contain shrink-0" 
+                    className="w-6 h-6 sm:w-10 sm:h-10 object-contain shrink-0" 
                   />
                   
                   {/* Poppins 32px Semibold Title */}
-                  <h3 className="g4-heading-1 text-white">
+                  <h3 className="g4-heading-3 text-white">
                     Rizal Law Office
                   </h3>
                 </div>
 
                 {/* Subtitle & Description */}
-                <h2 className="g4-heading-2">Contact Us</h2>
+                <h2 className="g4-large-body">Contact Us</h2>
                 <p className="g4-body text-slate-200 mt-2 mb-8">
                   We'd Love to hear from you! Whether you have questions, need support or want to learn more about our services, feel free to get in touch send us a message using the form below or contact us through our phone number or email
                 </p>

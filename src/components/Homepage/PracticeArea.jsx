@@ -73,7 +73,7 @@ export default function PracticeArea() {
           <span className="text-[#0c2a4a] text-sm md:text-base font-semibold tracking-wider uppercase">
             AREAS OF PRACTICE
           </span>
-          <h2 className="font-['Playfair_Display'] text-[42px] md:text-[56px] font-bold text-[#0c2a4a] leading-tight">
+          <h2 className="font-['Playfair_Display'] text-[36px] sm:text-[48px] md:text-[64px] font-extrabold text-center text-g4-900 leading-tight">
             Practice Areas
           </h2>
         </div>
