@@ -60,12 +60,12 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-3 sm:p-4 overflow-y-auto"
       onClick={onClose}
     >
       {/* Outer wrapper */}
       <div 
-        className="relative flex flex-col md:flex-row gap-4 w-full max-w-4xl my-auto max-h-[92vh] md:max-h-none overflow-y-auto md:overflow-visible"
+        className="relative flex flex-col md:flex-row gap-3 w-full max-w-4xl my-auto max-h-[95vh] md:max-h-none overflow-y-auto md:overflow-visible"
         onClick={(e) => e.stopPropagation()}
       >
 
@@ -74,118 +74,118 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
           onClick={onClose}
           type="button"
           aria-label="Close modal"
-          className="absolute top-2 right-2 md:-top-3 md:-right-3 text-white/80 hover:text-white z-30 text-lg sm:text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full bg-slate-900/90 border border-white/20 hover:bg-slate-800 transition cursor-pointer"
+          className="absolute top-2 right-2 md:-top-3 md:-right-3 text-white/80 hover:text-white z-30 text-base sm:text-lg font-bold w-7 h-7 flex items-center justify-center rounded-full bg-slate-900/90 border border-white/20 hover:bg-slate-800 transition cursor-pointer"
         >
           ✕
         </button>
 
         {/* LEFT CARD: Form Section */}
-        <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-between gap-4 rounded-lg bg-[#13426B] text-white shadow-2xl border border-white/10">
+        <div className="w-full md:w-1/2 p-4 sm:p-5 flex flex-col justify-between rounded-lg bg-[#13426B] text-white shadow-2xl border border-white/10">
           <div>
-            {/* Logo & Branding - Retained custom styling for title/brand */}
-            <div className="flex flex-col items-center mb-4">
-              <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2 w-full flex-wrap">
+            {/* Logo & Branding */}
+            <div className="flex flex-col items-center mb-2">
+              <div className="flex items-center justify-center gap-2 mb-1 w-full flex-wrap">
                 <img 
                   src={rizalLogo} 
                   alt="Rizal Logo" 
-                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain shrink-0" 
+                  className="w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0" 
                 />
-                <span className="g4-heading-2 text-xl sm:text-2xl font-bold tracking-wide text-white text-center">
+                <span className="g4-heading-3 text-lg sm:text-xl font-bold tracking-wide text-white text-center">
                   Rizal Law Office
                 </span>
               </div>
-              <div className="w-full h-px bg-white/20 my-1"></div>
+              <div className="w-full h-px bg-white/20 my-0.5"></div>
             </div>
 
             {/* Form Header */}
-            <div className="text-center mb-4">
-              <h2 className="text-lg sm:text-xl text-white font-bold">Create Account</h2>
-              <p className="text-xs sm:text-sm text-blue-200 mt-1">Quick setup. Secure access</p>
+            <div className="text-center mb-2">
+              <h2 className="text-base sm:text-lg text-white font-bold leading-tight">Create Account</h2>
+              <p className="text-[11px] sm:text-xs text-blue-200 mt-0.5">Quick setup. Secure access</p>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-2">
               
               {/* Name Fields */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
-                  <label className="block text-xs sm:text-sm text-blue-100 font-medium mb-1">First Name</label>
+                  <label className="block text-[11px] sm:text-xs text-blue-100 font-medium mb-0.5">First Name</label>
                   <input
                     type="text"
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleChange}
                     placeholder="Juan"
-                    className="w-full px-3 py-2 bg-white text-gray-800 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
+                    className="w-full px-2.5 py-1.5 bg-white text-gray-800 text-xs sm:text-sm rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs sm:text-sm text-blue-100 font-medium mb-1">Last Name</label>
+                  <label className="block text-[11px] sm:text-xs text-blue-100 font-medium mb-0.5">Last Name</label>
                   <input
                     type="text"
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleChange}
                     placeholder="Logdat"
-                    className="w-full px-3 py-2 bg-white text-gray-800 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
+                    className="w-full px-2.5 py-1.5 bg-white text-gray-800 text-xs sm:text-sm rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
                     required
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm text-blue-100 font-medium mb-1">Email</label>
+                <label className="block text-[11px] sm:text-xs text-blue-100 font-medium mb-0.5">Email</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="JuanLgdt@gmail.com"
-                  className="w-full px-3 py-2 bg-white text-gray-800 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 bg-white text-gray-800 text-xs sm:text-sm rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm text-blue-100 font-medium mb-1">Password</label>
+                <label className="block text-[11px] sm:text-xs text-blue-100 font-medium mb-0.5">Password</label>
                 <input
                   type="password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-3 py-2 bg-white text-gray-800 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 bg-white text-gray-800 text-xs sm:text-sm rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm text-blue-100 font-medium mb-1">Confirm Password</label>
+                <label className="block text-[11px] sm:text-xs text-blue-100 font-medium mb-0.5">Confirm Password</label>
                 <input
                   type="password"
                   name="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full px-3 py-2 bg-white text-gray-800 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
+                  className="w-full px-2.5 py-1.5 bg-white text-gray-800 text-xs sm:text-sm rounded focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
                   required
                 />
               </div>
 
               {/* Terms & Conditions Checkbox */}
-              <div className="flex items-start gap-2 pt-1">
+              <div className="flex items-start gap-1.5 pt-0.5">
                 <input
                   type="checkbox"
                   name="agreeTerms"
                   id="agreeTerms"
                   checked={formData.agreeTerms}
                   onChange={handleChange}
-                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+                  className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
                   required
                 />
-                <label htmlFor="agreeTerms" className="text-xs sm:text-sm text-blue-100 leading-snug cursor-pointer">
+                <label htmlFor="agreeTerms" className="text-[11px] sm:text-xs text-blue-100 leading-tight cursor-pointer">
                   I have read and agreed to the <span className="font-bold underline">TERMS AND CONDITIONS</span> set by LexMeet.
                 </label>
               </div>
@@ -193,57 +193,58 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-2.5 bg-[#2B6CB0] hover:bg-[#2c5282] text-white text-sm font-semibold rounded-md shadow transition duration-200 mt-2 cursor-pointer"
+                className="w-full py-2 bg-[#2B6CB0] hover:bg-[#2c5282] text-white text-xs sm:text-sm font-semibold rounded shadow transition duration-200 mt-1 cursor-pointer"
               >
                 Create Account
               </button>
             </form>
 
             {/* Social Logins */}
-            <div className="mt-4">
-              <div className="relative flex py-1 items-center">
+            <div className="mt-2.5">
+              <div className="relative flex py-0.5 items-center">
                 <div className="grow border-t border-white/20"></div>
-                <span className="shrink mx-2 font-inter text-xs text-blue-200 uppercase tracking-wider">Or Sign Up With</span>
+                <span className="shrink mx-2 font-inter text-[10px] text-blue-200 uppercase tracking-wider">Or Sign Up With</span>
                 <div className="grow border-t border-white/20"></div>
               </div>
 
               {/* Social Buttons */}
-              <div className="grid grid-cols-3 gap-2 mt-2">
-                <button type="button" className="flex items-center justify-center gap-2 py-2 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
-                  <span className="font-poppins text-xs font-medium text-gray-800 whitespace-nowrap">Sign up</span>
-                  <GoogleIcon className="w-4 h-4 shrink-0 text-gray-800 fill-gray-800" />
+              <div className="grid grid-cols-3 gap-1.5 mt-1">
+                <button type="button" className="flex items-center justify-center gap-1.5 py-1.5 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
+                  <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign up</span>
+                  <GoogleIcon className="w-3.5 h-3.5 shrink-0 text-gray-800 fill-gray-800" />
                 </button>
 
-                <button type="button" className="flex items-center justify-center gap-2 py-2 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
-                  <span className="font-poppins text-xs font-medium text-gray-800 whitespace-nowrap">Sign up</span>
-                  <FacebookIcon className="w-4 h-4 shrink-0 text-gray-800 fill-gray-800" />
+                <button type="button" className="flex items-center justify-center gap-1.5 py-1.5 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
+                  <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign up</span>
+                  <FacebookIcon className="w-3.5 h-3.5 shrink-0 text-gray-800 fill-gray-800" />
                 </button>
 
-                <button type="button" className="flex items-center justify-center gap-2 py-2 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
-                  <span className="font-poppins text-xs font-medium text-gray-800 whitespace-nowrap">Sign up</span>
-                  <AppleIcon className="w-4 h-4 shrink-0 text-gray-800 fill-gray-800" />
+                <button type="button" className="flex items-center justify-center gap-1.5 py-1.5 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
+                  <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign up</span>
+                  <AppleIcon className="w-3.5 h-3.5 shrink-0 text-gray-800 fill-gray-800" />
                 </button>
               </div>
             </div>
           </div>
 
           {/* Footer */}
-          <div className="pt-3 border-t border-white/10 flex flex-col items-center justify-center gap-1.5 text-center mt-2">
+          <div className="pt-2 border-t border-white/10 flex flex-col items-center justify-center gap-1 text-center mt-2">
             <div className="flex items-center justify-center">
-              <span className="text-xs sm:text-sm text-blue-200">Already Registered?</span>
+              <span className="text-[11px] sm:text-xs text-blue-200">Already Registered?</span>
               <button 
                 type="button"
                 onClick={onSwitchToLogin} 
-                className="text-xs sm:text-sm underline text-white font-semibold hover:text-blue-200 cursor-pointer ml-1"
+                className="text-[11px] sm:text-xs underline text-white font-semibold hover:text-blue-200 cursor-pointer ml-1"
               >
                 Sign in
               </button>
             </div>
             
-            <div className="flex items-center justify-center space-x-2 font-inter text-xs pt-1 text-blue-300">
+            {/* "Powered by" Section */}
+            <div className="flex items-center justify-center space-x-0.5 font-inter text-[9px] pt-0.5 text-blue-300 opacity-90">
               <span className="leading-none">Powered by</span>
               <div 
-                className="h-4 w-24 bg-current shrink-0 inline-block align-middle"
+                className="h-2 w-12 bg-current shrink-0 inline-block align-middle"
                 style={{
                   maskImage: `url(${lexmeetLogo})`,
                   WebkitMaskImage: `url(${lexmeetLogo})`,
@@ -251,22 +252,22 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
                   WebkitMaskRepeat: 'no-repeat',
                   maskSize: 'contain',
                   WebkitMaskSize: 'contain',
-                  maskPosition: 'center',
-                  WebkitMaskPosition: 'center'
+                  maskPosition: 'left center',
+                  WebkitMaskPosition: 'left center'
                 }}
               />
             </div>
           </div>
         </div>
 
-        {/* RIGHT CARD: Image Banner (Desktop Only) - Kept title style */}
-        <div className="hidden md:block md:w-1/2 relative rounded-lg overflow-hidden shadow-2xl border border-white/10 min-h-125">
+        {/* RIGHT CARD: Image Banner (Desktop Only) */}
+        <div className="hidden md:block md:w-1/2 relative rounded-lg overflow-hidden shadow-2xl border border-white/10">
           <img
             src={bgImage}
             alt="Secure Legal Access"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#13426B]/80 via-black/20 to-transparent flex items-center justify-start p-8 text-left">
+          <div className="absolute inset-0 bg-linear-to-t from-[#13426B]/80 via-black/20 to-transparent flex items-center justify-start p-6 text-left">
             <h1 className="g4-heading-1 text-white uppercase tracking-widest leading-relaxed drop-shadow-md">
               Secure<br />
               Access<br />

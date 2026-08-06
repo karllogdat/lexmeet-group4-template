@@ -1,4 +1,6 @@
-import { Routes, Route } from "react-router";
+import { useEffect } from "react"; // 1. Import ang useEffect
+import { Routes, Route, useLocation } from "react-router"; // 2. Import ang useLocation
+
 import HomePage from "./pages/HomePage";
 import DesignSystemPage from "./pages/DesignSystemPage";
 import MainLayout from "./components/MainLayout";
@@ -12,8 +14,14 @@ import LawOfficePage from "./pages/LawOffice";
 import LawyersProfile from "./pages/LawyersProfile";
 import AboutPage from "./pages/AboutPage";
 
-
 function App() {
+  const { pathname } = useLocation(); // 3. Kunin ang kasalukuyang URL path
+
+  // 4. I-trigger ang scroll to top sa bawat pagbabago ng pathname
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <Routes>
       <Route element={<MainLayout />}>

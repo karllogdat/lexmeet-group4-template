@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router";
-import lexLogo from "../../assets/LexLogo.svg";
+import lexmeetLogo from '../../assets/LexLogo.svg';
 
 export default function ProfileDropdown({ onOpenLogin }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ export default function ProfileDropdown({ onOpenLogin }) {
 
   const handleLoginClick = () => {
     setIsOpen(false);
-    if (onOpenLogin) onOpenLogin();
+    if (onOpenLogin) onOpenLogin(); // Opens the Signin modal
   };
 
   const handleLogoutClick = () => {
@@ -117,18 +117,23 @@ export default function ProfileDropdown({ onOpenLogin }) {
           }}
         >
           <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-            {/* Go to Lexmeet with LexLogo matching text color and size */}
             <DropdownItem 
               to="/lexmeet" 
-              customIcon={
+              icon={
                 <span
                   style={{
-                    display: 'inline-block',
-                    width: '18px',
-                    height: '18px',
+                    width: '24px',
+                    height: '24px',
                     backgroundColor: 'currentColor',
-                    WebkitMask: `url(${lexLogo}) no-repeat center / contain`,
-                    mask: `url(${lexLogo}) no-repeat center / contain`,
+                    maskImage: `url(${lexmeetLogo})`,
+                    WebkitMaskImage: `url(${lexmeetLogo})`,
+                    maskSize: 'contain',
+                    WebkitMaskSize: 'contain',
+                    maskPosition: 'center',
+                    WebkitMaskPosition: 'center',
+                    maskRepeat: 'no-repeat',
+                    WebkitMaskRepeat: 'no-repeat',
+                    display: 'block',
                   }}
                 />
               }
@@ -170,13 +175,13 @@ export default function ProfileDropdown({ onOpenLogin }) {
   );
 }
 
-function DropdownItem({ to, children, icon, customIcon, isButton = false, onClick }) {
+function DropdownItem({ to, children, icon, isButton = false, onClick }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const style = {
     display: 'flex',
     alignItems: 'center',
-    gap: '10px',
+    gap: '12px',
     padding: '10px 16px',
     color: '#0F2338',
     textDecoration: 'none',
@@ -192,13 +197,40 @@ function DropdownItem({ to, children, icon, customIcon, isButton = false, onClic
   };
 
   const renderIcon = () => {
-    if (customIcon) return customIcon;
+    if (!icon) return null;
+    let iconContent;
+    if (React.isValidElement(icon) && (icon.type === 'span' || icon.type === 'img' || icon.type === 'svg')) {
+      iconContent = icon;
+    } else {
+      iconContent = (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          {icon}
+        </svg>
+      );
+    }
+
     return (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        {icon}
-      </svg>
+      <span
+        style={{
+          width: '24px',
+          height: '24px',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexShrink: 0,
+        }}
+      >
+        {iconContent}
+      </span>
     );
   };
+
+  const content = (
+    <>
+      {renderIcon()}
+      {children}
+    </>
+  );
 
   return (
     <li>
@@ -209,8 +241,7 @@ function DropdownItem({ to, children, icon, customIcon, isButton = false, onClic
           onMouseLeave={() => setIsHovered(false)}
           style={style}
         >
-          {renderIcon()}
-          {children}
+          {content}
         </button>
       ) : (
         <Link
@@ -219,8 +250,7 @@ function DropdownItem({ to, children, icon, customIcon, isButton = false, onClic
           onMouseLeave={() => setIsHovered(false)}
           style={style}
         >
-          {renderIcon()}
-          {children}
+          {content}
         </Link>
       )}
     </li>

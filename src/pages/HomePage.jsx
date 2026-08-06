@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import bg1 from "../assets/Homepage/bg1.png";
 import bg2 from "../assets/Homepage/bg2.png";
@@ -8,28 +8,16 @@ import PracticeArea from "../components/Homepage/PracticeArea";
 import EverydayLawSection from "../components/Homepage/Everydaylaw";
 import LawUpdatesSection from "../components/Homepage/Lawupdates";
 import ContactModal from "../components/Contactus/Contact_modal";
-import LoginModal from "../components/NavBar/Login_out/login";
-
-import Button from "../components/Button";
+import LoginModal from "../components/NavBar/Login_out/log-in";
 
 export default function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
-  const servicesRef = useRef(null);
-
-  const handleScroll = () => {
-    // 2. Trigger the native scroll API
-    servicesRef.current?.scrollIntoView({
-      behavior: "smooth", // Smooth animation
-      block: "start", // Vertically aligns element to the top
-    });
-  };
 
   return (
-    /* Idinagdag ang overflow-x-hidden at w-full dito sa main container */
-    <main className="w-full bg-[#f8fafc] overflow-x-hidden relative">
+    <main className="bg-[#f8fafc]">
       {/* Hero Section */}
-      <section className="relative w-full min-h-187.5 bg-[#0c2a4a] text-white overflow-hidden flex items-center">
+      <section className="relative w-full min-h-187.5 bg-[#0c2a4a] text-white overflow-hidden flex items-start">
         {/* Background Layer 1: Architectural Texture */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
@@ -39,15 +27,16 @@ export default function HomePage() {
         {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-[#0b243f] via-[#0b243f]/80 to-transparent" />
 
-        {/* Lady Justice Image (Inalis ang max-w-none para responsive or ginawaran ng inline clip) */}
+        {/* Background Layer 2: Lady Justice */}
         <img
           src={bg2}
           alt="Lady Justice"
-          className="hidden md:block absolute right-0 top-16 md:top-20 w-177.5 max-w-full h-auto object-contain object-top-right z-0 pointer-events-none"
+          className="hidden md:block absolute right-0 top-6 md:top-8 w-177.5 h-266.25 max-w-none object-contain object-top-right z-0 pointer-events-none"
         />
 
         {/* Hero Content Wrapper */}
-        <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24 w-full flex flex-col md:flex-row items-start justify-between gap-8 z-10">
+        <div className="relative max-w-7xl mx-auto px-6 pt-8 pb-20 md:pt-10 md:pb-24 w-full flex flex-col md:flex-row items-start justify-between gap-8 z-10">
+          
           {/* Text Content */}
           <div className="w-full md:w-7/12 space-y-5 max-w-xl">
             <h1 className="g4-heading-1 tracking-tight text-white">
@@ -60,8 +49,13 @@ export default function HomePage() {
               tailored for your busy schedule, entirely from your screen.
             </p>
 
-            <div className="pt-3">
-              <Button onClick={() => setIsLoginOpen(true)}>Talk to Us!</Button>
+            <div className="pt-4 w-full">
+              <button 
+                onClick={() => setIsLoginOpen(true)}
+                className="w-full text-lg md:text-xl px-8 py-4 font-semibold text-center bg-g4-700 hover:opacity-90 text-white rounded-lg transition-all cursor-pointer shadow-md"
+              >
+                Talk to Us!
+              </button>
             </div>
           </div>
 
@@ -70,14 +64,14 @@ export default function HomePage() {
       </section>
 
       {/* Services Component */}
-      <OurServices ref={servicesRef} />
+      <OurServices />
 
       {/* Practice Areas Component */}
       <PracticeArea />
 
       {/* Got A Legal Question Banner */}
-      <section className="w-full bg-[#033b67] text-white py-16 md:py-20 px-4 text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-6">
+      <section className="w-full bg-[#033b67] text-white py-8 md:py-10 px-4 text-center">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center space-y-4">
           <h2 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-5xl font-normal tracking-wide uppercase leading-tight">
             Got a Legal <br className="hidden sm:inline" /> Question?
           </h2>
@@ -86,7 +80,14 @@ export default function HomePage() {
             Get in touch with us!
           </p>
 
-          <Button onClick={() => setIsContactOpen(true)}>Contact Us</Button>
+          <div>
+            <button 
+              onClick={() => setIsContactOpen(true)}
+              className="text-lg md:text-xl px-8 py-4 font-semibold bg-g4-700 hover:opacity-90 text-white rounded-lg transition-all cursor-pointer shadow-md"
+            >
+              Contact Us
+            </button>
+          </div>
         </div>
       </section>
 
@@ -103,7 +104,10 @@ export default function HomePage() {
       />
 
       {/* Login Modal */}
-      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <LoginModal
+        isOpen={isLoginOpen}
+        onClose={() => setIsLoginOpen(false)}
+      />
     </main>
   );
 }

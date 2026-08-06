@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button";
 
 // Replace with the path to your library background image
 import libraryBg from "../../assets/Homepage/everydaybg.png";
@@ -27,7 +28,7 @@ export default function LawUpdatesSection() {
       </div>
 
       {/* Content Area */}
-      <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-14 space-y-6">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-14 space-y-6 relative">
         {/* Category Badge locked to 340x79 px */}
         <div>
           <span className="w-85 h-19.75 bg-[#ebf3f8] text-g4-900 g4-heading-2 px-5 py-2 rounded-md font-medium shadow-sm flex items-center justify-center">
@@ -50,8 +51,8 @@ export default function LawUpdatesSection() {
           <p>{article.description}</p>
         </div>
 
-        {/* Read More Link */}
-        <div className="pt-4">
+        {/* Bottom Actions: Read More (left) and Learn More Button (right) */}
+        <div className="pt-6 flex items-center justify-between">
           <a
             href={article.link}
             className="group inline-flex items-center gap-2.5 g4-button text-white hover:text-slate-300 transition-colors text-base font-semibold"
@@ -61,6 +62,10 @@ export default function LawUpdatesSection() {
               →
             </span>
           </a>
+
+          <Button onClick={() => window.location.href = article.link}>
+            Learn More
+          </Button>
         </div>
       </div>
     </section>
