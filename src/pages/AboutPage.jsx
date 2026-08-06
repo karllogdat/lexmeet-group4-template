@@ -74,10 +74,10 @@ export default function AboutPage() {
         style={{
           backgroundImage: `linear-gradient(to top, rgba(0, 58, 107, 1), rgba(0, 58, 107, 0.75), rgba(0, 58, 107, 0.5)), url(${AboutImage})`,
         }}
-        className="w-full h-fit flex flex-col items-center gap-32 p-6 lg:px-16 lg:py-10 bg-cover bg-center"
+        className="w-full h-fit flex flex-col items-center gap-8 p-6 lg:px-16 lg:py-10 bg-cover bg-center"
       >
         <div className="w-full max-w-6xl mx-auto">
-          <div className="flex gap-8 border-b border-g4-700 mb-8">
+          <div className="flex gap-8 border-b border-g4-700">
             <button
               type="button"
               onClick={() => navigate("/law-practice")}
@@ -95,12 +95,25 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="w-full lg:w-lg flex flex-col gap-2 text-g4-50">
+        <div className="w-full lg:w-4xl flex flex-col gap-2 text-g4-50">
           <h2 className="g4-heading-2 font-bold">About Us</h2>
           <h3 className="g4-heading-3">
             LexMeet: Bridging the Gap to Accessible Legal Help
           </h3>
-          <p className="g4-body text-justify">
+          <p className="h-48 overflow-y-auto scrollbar-thin g4-body text-justify">
+            LexMeet combines the Latin word "Lex," meaning law, with "Meet,"
+            representinhg connection and conversation. Together, they embody our
+            mission: bringing lawyers and clients together through a modern
+            digital platform to make legal help more accessible, efficient, and
+            convenient.
+            <br />
+            <br />
+            With our tagline, "Legal help in a click," LexMeet leverages
+            technology to simplify legal services—making it easier for
+            individuals, businesses, and communities to connect with trusted
+            legal professionals anytime, anywhere.
+            <br />
+            <br />
             LexMeet combines the Latin word "Lex," meaning law, with "Meet,"
             representinhg connection and conversation. Together, they embody our
             mission: bringing lawyers and clients together through a modern
@@ -160,11 +173,11 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col py-16 gap-8 items-center text-g4-900">
+      <div className="w-full flex flex-col pb-8 gap-8 items-center text-g4-900">
         <h1 className="w-full text-center g4-heading-1 font-bold">
           Values We Live By
         </h1>
-        <div className="w-full flex flex-col gap-10 lg:gap-4">
+        <div className="w-full flex flex-col gap-16 lg:gap-0">
           {visibleValues.map((value, index) => (
             <ValueCard key={index} value={value} index={index} />
           ))}
@@ -175,7 +188,8 @@ export default function AboutPage() {
         </Button>
       </div>
 
-      <div className="w-full p-6 lg:px-20 py-64 flex flex-col lg:flex-row items-center gap-24 bg-linear-358 from-g4-900 from-[89.9%] to-g4-white to-[90.1%] text-g4-50">
+      {/* with slant bg: "w-full p-6 lg:px-20 py-32 flex flex-col lg:flex-row items-center gap-24 bg-linear-358 from-g4-900 from-[89.9%] to-g4-white to-[90.1%] text-g4-50" */}
+      <div className="w-full p-6 lg:px-20 py-16 flex flex-col lg:flex-row items-center gap-24 bg-g4-900 text-g4-50">
         <div className="w-full lg:w-1/2 flex flex-col gap-6">
           <h1 className="g4-heading-1 font-bold">Our Promise</h1>
           <h2 className="g4-heading-2">Making Legal Help Accessible</h2>

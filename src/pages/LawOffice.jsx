@@ -27,7 +27,7 @@ export default function LawOfficePage() {
 
   return (
     <div className="flex flex-col g4-body">
-      <div className="flex items-center justify-center h-fit py-20.5 px-6 lg:px-32">
+      <div className="flex items-center justify-center h-fit py-16 px-6 lg:px-32">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
           <LawOfficeCarousel
             className="lg:w-1/2"
@@ -81,7 +81,7 @@ export default function LawOfficePage() {
         />
       </div>
 
-      <div className="flex items-center justify-center h-fit py-20.5 px-6 lg:px-32">
+      <div className="flex items-center justify-center h-fit py-16 px-6 lg:px-32">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
           <div className="flex flex-col items-end gap-8 lg:w-1/2">
             <h1 className="g4-heading-1 font-bold">Our Staffs</h1>
@@ -104,11 +104,11 @@ export default function LawOfficePage() {
         </div>
       </div>
 
-      <div className="h-fit flex flex-col p-6 lg:p-32 gap-16 lg:gap-32 lg:flex-row items-center bg-g4-900">
+      <div className="h-fit flex flex-col p-6 lg:p-16 gap-16 lg:gap-32 lg:flex-row items-center bg-g4-900">
         <div className="h-fit flex flex-col rounded-lg bg-white overflow-hidden">
           <LawOfficeCarousel images={IMAGES} />
 
-          <div className="flex flex-col gap-6.5 p-6 lg:px-10.5 lg:py-16">
+          <div className="flex flex-col gap-6.5 p-6 lg:px-8 lg:py-8">
             <h2 className="g4-heading-2">Office Location</h2>
             <p>
               123 Kalayaan Avenue, Barangay San Antonio, Makati City, 1205 Metro
