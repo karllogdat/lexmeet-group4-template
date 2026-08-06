@@ -12,13 +12,15 @@ export default function PracticeAreasSection() {
   const navigate = useNavigate();
   const [showAll, setShowAll] = useState(false);
 
-  const visibleAreas = showAll ? practiceAreas : practiceAreas.slice(0, INITIAL_VISIBLE);
+  const visibleAreas = showAll
+    ? practiceAreas
+    : practiceAreas.slice(0, INITIAL_VISIBLE);
   const hasMore = practiceAreas.length > INITIAL_VISIBLE;
 
   return (
     <section className="bg-[#002E56] px-6 md:px-12 py-10">
       <div className="max-w-6xl mx-auto">
-        <div className="flex gap-8 border-b border-[#3776A1] mb-8">
+        <div className="flex gap-8 border-b border-[#3776A1] mb-8 g4-heading-3 font-bold">
           {/* {TABS.map((tab) => (
             <button
               key={tab}
@@ -36,14 +38,14 @@ export default function PracticeAreasSection() {
           <button
             type="button"
             onClick={() => navigate("/law-practice")}
-            className="border-g4-400 text-g4-400 g4-heading-3 pb-3 text-sm font-medium border-b-2 -mb-px transition-colors hover:text-white/70"
+            className="border-g4-400 text-g4-400 pb-3 border-b-2 -mb-px transition-colors hover:text-white/70"
           >
             Law Practice
           </button>
           <button
             type="button"
             onClick={() => navigate("/about")}
-            className="g4-heading-3 pb-3 text-sm font-medium border-b-2 -mb-px transition-colors border-transparent text-g4-700 hover:text-white/70"
+            className="pb-3 border-b-2 -mb-px transition-colors border-transparent text-g4-700 hover:text-white/70"
           >
             About
           </button>
