@@ -15,9 +15,7 @@ import LawyersProfile from "./pages/LawyersProfile";
 import AboutPage from "./pages/AboutPage";
 
 function App() {
-  const { pathname } = useLocation(); // 3. Kunin ang kasalukuyang URL path
-
-  // 4. I-trigger ang scroll to top sa bawat pagbabago ng pathname
+  const { pathname } = useLocation(); 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);

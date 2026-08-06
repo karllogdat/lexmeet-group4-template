@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import Button from "../Button";
 
-// Replace with the path to your background image
+// Background image import
 import libraryBg from "../../assets/Homepage/everydaybg.png";
 
 export default function EverydayLawSection() {
+  const navigate = useNavigate();
+
   const article = {
     category: "Everyday Law",
     title: "Co-maker ng 'di nagbayad sa utang, tama ba na ikaw ang singilin?",
@@ -15,7 +18,6 @@ export default function EverydayLawSection() {
       "Nakapirma ka na ba sa loan agreement bilang co-maker?",
       "Ano ang panganib kung ikaw ay pipirma bilang co-maker sa isang loan?",
     ],
-    link: "#",
   };
 
   return (
@@ -31,15 +33,18 @@ export default function EverydayLawSection() {
 
       {/* Content Area */}
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-14 space-y-6 relative">
-        {/* Category Badge locked to 340x79 px */}
+        {/* Category Badge */}
         <div>
           <span className="w-85 h-19.75 bg-[#ebf3f8] text-g4-900 g4-heading-2 px-5 py-2 rounded-md font-medium shadow-sm flex items-center justify-center">
             {article.category}
           </span>
         </div>
 
-        {/* Article Title */}
-        <h2 className="g4-heading-2 text-g4-50">
+        {/* Article Title - Clickable to open blog */}
+        <h2 
+          onClick={() => navigate("/everyday-law/blog")}
+          className="g4-heading-2 text-g4-50 cursor-pointer hover:text-slate-200 transition-colors"
+        >
           {article.title}
         </h2>
 
@@ -55,19 +60,22 @@ export default function EverydayLawSection() {
           ))}
         </div>
 
-        {/* Bottom Actions: Read More (left) and Learn More Button (right) */}
+        {/* Bottom Actions */}
         <div className="pt-6 flex items-center justify-between">
-          <a
-            href={article.link}
-            className="group inline-flex items-center gap-2.5 g4-button text-white hover:text-slate-300 transition-colors text-base font-semibold"
+          {/* Read More button navigating to blog article */}
+          <button
+            type="button"
+            onClick={() => navigate("/everyday-law/blog")}
+            className="group inline-flex items-center gap-2.5 g4-button text-white hover:text-slate-300 transition-colors text-base font-semibold bg-transparent border-none p-0 cursor-pointer"
           >
             <span>Read More</span>
             <span className="text-xl transition-transform duration-200 group-hover:translate-x-1">
               →
             </span>
-          </a>
+          </button>
 
-          <Button onClick={() => window.location.href = article.link}>
+          {/* Learn More button navigating to main Everyday Law page */}
+          <Button onClick={() => navigate("/everyday-law")}>
             Learn More
           </Button>
         </div>
