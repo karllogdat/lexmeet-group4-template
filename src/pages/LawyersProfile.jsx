@@ -25,9 +25,7 @@ export default function LawyersProfilePage() {
   const filteredLawyers = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     if (!q) return lawyers;
-    return lawyers.filter((l) =>
-      l.name.toLowerCase().includes(q)
-    );
+    return lawyers.filter((l) => l.name.toLowerCase().includes(q));
   }, [searchQuery]);
 
   // Map page tab to table variant
@@ -55,9 +53,8 @@ export default function LawyersProfilePage() {
       {/* ── Page content ──────────────────────────────────────────── */}
       <div className="min-h-screen bg-linear-to-b from-white to-[#003A6B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-
           {/* Page title */}
-          <h1 className="g4-heading-1 font-medium text-g4-900 text-center mb-10">
+          <h1 className="g4-heading-1 font-bold text-g4-900 text-center mb-10">
             Lawyers Profile
           </h1>
 
@@ -97,7 +94,9 @@ export default function LawyersProfilePage() {
       {/* ── Lawyer detail modal ────────────────────────────────────── */}
       {/* key forces tab state reset when a different lawyer is selected */}
       <LawyerProfileModal
-        key={selectedLawyer ? `${selectedLawyer.id}-${initialModalTab}` : "closed"}
+        key={
+          selectedLawyer ? `${selectedLawyer.id}-${initialModalTab}` : "closed"
+        }
         lawyer={selectedLawyer}
         initialTab={initialModalTab}
         onClose={() => setSelectedLawyer(null)}
