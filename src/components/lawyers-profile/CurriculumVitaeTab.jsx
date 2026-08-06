@@ -76,12 +76,17 @@ export default function CurriculumVitaeTab({ cv }) {
   const [workExpanded, setWorkExpanded] = useState(false);
   const [eduExpanded, setEduExpanded] = useState(false);
   const [casesExpanded, setCasesExpanded] = useState(false);
+  const [locationsExpanded, setLocationExpanded] = useState(false);
+  const [concentrationExpanded, setConcentrationExpanded] = useState(false);
+
 
   // Slice helpers
   const visibleLangs = langsExpanded ? languages : languages.slice(0, PREVIEW_COUNT);
   const visibleWork = workExpanded ? workExperience : workExperience.slice(0, PREVIEW_COUNT);
   const visibleEdu = eduExpanded ? education : education.slice(0, PREVIEW_COUNT);
   const visibleCases = casesExpanded ? casesHandled : casesHandled.slice(0, PREVIEW_COUNT);
+  const visibleLocations = locationsExpanded ? locationOfPractice : locationOfPractice.slice(0, PREVIEW_COUNT);
+  const visibleConcentration = concentrationExpanded ? concentration : concentration.slice(0, PREVIEW_COUNT);
 
   return (
     <div className="p-5 grid grid-cols-1 sm:grid-cols-3 gap-6 pb-10">
@@ -176,10 +181,16 @@ export default function CurriculumVitaeTab({ cv }) {
         <div>
           <CvLabel>Location of Practice</CvLabel>
           <div className="flex flex-wrap gap-2 mt-1">
-            {locationOfPractice.map((loc) => (
+            {visibleLocations.map((loc) => (
               <Pill key={loc} label={loc} />
             ))}
           </div>
+          {locationOfPractice.length > PREVIEW_COUNT && (
+            <CvToggleBtn
+              expanded={locationsExpanded}
+              onToggle={() => setLocationExpanded((v) => !v)}
+            />
+          )}
         </div>
       </div>
 
@@ -189,12 +200,18 @@ export default function CurriculumVitaeTab({ cv }) {
         <div>
           <CvLabel>Concentration of Law Practice</CvLabel>
           <ul className="mt-1 space-y-1">
-            {concentration.map((item) => (
+            {visibleConcentration.map((item) => (
               <li key={item} className="font-inter font-semibold text-sm text-g4-600 wrap-break-word">
                 {item}
               </li>
             ))}
           </ul>
+          {concentration.length > PREVIEW_COUNT && (
+            <CvToggleBtn
+              expanded={concentrationExpanded}
+              onToggle={() => setConcentrationExpanded((v) => !v)}
+            />
+          )}
         </div>
 
         {/* Cases Handled */}
