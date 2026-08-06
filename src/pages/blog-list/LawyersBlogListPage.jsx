@@ -12,11 +12,11 @@ export default function LawyersBlogListPage() {
   const crumbs = [{ name: "Everyday Law", to: "/everyday-law" }];
 
   return (
-    <div className="flex flex-col gap-8 p-8 lg:p-20">
+    <div className="flex flex-col gap-8 p-6 lg:px-20">
       <Breadcrumbs items={crumbs} />
 
       {/* Search input */}
-      <div className="flex w-full items-center gap-2.5 mb-6">
+      <div className="flex w-full items-center gap-2.5">
         <div
           onClick={() => navigate("/everyday-law")}
           className="flex items-center justify-center w-13 h-13 bg-g4-700 rounded-[10px] shrink-0"
