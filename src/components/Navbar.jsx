@@ -31,6 +31,20 @@ export default function Navbar() {
     },
   ];
 
+  const checkIsActive = (item) => {
+    if (item.isModalTrigger) return isContactOpen;
+
+    if (item.href.includes("#")) {
+      const [path, hash] = item.href.split("#");
+      return (
+        location.pathname === path &&
+        (location.hash === `#${hash}` || (!location.hash && path === "/"))
+      );
+    }
+
+    return location.pathname === item.href;
+  };
+
   const handleNavClick = (e, item) => {
     if (item.isModalTrigger) {
       e.preventDefault();
@@ -50,19 +64,22 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#0F2338] text-white">
-        <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 lg:px-8">
-          {/* Brand Logo */}
-          <div className="shrink-0">
+      <header className="sticky top-0 z-50 w-full bg-[#0F2338] text-white shadow-md">
+        {/* max-w-[1400px] or max-w-7xl with mx-auto ensures centered container with equal outer margins */}
+        <nav className="mx-auto flex h-20 w-full max-w-[1400px] items-center justify-between px-6 lg:px-12">
+          
+          {/* 1. Left Section: Logo */}
+          <div className="flex shrink-0 items-center">
             <BrandLogo />
           </div>
 
-          {/* Desktop Navigation - Responsive font sizes and dynamic spacing */}
+          {/* 2. Middle Section: Navigation Links (Centering container) */}
           <div className="hidden items-center justify-center gap-2 xl:flex xl:gap-4 2xl:gap-6">
             {navItems.map((item) => (
               <NavLink
                 key={item.label}
                 href={item.href}
+                isActive={checkIsActive(item)}
                 onClick={(e) => handleNavClick(e, item)}
               >
                 <span className="whitespace-nowrap text-xs xl:text-sm 2xl:text-base">
@@ -72,12 +89,12 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Profile Dropdown */}
-          <div className="hidden shrink-0 xl:block">
+          {/* 3. Right Section: Profile Dropdown */}
+          <div className="hidden shrink-0 items-center xl:flex">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
           </div>
 
-          {/* Mobile/Tablet Controls */}
+          {/* Mobile / Tablet Controls */}
           <div className="flex items-center gap-3 xl:hidden">
             <ProfileDropdown onOpenLogin={() => setIsLoginOpen(true)} />
 
@@ -91,7 +108,7 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* Mobile/Tablet Menu */}
+        {/* Mobile / Tablet Dropdown Menu */}
         <div
           className={`overflow-hidden transition-all duration-300 xl:hidden ${
             isMenuOpen ? "max-h-125 border-t border-white/20" : "max-h-0"
@@ -102,6 +119,7 @@ export default function Navbar() {
               <NavLink
                 key={item.label}
                 href={item.href}
+                isActive={checkIsActive(item)}
                 onClick={(e) => handleNavClick(e, item)}
               >
                 <div className="py-2.5">{item.label}</div>
