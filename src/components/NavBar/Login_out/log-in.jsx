@@ -3,7 +3,6 @@ import bgImage from '../../../assets/Log_pics/logbg.jpg';
 import lexLogo from '../../../assets/Lex.svg';
 import lexMeetLogo from '../../../assets/LexMeetName.svg';
 import Signin from './Signin';
-
 import Button from '../../Button';
 
 const GoogleIcon = ({ className }) => (
@@ -31,17 +30,18 @@ export default function Login({ isOpen, onClose }) {
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
   if (!isOpen) return null;
+
+  const handleCloseAll = () => {
+    setIsSignUpOpen(false);
+    onClose();
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,17 +50,17 @@ export default function Login({ isOpen, onClose }) {
 
   return (
     <>
-      {!isSignUpOpen && (
+      {!isSignUpOpen ? (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md overflow-y-auto"
-          onClick={onClose}
+          onClick={handleCloseAll}
         >
           <div 
             className="relative z-10 w-full max-w-4xl rounded-lg overflow-hidden shadow-2xl backdrop-blur-xl bg-slate-900/40 border border-white/20 text-white my-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              onClick={onClose}
+              onClick={handleCloseAll}
               type="button"
               aria-label="Close modal"
               className="absolute top-3 right-3 text-white/70 hover:text-white z-20 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition cursor-pointer"
@@ -69,17 +69,15 @@ export default function Login({ isOpen, onClose }) {
             </button>
 
             <div 
-              className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none backdrop-blur-[50%]"
+              className="absolute inset-0 bg-cover bg-center opacity-20 pointer-events-none backdrop-blur-2xl"
               style={{ backgroundImage: `url(${bgImage})` }}
             />
 
             <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 p-6 sm:p-10 md:p-12 gap-8 items-center">
               
               <div className="flex flex-col space-y-5">
-                
                 <div className="flex items-center space-x-3">
                   <img src={lexLogo} alt="Rizal Logo" className="w-12 h-12 shrink-0 object-contain" />
-
                   <div className="flex flex-col justify-center leading-tight text-white">
                     <span className="text-[26px] font-['Playfair_Display'] font-bold text-white">Welcome to</span>
                     <span className="text-[26px] font-['Playfair_Display'] font-bold tracking-wide text-white">
@@ -142,28 +140,19 @@ export default function Login({ isOpen, onClose }) {
                 </div>
 
                 <div className="grid grid-cols-3 gap-2">
-                  <button 
-                    type="button" 
-                    className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer"
-                  >
+                  <button type="button" className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
                     <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign in with</span>
-                    <GoogleIcon className="w-3.5 h-3.5 shrink-0 text-g4-900 fill-g4-900" />
+                    <GoogleIcon className="w-3.5 h-3.5 shrink-0" />
                   </button>
 
-                  <button 
-                    type="button" 
-                    className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer"
-                  >
+                  <button type="button" className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
                     <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign in with</span>
-                    <FacebookIcon className="w-3.5 h-3.5 shrink-0 text-g4-900 fill-g4-900" />
+                    <FacebookIcon className="w-3.5 h-3.5 shrink-0" />
                   </button>
 
-                  <button 
-                    type="button" 
-                    className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer"
-                  >
+                  <button type="button" className="flex items-center justify-center gap-1.5 py-2 px-1 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
                     <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign in with</span>
-                    <AppleIcon className="w-4 h-4 shrink-0 text-g4-900 fill-g4-900" />
+                    <AppleIcon className="w-4 h-4 shrink-0" />
                   </button>
                 </div>
 
@@ -178,7 +167,7 @@ export default function Login({ isOpen, onClose }) {
                   </button>
                 </div>
 
-                <div className="flex items-center justify-center space-x-0.5 font-inter text-[10px] pt-2 border-t border-white/10 text-g4-400 opacity-80">
+                <div className="flex items-center justify-center space-x-0.5 font-inter text-[10px] pt-2 border-t border-white/10 opacity-80">
                   <span className="leading-none">Powered by</span>
                   <div 
                     className="h-2.5 w-14 bg-current shrink-0 inline-block align-middle"
@@ -201,20 +190,20 @@ export default function Login({ isOpen, onClose }) {
                   We are Ready to Serve for all your Legal Needs!
                 </h1>
                 <p className="g4-body text-white leading-relaxed">
-                  We are full-service law firm with a complement of competent lawyers in various legal expertise and a support personal group ready to serve all your legal services needs. From legal advice, legal documents, legal works and other related legal services, we are here for you.
+                  We are full-service law firm with a complement of competent lawyers in various legal expertise and a support personal group ready to serve all your legal services needs.
                 </p>
               </div>
 
             </div>
           </div>
         </div>
+      ) : (
+        <Signin 
+          isOpen={isSignUpOpen} 
+          onClose={handleCloseAll}
+          onSwitchToLogin={() => setIsSignUpOpen(false)}
+        />
       )}
-
-      <Signin 
-        isOpen={isSignUpOpen} 
-        onClose={onClose}
-        onSwitchToLogin={() => setIsSignUpOpen(false)}
-      />
     </>
   );
 }

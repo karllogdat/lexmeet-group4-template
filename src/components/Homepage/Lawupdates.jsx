@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router";
 import Button from "../Button";
 
-// Replace with the path to your library background image
 import libraryBg from "../../assets/Homepage/everydaybg.png";
 
 export default function LawUpdatesSection() {
@@ -20,7 +19,6 @@ export default function LawUpdatesSection() {
 
   return (
     <section className="w-full bg-[#053258] text-white">
-      {/* Top Background Image Header */}
       <div className="w-full h-55 sm:h-75 md:h-90 relative overflow-hidden">
         <img
           src={libraryBg}
@@ -29,16 +27,13 @@ export default function LawUpdatesSection() {
         />
       </div>
 
-      {/* Content Area */}
       <div className="max-w-6xl mx-auto px-6 md:px-12 py-10 md:py-14 space-y-6 relative">
-        {/* Category Badge */}
         <div>
           <span className="w-85 h-19.75 bg-[#ebf3f8] text-g4-900 g4-heading-2 px-5 py-2 rounded-md font-medium shadow-sm flex items-center justify-center">
             {article.category}
           </span>
         </div>
 
-        {/* Article Title */}
         <h2
           onClick={() => navigate("/everyday-law/blog")}
           className="g4-heading-2 text-g4-50 cursor-pointer hover:text-slate-200 transition-colors"
@@ -46,17 +41,14 @@ export default function LawUpdatesSection() {
           {article.title}
         </h2>
 
-        {/* Article Metadata */}
         <p className="g4-caption text-g4-600 font-light">
           {article.author} • {article.date} • {article.readTime}
         </p>
 
-        {/* Article Excerpt */}
         <div className="g4-body text-g4-100 leading-relaxed max-w-5xl">
           <p>{article.description}</p>
         </div>
 
-        {/* Bottom Actions */}
         <div className="pt-6 flex items-center justify-between">
           <button
             type="button"

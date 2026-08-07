@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import bgImage from '../../../assets/Log_pics/logbg.jpg';
-import lexmeetLogo from '../../../assets/LexMeetName.svg';
+import lexMeetLogo from '../../../assets/LexMeetName.svg';
 import rizalLogo from '../../../assets/Lex.svg';
 
 const GoogleIcon = ({ className }) => (
@@ -31,18 +31,6 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
     agreeTerms: false,
   });
 
-  // Lock background scroll when modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
-
   if (!isOpen) return null;
 
   const handleChange = (e) => {
@@ -63,13 +51,10 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-3 sm:p-4 overflow-y-auto"
       onClick={onClose}
     >
-      {/* Outer wrapper */}
       <div 
         className="relative flex flex-col md:flex-row gap-3 w-full max-w-4xl my-auto max-h-[95vh] md:max-h-none overflow-y-auto md:overflow-visible"
         onClick={(e) => e.stopPropagation()}
       >
-
-        {/* Close Button */}
         <button
           onClick={onClose}
           type="button"
@@ -79,10 +64,9 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
           ✕
         </button>
 
-        {/* LEFT CARD: Form Section */}
+        {/* LEFT CARD */}
         <div className="w-full md:w-1/2 p-4 sm:p-5 flex flex-col justify-between rounded-lg bg-[#13426B] text-white shadow-2xl border border-white/10">
           <div>
-            {/* Logo & Branding */}
             <div className="flex flex-col items-center mb-2">
               <div className="flex items-center justify-center gap-2 mb-1 w-full flex-wrap">
                 <img 
@@ -97,16 +81,12 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
               <div className="w-full h-px bg-white/20 my-0.5"></div>
             </div>
 
-            {/* Form Header */}
             <div className="text-center mb-2">
               <h2 className="text-base sm:text-lg text-white font-bold leading-tight">Create Account</h2>
               <p className="text-[11px] sm:text-xs text-blue-200 mt-0.5">Quick setup. Secure access</p>
             </div>
 
-            {/* Form */}
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-              
-              {/* Name Fields */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 <div>
                   <label className="block text-[11px] sm:text-xs text-blue-100 font-medium mb-0.5">First Name</label>
@@ -174,7 +154,6 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
                 />
               </div>
 
-              {/* Terms & Conditions Checkbox */}
               <div className="flex items-start gap-1.5 pt-0.5">
                 <input
                   type="checkbox"
@@ -190,7 +169,6 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
                 </label>
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full py-2 bg-[#2B6CB0] hover:bg-[#2c5282] text-white text-xs sm:text-sm font-semibold rounded shadow transition duration-200 mt-1 cursor-pointer"
@@ -199,7 +177,6 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
               </button>
             </form>
 
-            {/* Social Logins */}
             <div className="mt-2.5">
               <div className="relative flex py-0.5 items-center">
                 <div className="grow border-t border-white/20"></div>
@@ -207,7 +184,6 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
                 <div className="grow border-t border-white/20"></div>
               </div>
 
-              {/* Social Buttons */}
               <div className="grid grid-cols-3 gap-1.5 mt-1">
                 <button type="button" className="flex items-center justify-center gap-1.5 py-1.5 px-1 bg-white text-gray-700 rounded border border-gray-200 hover:bg-gray-50 transition cursor-pointer">
                   <span className="font-poppins text-[11px] font-medium text-gray-800 whitespace-nowrap">Sign up</span>
@@ -227,7 +203,6 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
             </div>
           </div>
 
-          {/* Footer */}
           <div className="pt-2 border-t border-white/10 flex flex-col items-center justify-center gap-1 text-center mt-2">
             <div className="flex items-center justify-center">
               <span className="text-[11px] sm:text-xs text-blue-200">Already Registered?</span>
@@ -240,14 +215,13 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
               </button>
             </div>
             
-            {/* "Powered by" Section */}
             <div className="flex items-center justify-center space-x-0.5 font-inter text-[9px] pt-0.5 text-blue-300 opacity-90">
               <span className="leading-none">Powered by</span>
               <div 
                 className="h-2 w-12 bg-current shrink-0 inline-block align-middle"
                 style={{
-                  maskImage: `url(${lexmeetLogo})`,
-                  WebkitMaskImage: `url(${lexmeetLogo})`,
+                  maskImage: `url(${lexMeetLogo})`,
+                  WebkitMaskImage: `url(${lexMeetLogo})`,
                   maskRepeat: 'no-repeat',
                   WebkitMaskRepeat: 'no-repeat',
                   maskSize: 'contain',
@@ -260,14 +234,14 @@ export default function Signin({ isOpen, onClose, onSwitchToLogin }) {
           </div>
         </div>
 
-        {/* RIGHT CARD: Image Banner (Desktop Only) */}
+        {/* RIGHT CARD */}
         <div className="hidden md:block md:w-1/2 relative rounded-lg overflow-hidden shadow-2xl border border-white/10">
           <img
             src={bgImage}
             alt="Secure Legal Access"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#13426B]/80 via-black/20 to-transparent flex items-center justify-start p-6 text-left">
+          <div className="absolute inset-0 bg-gradient-to-t from-[#13426B]/80 via-black/20 to-transparent flex items-center justify-start p-6 text-left">
             <h1 className="g4-heading-1 text-white uppercase tracking-widest leading-relaxed drop-shadow-md">
               Secure<br />
               Access<br />

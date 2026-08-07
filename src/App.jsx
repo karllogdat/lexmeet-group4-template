@@ -1,5 +1,5 @@
-import { useEffect } from "react"; // 1. Import ang useEffect
-import { Routes, Route, useLocation } from "react-router"; // 2. Import ang useLocation
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router";
 
 import HomePage from "./pages/HomePage";
 import DesignSystemPage from "./pages/DesignSystemPage";
@@ -17,6 +17,7 @@ import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   const { pathname } = useLocation(); 
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -29,7 +30,9 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/design-system" element={<DesignSystemPage />} />
           <Route path="/law-practice" element={<LawPracticePage />} />
-          <Route path="everyday-law">
+          
+          {/* Everyday Law Parent Route */}
+          <Route path="/everyday-law">
             <Route index element={<EverydayLawMainPage />} />
             <Route path="blog" element={<EverydayLawBlogPage />} />
             <Route
@@ -42,6 +45,7 @@ function App() {
             />
             <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} />
           </Route>
+
           <Route path="/law-office" element={<LawOfficePage />} />
           <Route path="/lawyers-profile" element={<LawyersProfile />} />
           <Route path="/about" element={<AboutPage />} />
