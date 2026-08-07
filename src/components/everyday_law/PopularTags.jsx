@@ -6,7 +6,7 @@ export default function PopularTags({ tags }) {
       <h3 className="g4-heading-3 text-g4-900">Popular Tags</h3>
       <div className="flex flex-wrap gap-2">
         {tags.map((tag, index) => (
-          <Tag id={index} name={tag} />
+          <Tag key={index} name={tag} />
         ))}
       </div>
     </div>

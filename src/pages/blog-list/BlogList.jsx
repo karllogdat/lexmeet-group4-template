@@ -6,7 +6,10 @@ import { useNavigate } from "react-router";
 
 import {
   blogsSamples,
+  everydayLawSamples,
   latestBlogSample,
+  lawUpdatesSamples,
+  lawyersBlogSamples,
 } from "../../components/everyday_law/EverydayLawMainData";
 import { useEffect, useState } from "react";
 import BlogPagination from "../../components/everyday_law/BlogPagination";
@@ -43,7 +46,20 @@ export default function BlogList({ type }) {
     currentPage,
   ];
 
-  const blogs = blogsSamples;
+  const [blogs, setBlogs] = useState(blogsSamples);
+  useEffect(() => {
+    switch (type) {
+      case "everyday_law":
+        setBlogs(everydayLawSamples);
+        break;
+      case "law_updates":
+        setBlogs(lawUpdatesSamples);
+        break;
+      case "lawyers_blog":
+        setBlogs(lawyersBlogSamples);
+        break;
+    }
+  }, [type]);
 
   return (
     <div className="flex flex-col gap-8 p-6 lg:px-20">

@@ -26,7 +26,12 @@ import {
 } from "@tabler/icons-react";
 import ShareLink from "../../components/everyday_law/ShareLink";
 import { useNavigate, useParams } from "react-router";
-import { blogsSamples } from "../../components/everyday_law/EverydayLawMainData";
+import {
+  blogsSamples,
+  everydayLawSamples,
+  lawUpdatesSamples,
+  lawyersBlogSamples,
+} from "../../components/everyday_law/EverydayLawMainData";
 import BlogTags from "../../components/everyday_law/BlogTags";
 
 export default function BlogPage({ type }) {
@@ -34,7 +39,20 @@ export default function BlogPage({ type }) {
   const navigate = useNavigate();
 
   // replace with actual blog id fetching
-  const blogs = blogsSamples;
+  const [blogs, setBlogs] = useState(blogsSamples);
+  useEffect(() => {
+    switch (type) {
+      case "everyday_law":
+        setBlogs(everydayLawSamples);
+        break;
+      case "law_updates":
+        setBlogs(lawUpdatesSamples);
+        break;
+      case "lawyers_blog":
+        setBlogs(lawyersBlogSamples);
+        break;
+    }
+  }, [type]);
   const currentBlog = blogs.find((blog) => blog.id == id);
 
   const [currentPage, setCurrentPage] = useState({ name: "Unknown", to: "/" });
@@ -60,6 +78,32 @@ export default function BlogPage({ type }) {
         break;
     }
   }, [type]);
+
+  // Invalid blog ID
+  if (!currentBlog) {
+    return (
+      <div className="w-full min-h-screen flex flex-col items-center justify-center gap-6 text-center">
+        <div className="flex flex-col gap-2">
+          <h1 className="g4-heading-1 text-g4-900">Blog Post Not Found</h1>
+
+          <p className="g4-body text-g4-600 max-w-xl">
+            Sorry, we couldn't find the blog post you're looking for. It may
+            have been removed, or the link may be incorrect.
+          </p>
+        </div>
+
+        <Button onClick={() => navigate(currentPage.to)}>
+          Back to {currentPage.name}
+        </Button>
+      </div>
+    );
+  }
+
+  const currentIndex = blogs.findIndex((blog) => blog.id === currentBlog.id);
+
+  const previousBlog = blogs[currentIndex - 1];
+  const nextBlog = blogs[currentIndex + 1];
+
   const crumbs = [
     { name: "Everyday Law Main", to: "/everyday-law" },
     currentPage,
@@ -128,7 +172,7 @@ export default function BlogPage({ type }) {
         tags={["Legal Advice", "Client Stories", "Practical Lessons"]}
       />
 
-      <img src={BlogImage} className="w-full object-cover aspect-4/3" />
+      <img src={currentBlog.image} className="w-full object-cover aspect-4/3" />
 
       <p className="py-2.5 g4-body">{currentBlog.content}</p>
 
@@ -166,12 +210,29 @@ export default function BlogPage({ type }) {
           </ShareModal>
         </div>
         <div className="flex gap-2.5">
-          <div className="h-[52px] w-[52px] flex items-center justify-center rounded-full bg-g4-700 text-white">
+          <button
+            disabled={!previousBlog}
+            onClick={() => {
+              if (previousBlog) {
+                navigate(`${currentPage.to}/${previousBlog.id}`);
+              }
+            }}
+            className="h-[52px] w-[52px] flex items-center justify-center rounded-full bg-g4-700 text-white disabled:opacity-40 disabled:cursor-not-allowed"
+          >
             <ChevronLeft />
-          </div>
-          <div className="h-[52px] w-[52px] flex items-center justify-center rounded-full bg-g4-700 text-white">
+          </button>
+
+          <button
+            disabled={!nextBlog}
+            onClick={() => {
+              if (nextBlog) {
+                navigate(`${currentPage.to}/${nextBlog.id}`);
+              }
+            }}
+            className="h-[52px] w-[52px] flex items-center justify-center rounded-full bg-g4-700 text-white disabled:opacity-40 disabled:cursor-not-allowed"
+          >
             <ChevronRight />
-          </div>
+          </button>
         </div>
       </div>
     </div>
