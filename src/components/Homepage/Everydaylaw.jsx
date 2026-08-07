@@ -40,7 +40,7 @@ export default function EverydayLawSection() {
           </span>
         </div>
 
-        {/* Article Title - Clickable to open blog */}
+        {/* Article Title - Clickable to open single blog article */}
         <h2 
           onClick={() => navigate("/everyday-law/blog")}
           className="g4-heading-2 text-g4-50 cursor-pointer hover:text-slate-200 transition-colors"
@@ -62,7 +62,7 @@ export default function EverydayLawSection() {
 
         {/* Bottom Actions */}
         <div className="pt-6 flex items-center justify-between">
-          {/* Read More button navigating to blog article */}
+          {/* Read More button navigating to single blog page */}
           <button
             type="button"
             onClick={() => navigate("/everyday-law/blog")}
@@ -74,8 +74,8 @@ export default function EverydayLawSection() {
             </span>
           </button>
 
-          {/* Learn More button navigating to main Everyday Law page */}
-          <Button onClick={() => navigate("/everyday-law")}>
+          {/* Learn More button navigating to blog list page */}
+          <Button onClick={() => navigate("/everyday-law/everyday-law-blog-list")}>
             Learn More
           </Button>
         </div>

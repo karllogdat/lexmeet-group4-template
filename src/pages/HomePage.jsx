@@ -72,8 +72,8 @@ export default function HomePage() {
       <PracticeArea />
 
       {/* Got A Legal Question Banner */}
-      <section className="w-full bg-[#033b67] text-white py-16 md:py-20 px-4 text-center flex items-center justify-center">
-        <div className="max-w-xl mx-auto flex flex-col items-center justify-center space-y-6 w-full">
+      <section className="w-full bg-[#033b67] text-white py-4 md:py-6 px-4 text-center flex items-center justify-center">
+        <div className="max-w-xl mx-auto flex flex-col items-center justify-center space-y-2 w-full">
           <h2 className="g4-heading-1 font-bold tracking-wide leading-tight">
             Got a Legal <br className="hidden sm:inline" /> Question?
           </h2>
@@ -82,7 +82,9 @@ export default function HomePage() {
             Get in touch with us!
           </p>
 
-          <Button onClick={() => setIsContactOpen(true)}>Contact Us</Button>
+          <div className="pt-1">
+            <Button onClick={() => setIsContactOpen(true)}>Contact Us</Button>
+          </div>
         </div>
       </section>
 
