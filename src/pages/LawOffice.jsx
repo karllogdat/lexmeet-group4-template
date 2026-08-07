@@ -49,14 +49,14 @@ export default function LawOfficePage() {
         </div>
       </div>
 
-      <div className="h-fit grid lg:grid-cols-4 lg:grid-rows-2 gap-4 lg:gap-y-8 lg:gap-x-16 bg-g4-900 text-g4-50">
-        <img
-          src={LawyersLarge}
-          className="w-full h-full aspect-4/3 object-cover col-span-2 lg:col-span-1 lg:row-span-2"
-          alt="Lawyers Large"
+      <div className="h-fit flex flex-col items-center justify-center py-16 px-6 gap-4 lg:gap-y-8 bg-g4-900 text-g4-50">
+        <LawOfficeCarousel
+          className="lg:w-1/2"
+          imageClassName="rounded-lg"
+          images={IMAGES}
         />
 
-        <div className="row-span-2 col-span-2 flex flex-col justify-center gap-8 py-20 px-6 lg:px-0">
+        <div className="lg:w-1/2 flex flex-col justify-center gap-8">
           <h1 className="g4-heading-1 font-bold">Our Lawyers</h1>
           <h2 className="g4-heading-2">
             Manned by Competent and Trustworthy Lawyers
@@ -67,18 +67,6 @@ export default function LawOfficePage() {
           </p>
           <Button>Read More</Button>
         </div>
-
-        <img
-          src={LawyersTop}
-          className="w-full h-full aspect-4/3 object-cover rounded-bl-lg sm:rounded-tr-lg"
-          alt="Lawyers Top"
-        />
-
-        <img
-          src={LawyersBottom}
-          className="w-full h-full aspect-4/3 object-cover rounded-tl-lg"
-          alt="Lawyers Bottom"
-        />
       </div>
 
       <div className="flex items-center justify-center h-fit py-16 px-6 lg:px-32">
