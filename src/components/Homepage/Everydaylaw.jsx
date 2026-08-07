@@ -14,10 +14,8 @@ export default function EverydayLawSection() {
     author: "Author",
     date: "Month 1, 2026",
     readTime: "10 min read",
-    descriptionLines: [
-      "Nakapirma ka na ba sa loan agreement bilang co-maker?",
-      "Ano ang panganib kung ikaw ay pipirma bilang co-maker sa isang loan?",
-    ],
+    description:
+      "Growing a business means taking on new opportunities, but it also comes with legal responsibilities that many entrepreneurs overlook. One of the most common mistakes we see is relying on verbal agreements or informal conversations instead of written contracts. While trust is important, a properly drafted agreement...",
   };
 
   return (
@@ -41,7 +39,7 @@ export default function EverydayLawSection() {
         </div>
 
         {/* Article Title - Clickable to open single blog article */}
-        <h2 
+        <h2
           onClick={() => navigate("/everyday-law/blog")}
           className="g4-heading-2 text-g4-50 cursor-pointer hover:text-slate-200 transition-colors"
         >
@@ -54,10 +52,8 @@ export default function EverydayLawSection() {
         </p>
 
         {/* Article Excerpt */}
-        <div className="g4-body text-g4-100 leading-relaxed space-y-2">
-          {article.descriptionLines.map((line, idx) => (
-            <p key={idx}>{line}</p>
-          ))}
+        <div className="g4-body text-g4-100 leading-relaxed max-w-5xl">
+          <p>{article.description}</p>
         </div>
 
         {/* Bottom Actions */}
@@ -75,7 +71,9 @@ export default function EverydayLawSection() {
           </button>
 
           {/* Learn More button navigating to blog list page */}
-          <Button onClick={() => navigate("/everyday-law/everyday-law-blog-list")}>
+          <Button
+            onClick={() => navigate("/everyday-law/everyday-law-blog-list")}
+          >
             Learn More
           </Button>
         </div>
