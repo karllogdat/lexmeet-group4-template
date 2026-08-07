@@ -98,9 +98,9 @@ export default function EverydayLawBlogPage() {
 
         <hr className="w-full border-g4-700 border-b-[5px]" />
 
-        <div className="w-full flex justify-between">
+        <div className="w-full flex flex-col lg:flex-row justify-between">
           <p className="g4-body text-g4-600">By Jane Doe • May 15, 2023</p>
-          <p className="g4-body text-g4-600">5 min read</p>
+          <p className="g4-body text-g4-600">5 min read • 100 views</p>
         </div>
       </div>
 
