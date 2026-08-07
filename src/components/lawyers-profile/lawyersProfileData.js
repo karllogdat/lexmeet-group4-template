@@ -891,4 +891,561 @@ export const lawyers = [
       { day: "Sunday", am: "Not available", pm: "Not available" },
     ],
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SAMPLE / TEST DATA — lawyers 9–16
+  // These entries were added to verify pagination functionality (≥ 3 pages at
+  // 5 rows/page).  Replace or remove before production deployment.
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  {
+    id: "lawyer-9",
+    name: "Atty. Cristina B. Navarro",
+    position: "Senior Associate",
+    photo: annaBermudezImg,
+    isOnline: true,
+    phone: "+63 925 901 2345",
+    rating: 4.7,
+    isAvailable: true,
+    location: "Marikina, Metro Manila",
+    consultationCount: 58,
+    cv: {
+      rollNumber: "1289012I",
+      dateAdmitted: "August 12, 2011",
+      ibp: { number: "Marikina 9012345", date: "September 5, 2022" },
+      mcle: {
+        status: "Compliant",
+        number: "101890123456",
+        dateRange: "July 1, 2022 – September 30, 2022",
+      },
+      languages: ["Filipino", "English", "Bicolano"],
+      workExperience: [
+        {
+          firm: "Navarro & Associates",
+          role: "Managing Associate",
+          address: "3rd Floor, Marikina City Hall Annex, Marikina City",
+        },
+      ],
+      education: [
+        {
+          institution: "University of the East",
+          degree: "AB Political Science",
+          date: "April 10, 2005",
+        },
+        {
+          institution: "University of the East College of Law",
+          degree: "Juris Doctor",
+          date: "April 15, 2009",
+        },
+      ],
+      locationOfPractice: ["Luzon wide"],
+      concentration: ["Civil law", "Property law"],
+      casesHandled: [
+        "Real estate transactions",
+        "Land titling and registration",
+        "Easement disputes",
+      ],
+    },
+    reviews: [
+      {
+        id: "r9-1",
+        reviewer: "Mr. Cabrera",
+        rating: 4.7,
+        text: "Very helpful in resolving our land title issue. Process was straightforward.",
+        timestamp: "03/10/2023, 10:00 AM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Tuesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Wednesday", am: "Not available", pm: "Not available" },
+      { day: "Thursday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Friday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Saturday", am: "Not available", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  {
+    id: "lawyer-10",
+    name: "Atty. Benjamin C. Torres",
+    position: "Associate Lawyer",
+    photo: kalixMartinezImg,
+    isOnline: false,
+    phone: "+63 926 012 3456",
+    rating: 4.3,
+    isAvailable: false,
+    location: "Caloocan, Metro Manila",
+    consultationCount: 42,
+    cv: {
+      rollNumber: "1390123J",
+      dateAdmitted: "October 5, 2016",
+      ibp: { number: "Caloocan 0123456", date: "November 8, 2022" },
+      mcle: {
+        status: "Compliant",
+        number: "110901234567",
+        dateRange: "August 3, 2022 – October 31, 2022",
+      },
+      languages: ["Filipino", "English", "Ilocano"],
+      workExperience: [
+        {
+          firm: "Torres Legal Services",
+          role: "Sole Practitioner",
+          address: "Room 201, Caloocan Business Center, Caloocan City",
+        },
+      ],
+      education: [
+        {
+          institution: "Pamantasan ng Lungsod ng Maynila",
+          degree: "AB Political Science",
+          date: "April 8, 2010",
+        },
+        {
+          institution: "Pamantasan ng Lungsod ng Maynila College of Law",
+          degree: "Juris Doctor",
+          date: "April 22, 2014",
+        },
+      ],
+      locationOfPractice: ["Luzon wide"],
+      concentration: ["Criminal law", "Civil law"],
+      casesHandled: [
+        "Criminal defense",
+        "Collection suits",
+        "Small claims",
+      ],
+    },
+    reviews: [
+      {
+        id: "r10-1",
+        reviewer: "Ms. Medina",
+        rating: 4.3,
+        text: "Reliable and affordable. Helped us with a small claims case effectively.",
+        timestamp: "04/05/2023, 2:15 PM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Tuesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Wednesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Thursday", am: "Not available", pm: "Not available" },
+      { day: "Friday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Saturday", am: "Not available", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  {
+    id: "lawyer-11",
+    name: "Atty. Rosalinda M. Aquino",
+    position: "Of Counsel",
+    photo: louisseMartinezImg,
+    isOnline: true,
+    phone: "+63 927 123 4567",
+    rating: 4.8,
+    isAvailable: true,
+    location: "Malabon, Metro Manila",
+    consultationCount: 77,
+    cv: {
+      rollNumber: "1401234K",
+      dateAdmitted: "March 3, 2007",
+      ibp: { number: "Malabon 1234567", date: "April 20, 2022" },
+      mcle: {
+        status: "Compliant",
+        number: "120012345678",
+        dateRange: "September 5, 2022 – November 30, 2022",
+      },
+      languages: ["Filipino", "English", "Tagalog"],
+      workExperience: [
+        {
+          firm: "Aquino Law Group",
+          role: "Of Counsel",
+          address: "2nd Floor, Malabon City Hall Building, Malabon City",
+        },
+      ],
+      education: [
+        {
+          institution: "Arellano University",
+          degree: "AB Journalism",
+          date: "March 28, 2001",
+        },
+        {
+          institution: "Arellano University School of Law",
+          degree: "Juris Doctor",
+          date: "April 14, 2005",
+        },
+      ],
+      locationOfPractice: ["Luzon wide"],
+      concentration: ["Environmental law", "Local government law"],
+      casesHandled: [
+        "Environmental compliance",
+        "LGU resolutions review",
+        "Zoning disputes",
+      ],
+    },
+    reviews: [
+      {
+        id: "r11-1",
+        reviewer: "Engr. Reyes",
+        rating: 4.8,
+        text: "Excellent guidance on environmental compliance for our construction project.",
+        timestamp: "05/14/2023, 9:30 AM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Tuesday", am: "Not available", pm: "Not available" },
+      { day: "Wednesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Thursday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Friday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Saturday", am: "Not available", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  {
+    id: "lawyer-12",
+    name: "Atty. Fernando R. Gutierrez",
+    position: "Senior Partner",
+    photo: annaBermudezImg,
+    isOnline: false,
+    phone: "+63 928 234 5678",
+    rating: 4.9,
+    isAvailable: false,
+    location: "Valenzuela, Metro Manila",
+    consultationCount: 112,
+    cv: {
+      rollNumber: "1512345L",
+      dateAdmitted: "January 15, 2001",
+      ibp: { number: "Valenzuela 2345678", date: "February 10, 2022" },
+      mcle: {
+        status: "Compliant",
+        number: "130123456789",
+        dateRange: "October 1, 2022 – December 31, 2022",
+      },
+      languages: ["Filipino", "English", "Spanish", "Tagalog"],
+      workExperience: [
+        {
+          firm: "Gutierrez & Partners",
+          role: "Senior Partner",
+          address: "5th Floor, Valenzuela Business Tower, Valenzuela City",
+        },
+      ],
+      education: [
+        {
+          institution: "University of Santo Tomas",
+          degree: "AB Economics",
+          date: "March 22, 1995",
+        },
+        {
+          institution: "University of Santo Tomas Faculty of Civil Law",
+          degree: "Juris Doctor",
+          date: "April 18, 1999",
+        },
+      ],
+      locationOfPractice: ["Nationwide", "Luzon wide"],
+      concentration: ["Commercial law", "Corporate law", "Intellectual property"],
+      casesHandled: [
+        "Trademark registration",
+        "Copyright infringement",
+        "Corporate formation",
+        "Commercial contract disputes",
+      ],
+    },
+    reviews: [
+      {
+        id: "r12-1",
+        reviewer: "Ms. Hizon",
+        rating: 5.0,
+        text: "Exceptional IP counsel. Our trademark was registered without any issues.",
+        timestamp: "06/20/2023, 11:00 AM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "8:00 – 11:00 AM", pm: "2:00 – 5:00 PM" },
+      { day: "Tuesday", am: "8:00 – 11:00 AM", pm: "2:00 – 5:00 PM" },
+      { day: "Wednesday", am: "Not available", pm: "Not available" },
+      { day: "Thursday", am: "8:00 – 11:00 AM", pm: "2:00 – 5:00 PM" },
+      { day: "Friday", am: "8:00 – 11:00 AM", pm: "Not available" },
+      { day: "Saturday", am: "Not available", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  {
+    id: "lawyer-13",
+    name: "Atty. Jocelyn P. Mendez",
+    position: "Junior Associate",
+    photo: louisseMartinezImg,
+    isOnline: true,
+    phone: "+63 929 345 6789",
+    rating: 4.2,
+    isAvailable: true,
+    location: "Las Piñas, Metro Manila",
+    consultationCount: 25,
+    cv: {
+      rollNumber: "1623456M",
+      dateAdmitted: "June 22, 2021",
+      ibp: { number: "Las Piñas 3456789", date: "July 15, 2022" },
+      mcle: {
+        status: "Exempt",
+        number: "N/A",
+        dateRange: "N/A",
+      },
+      languages: ["Filipino", "English", "Tagalog"],
+      workExperience: [
+        {
+          firm: "Rizal Law Office",
+          role: "Junior Associate",
+          address: "Unit 608, 6th Floor, AIC Burgundy Empire Tower, ADB Avenue, Ortigas",
+        },
+      ],
+      education: [
+        {
+          institution: "Lyceum of the Philippines University",
+          degree: "AB Political Science",
+          date: "May 3, 2017",
+        },
+        {
+          institution: "Lyceum of the Philippines University College of Law",
+          degree: "Juris Doctor",
+          date: "April 30, 2021",
+        },
+      ],
+      locationOfPractice: ["Luzon wide"],
+      concentration: ["Family law", "Civil law"],
+      casesHandled: [
+        "Legal separation",
+        "Guardianship petitions",
+        "Estate planning",
+      ],
+    },
+    reviews: [
+      {
+        id: "r13-1",
+        reviewer: "Mrs. Ramos",
+        rating: 4.2,
+        text: "Young but knowledgeable. Handled our guardianship petition efficiently.",
+        timestamp: "07/08/2023, 3:00 PM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Tuesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Wednesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Thursday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Friday", am: "Not available", pm: "Not available" },
+      { day: "Saturday", am: "Not available", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  {
+    id: "lawyer-14",
+    name: "Atty. Alfredo N. Cruz",
+    position: "Managing Partner",
+    photo: kalixMartinezImg,
+    isOnline: true,
+    phone: "+63 930 456 7890",
+    rating: 5.0,
+    isAvailable: true,
+    location: "Navotas, Metro Manila",
+    consultationCount: 150,
+    cv: {
+      rollNumber: "1734567N",
+      dateAdmitted: "July 4, 1998",
+      ibp: { number: "Navotas 4567890", date: "August 3, 2022" },
+      mcle: {
+        status: "Compliant",
+        number: "140234567890",
+        dateRange: "November 1, 2022 – January 31, 2023",
+      },
+      languages: ["Filipino", "English", "Spanish", "Chinese", "Japanese"],
+      workExperience: [
+        {
+          firm: "Cruz & Cruz Law Firm",
+          role: "Managing Partner",
+          address: "10th Floor, Navotas Trade Center, Navotas City",
+        },
+      ],
+      education: [
+        {
+          institution: "Ateneo de Manila University",
+          degree: "AB Philosophy",
+          date: "March 30, 1992",
+        },
+        {
+          institution: "Ateneo de Manila University School of Law",
+          degree: "Juris Doctor",
+          date: "April 10, 1996",
+        },
+      ],
+      locationOfPractice: ["Nationwide", "Luzon wide", "Visayas wide", "Mindanao wide"],
+      concentration: ["Maritime law", "Commercial law", "Banking law"],
+      casesHandled: [
+        "Admiralty and maritime disputes",
+        "Cargo claims",
+        "Ship mortgage foreclosures",
+        "Port authority disputes",
+      ],
+    },
+    reviews: [
+      {
+        id: "r14-1",
+        reviewer: "Capt. Rivera",
+        rating: 5.0,
+        text: "Best maritime lawyer in the country. Won our cargo claim hands down.",
+        timestamp: "08/15/2023, 10:45 AM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "8:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Tuesday", am: "8:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Wednesday", am: "8:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Thursday", am: "8:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Friday", am: "8:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Saturday", am: "9:00 – 11:00 AM", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  {
+    id: "lawyer-15",
+    name: "Atty. Sheila R. Domingo",
+    position: "Associate Lawyer",
+    photo: annaBermudezImg,
+    isOnline: false,
+    phone: "+63 931 567 8901",
+    rating: 4.6,
+    isAvailable: false,
+    location: "Muntinlupa, Metro Manila",
+    consultationCount: 53,
+    cv: {
+      rollNumber: "1845678O",
+      dateAdmitted: "December 12, 2013",
+      ibp: { number: "Muntinlupa 5678901", date: "January 25, 2023" },
+      mcle: {
+        status: "Compliant",
+        number: "150345678901",
+        dateRange: "December 1, 2022 – February 28, 2023",
+      },
+      languages: ["Filipino", "English", "Tagalog"],
+      workExperience: [
+        {
+          firm: "Domingo Legal Group",
+          role: "Associate",
+          address: "Suite 305, Alabang Business Park, Muntinlupa City",
+        },
+      ],
+      education: [
+        {
+          institution: "University of the Philippines",
+          degree: "BS Accountancy",
+          date: "April 5, 2007",
+        },
+        {
+          institution: "San Beda College of Law",
+          degree: "Juris Doctor",
+          date: "April 20, 2011",
+        },
+      ],
+      locationOfPractice: ["Luzon wide"],
+      concentration: ["Taxation law", "Corporate law"],
+      casesHandled: [
+        "Tax compliance",
+        "Corporate governance",
+        "BIR audit defense",
+      ],
+    },
+    reviews: [
+      {
+        id: "r15-1",
+        reviewer: "Mr. Uy",
+        rating: 4.6,
+        text: "Knowledgeable on tax matters. Resolved our BIR assessment issue successfully.",
+        timestamp: "09/01/2023, 1:00 PM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Tuesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Wednesday", am: "9:00 – 11:00 AM", pm: "Not available" },
+      { day: "Thursday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Friday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Saturday", am: "Not available", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  {
+    id: "lawyer-16",
+    name: "Atty. Danilo T. Soriano",
+    position: "Senior Associate",
+    photo: louisseMartinezImg,
+    isOnline: true,
+    phone: "+63 932 678 9012",
+    rating: 4.5,
+    isAvailable: true,
+    location: "San Mateo, Rizal",
+    consultationCount: 66,
+    cv: {
+      rollNumber: "1956789P",
+      dateAdmitted: "May 7, 2010",
+      ibp: { number: "Rizal 6789012", date: "June 18, 2022" },
+      mcle: {
+        status: "Compliant",
+        number: "160456789012",
+        dateRange: "January 3, 2023 – March 31, 2023",
+      },
+      languages: ["Filipino", "English", "Tagalog", "Kapampangan"],
+      workExperience: [
+        {
+          firm: "Soriano & Soriano",
+          role: "Senior Associate",
+          address: "2nd Floor, San Mateo Commercial Building, San Mateo, Rizal",
+        },
+      ],
+      education: [
+        {
+          institution: "University of Santo Tomas",
+          degree: "AB Mass Communication",
+          date: "April 3, 2004",
+        },
+        {
+          institution: "Arellano University School of Law",
+          degree: "Juris Doctor",
+          date: "April 25, 2008",
+        },
+      ],
+      locationOfPractice: ["Luzon wide"],
+      concentration: ["Labor law", "Administrative law"],
+      casesHandled: [
+        "NLRC complaints",
+        "Labor standards enforcement",
+        "Employee benefit disputes",
+        "Occupational safety and health violations",
+      ],
+    },
+    reviews: [
+      {
+        id: "r16-1",
+        reviewer: "Ms. Alcantara",
+        rating: 4.5,
+        text: "Straightforward and results-oriented. Our NLRC case was resolved within the expected timeline.",
+        timestamp: "10/10/2023, 4:30 PM",
+      },
+    ],
+    schedule: [
+      { day: "Monday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Tuesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Wednesday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Thursday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Friday", am: "9:00 – 11:00 AM", pm: "1:00 – 5:00 PM" },
+      { day: "Saturday", am: "Not available", pm: "Not available" },
+      { day: "Sunday", am: "Not available", pm: "Not available" },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // END SAMPLE / TEST DATA
+  // ═══════════════════════════════════════════════════════════════════════════
 ];

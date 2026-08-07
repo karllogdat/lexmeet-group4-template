@@ -1,9 +1,11 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Search } from "lucide-react";
 import { lawyers } from "../components/lawyers-profile/lawyersProfileData";
 import PageTabs from "../components/lawyers-profile/PageTabs";
 import LawyerTable from "../components/lawyers-profile/LawyerTable";
 import LawyerProfileModal from "../components/lawyers-profile/LawyerProfileModal";
+import TablePagination from "../components/lawyers-profile/TablePagination";
+import usePagination from "../hooks/usePagination";
 
 /**
  * LawyersProfilePage — main page for /lawyers-profile
@@ -13,8 +15,13 @@ import LawyerProfileModal from "../components/lawyers-profile/LawyerProfileModal
  *   - Search input filtered by lawyer name
  *   - 3-tab navigation (List of Lawyers / Ratings & Feedback / Lawyers Schedule)
  *   - Shared table structure, variable right column per tab
+ *   - Shared pagination state across all 3 tabs (5 rows/page)
  *   - "See More" modal for individual lawyer details
  */
+
+/** Rows displayed per page — 5 keeps rows visible without excessive scrolling. */
+const ROWS_PER_PAGE = 5;
+
 export default function LawyersProfilePage() {
   const [activeTab, setActiveTab] = useState("list");
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,6 +34,25 @@ export default function LawyersProfilePage() {
     if (!q) return lawyers;
     return lawyers.filter((l) => l.name.toLowerCase().includes(q));
   }, [searchQuery]);
+
+  // Shared pagination — one instance covers all 3 tabs
+  const pagination = usePagination({
+    totalItems: filteredLawyers.length,
+    itemsPerPage: ROWS_PER_PAGE,
+  });
+
+  // Reset to page 1 whenever the search query changes so the user
+  // doesn't land on a page that may have no matching results.
+  useEffect(() => {
+    pagination.goToPage(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
+
+  // Slice the filtered list to the current page's window
+  const pageLawyers = filteredLawyers.slice(
+    pagination.startIndex,
+    pagination.endIndex,
+  );
 
   // Map page tab to table variant
   const variantMap = {
@@ -82,11 +108,14 @@ export default function LawyersProfilePage() {
             {/* Table */}
             <div className="bg-white">
               <LawyerTable
-                lawyers={filteredLawyers}
+                lawyers={pageLawyers}
                 variant={variantMap[activeTab]}
                 onSeeMore={handleSeeMore}
               />
             </div>
+
+            {/* Pagination controls — shared across all tabs */}
+            <TablePagination {...pagination} />
           </div>
         </div>
       </div>
