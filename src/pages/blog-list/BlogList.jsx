@@ -38,7 +38,10 @@ export default function BlogList({ type }) {
     }
   }, [type]);
 
-  const crumbs = [{ name: "Everyday Law", to: "/everyday-law" }, currentPage];
+  const crumbs = [
+    { name: "Everyday Law Main", to: "/everyday-law" },
+    currentPage,
+  ];
 
   const blogs = blogsSamples;
 
@@ -69,11 +72,11 @@ export default function BlogList({ type }) {
       </div>
 
       <h1 className="w-full font-bold text-center g4-heading-1 text-g4-900">
-        Everyday Law
+        {currentPage.name}
       </h1>
 
       <div className="flex flex-col gap-6">
-        <BlogPagination blogs={blogs} />
+        <BlogPagination blogs={blogs} currentPage={currentPage} />
       </div>
     </div>
   );

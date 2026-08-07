@@ -15,6 +15,7 @@ import LawyersProfile from "./pages/LawyersProfile";
 import AboutPage from "./pages/AboutPage";
 import ScrollToTop from "./hooks/ScrollToTop";
 import BlogList from "./pages/blog-list/BlogList";
+import BlogPage from "./pages/blog-list/BlogPage";
 
 function App() {
   const { pathname } = useLocation();
@@ -30,20 +31,12 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/design-system" element={<DesignSystemPage />} />
           <Route path="/law-practice" element={<LawPracticePage />} />
-          
+
           {/* Everyday Law Parent Route */}
           <Route path="/everyday-law">
             <Route index element={<EverydayLawMainPage />} />
             <Route path="blog" element={<EverydayLawBlogPage />} />
-            {/* <Route
-              path="everyday-law-blog-list"
-              element={<EverydayLawBlogListPage />}
-            />
-            <Route
-              path="law-updates-blog-list"
-              element={<LawUpdatesBlogListPage />}
-            />
-            <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} /> */}
+
             <Route
               path="everyday-law-blog-list"
               element={<BlogList type="everyday_law" />}
@@ -55,6 +48,22 @@ function App() {
             <Route
               path="lawyers-blog-list"
               element={<BlogList type="lawyers_blog" />}
+            />
+
+            {/* Individual blogs */}
+            <Route
+              path="everyday-law-blog-list/:id"
+              element={<BlogPage type="everyday_law" />}
+            />
+
+            <Route
+              path="law-updates-blog-list/:id"
+              element={<BlogPage type="law_updates" />}
+            />
+
+            <Route
+              path="lawyers-blog-list/:id"
+              element={<BlogPage type="lawyers_blog" />}
             />
           </Route>
 
