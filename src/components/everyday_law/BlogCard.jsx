@@ -14,7 +14,8 @@ export default function BlogCard({ blog, to }) {
       <div className="flex flex-col gap-2.5">
         <h3 className="g4-heading-3 text-g4-900">{blog.title}</h3>
         <p className="g4-body text-g4-600">
-          {blog.author} • {blog.published_at.toDateString()} • 10 min read
+          {blog.author} • {blog.published_at.toDateString()} • {blog.read_time}{" "}
+          min read
         </p>
         <hr className="border border-g4-900" />
         <p className="g4-body text-g4-900 text-truncate line-clamp-4">

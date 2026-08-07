@@ -1,20 +1,29 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import usePagination from "../../hooks/usePagination";
 import BlogCard from "./BlogCard";
+import { useEffect } from "react";
 
-export default function BlogPagination({ blogs = [] }) {
+export default function BlogPagination({ blogs = [], currentPage }) {
   const pagination = usePagination({
     totalItems: blogs.length,
     itemsPerPage: 3,
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pagination.currentPage]);
 
   const currentBlogs = blogs.slice(pagination.startIndex, pagination.endIndex);
 
   return (
     <>
       <div className="flex flex-col gap-6 ">
-        {currentBlogs.map((blog, index) => (
-          <BlogCard key={index} blog={blog} />
+        {currentBlogs.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            blog={blog}
+            to={`${currentPage.to}/${blog.id}`}
+          />
         ))}
       </div>
 
