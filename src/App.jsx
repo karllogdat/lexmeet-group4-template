@@ -14,9 +14,10 @@ import LawOfficePage from "./pages/LawOffice";
 import LawyersProfile from "./pages/LawyersProfile";
 import AboutPage from "./pages/AboutPage";
 import ScrollToTop from "./hooks/ScrollToTop";
+import BlogList from "./pages/blog-list/BlogList";
 
 function App() {
-  const { pathname } = useLocation(); 
+  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -32,7 +33,7 @@ function App() {
           <Route path="everyday-law">
             <Route index element={<EverydayLawMainPage />} />
             <Route path="blog" element={<EverydayLawBlogPage />} />
-            <Route
+            {/* <Route
               path="everyday-law-blog-list"
               element={<EverydayLawBlogListPage />}
             />
@@ -40,7 +41,19 @@ function App() {
               path="law-updates-blog-list"
               element={<LawUpdatesBlogListPage />}
             />
-            <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} />
+            <Route path="lawyers-blog-list" element={<LawyersBlogListPage />} /> */}
+            <Route
+              path="everyday-law-blog-list"
+              element={<BlogList type="everyday_law" />}
+            />
+            <Route
+              path="law-updates-blog-list"
+              element={<BlogList type="law_updates" />}
+            />
+            <Route
+              path="lawyers-blog-list"
+              element={<BlogList type="lawyers_blog" />}
+            />
           </Route>
           <Route path="/law-office" element={<LawOfficePage />} />
           <Route path="/lawyers-profile" element={<LawyersProfile />} />
