@@ -5,12 +5,16 @@ import Button from "../components/Button";
 
 import LatestBlog from "../components/everyday_law/LatestBlog";
 import {
+  everydayLawSamples,
   latestBlogSample,
   tags,
 } from "../components/everyday_law/EverydayLawMainData";
 import PopularTags from "../components/everyday_law/PopularTags";
 
 export default function EverydayLawMainPage() {
+  const latestBlog = everydayLawSamples[0];
+  const linkToLatestBlog = "/everyday-law/everyday-law-blog-list/1";
+
   return (
     <div className="flex flex-col items-center p-6 lg:px-20 gap-2.5">
       <h1 className="w-full h-16 text-center g4-heading-1 font-bold text-g4-700">
@@ -43,7 +47,7 @@ export default function EverydayLawMainPage() {
       </div>
 
       {/*Latest Blog Section */}
-      <LatestBlog blog={latestBlogSample} />
+      <LatestBlog blog={latestBlog} linkToBlog={linkToLatestBlog} />
 
       {/* popular tags section */}
       <PopularTags tags={tags} />

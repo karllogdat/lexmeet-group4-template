@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import LatestBlogImage from "../../assets/everyday-law/latest-blog.jpg";
 import { useNavigate } from "react-router";
 
-export default function LatestBlog({ blog }) {
+export default function LatestBlog({ blog, linkToBlog }) {
   const navigate = useNavigate();
 
   return (
@@ -30,7 +30,7 @@ export default function LatestBlog({ blog }) {
           <p className="line-clamp-7 text-truncate g4-body">{blog.content}</p>
           <button
             type="button"
-            onClick={() => navigate("/everyday-law/blog")}
+            onClick={() => navigate(linkToBlog)}
             className="cursor-pointer flex w-fit py-2 items-center justify-center gap-2.5 text-g4-700"
           >
             <span className="g4-button">Read More</span>
