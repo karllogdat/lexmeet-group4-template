@@ -57,6 +57,9 @@ export default function AboutPage() {
   const visibleValues = showAll ? values : values.slice(0, VISIBLE_VALUES);
   const hasMore = values.length > VISIBLE_VALUES;
 
+  const promiseImage =
+    "https://images.pexels.com/photos/8112153/pexels-photo-8112153.jpeg";
+
   const promises = [
     "Annulment of Marriage",
     "Support",
@@ -173,11 +176,11 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col pb-8 gap-8 items-center text-g4-900">
+      <div className="w-full flex flex-col pb-16 gap-8 items-center text-g4-900">
         <h1 className="w-full text-center g4-heading-1 font-bold">
           Values We Live By
         </h1>
-        <div className="w-full flex flex-col gap-16 lg:gap-0">
+        <div className="w-full flex flex-col p-6 lg:px-20 gap-16 lg:gap-0">
           {visibleValues.map((value, index) => (
             <ValueCard key={index} value={value} index={index} />
           ))}
@@ -189,37 +192,44 @@ export default function AboutPage() {
       </div>
 
       {/* with slant bg: "w-full p-6 lg:px-20 py-32 flex flex-col lg:flex-row items-center gap-24 bg-linear-358 from-g4-900 from-[89.9%] to-g4-white to-[90.1%] text-g4-50" */}
-      <div className="w-full p-6 lg:px-20 py-16 flex flex-col lg:flex-row items-center gap-24 bg-g4-900 text-g4-50">
-        <div className="w-full lg:w-1/2 flex flex-col gap-6">
-          <h1 className="g4-heading-1 font-bold">Our Promise</h1>
-          <h2 className="g4-heading-2">Making Legal Help Accessible</h2>
-          <p className="g4-body">
-            From this vision, LexMeet was created—to make legal help more
-            accessible through technology. We connect peohple with trusted
-            lawyers for secure, real-time online consultations, wherever they
-            are and whenever they need legal guidance.
-            <br /> <br />
-            Choose a lawyer based on expertise, location, or preferred language,
-            then connect through our secure video consultation platform using
-            your computer, tablet, or smartphone. With easy scheduling,
-            transparent access, and affordable consultations, LexMeet makes
-            finding the right legal professional simple, convenient, and just a
-            click away.
-          </p>
-        </div>
+      <div className="flex flex-col w-full">
+        <img
+          src={promiseImage}
+          className="w-full object-cover aspect-1/1 lg:aspect-4/1"
+        />
 
-        <div className="w-full lg:w-1/2 flex flex-col gap-14">
-          <div className="grid grid-cols-2 gap-6">
-            {promises.map((promise, index) => (
-              <PromiseCard key={index} promise={promise} />
-            ))}
+        <div className="w-full p-6 lg:px-20 py-16 flex flex-col lg:flex-row items-center gap-24 bg-g4-900 text-g4-50">
+          <div className="w-full lg:w-1/2 flex flex-col gap-6">
+            <h1 className="g4-heading-1 font-bold">Our Promise</h1>
+            <h2 className="g4-heading-2">Making Legal Help Accessible</h2>
+            <p className="g4-body">
+              From this vision, LexMeet was created—to make legal help more
+              accessible through technology. We connect peohple with trusted
+              lawyers for secure, real-time online consultations, wherever they
+              are and whenever they need legal guidance.
+              <br /> <br />
+              Choose a lawyer based on expertise, location, or preferred
+              language, then connect through our secure video consultation
+              platform using your computer, tablet, or smartphone. With easy
+              scheduling, transparent access, and affordable consultations,
+              LexMeet makes finding the right legal professional simple,
+              convenient, and just a click away.
+            </p>
           </div>
 
-          <p className="g4-body">
-            A meeting place for clients seeking legal advice online! A webspace
-            for lawyers making their services available to the public! Come on!
-            LexMeet!
-          </p>
+          <div className="w-full lg:w-1/2 flex flex-col gap-14">
+            <div className="grid grid-cols-2 gap-6">
+              {promises.map((promise, index) => (
+                <PromiseCard key={index} promise={promise} />
+              ))}
+            </div>
+
+            <p className="g4-body">
+              A meeting place for clients seeking legal advice online! A
+              webspace for lawyers making their services available to the
+              public! Come on! LexMeet!
+            </p>
+          </div>
         </div>
       </div>
     </div>
