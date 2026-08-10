@@ -1,18 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router'; // React Router v7 import
+import { Link, useNavigate } from 'react-router';
 
 import lexLogo from "../assets/Lex.svg";
 import lexMeetLogo from "../assets/LexMeetName.svg";
 
 export default function Footer() {
+  const navigate = useNavigate();
+
+  const handleLogoClick = (e) => {
+    e.preventDefault();
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="flex flex-col w-full text-white font-sans">
       <div className="bg-linear-to-r from-[#3776A1] to-[#142B3B] px-6 py-6 sm:py-8">
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 items-start">
           
-          {/* Brand Logo & Name Section - Clickable Link to Homepage */}
           <Link 
             to="/" 
+            onClick={handleLogoClick}
             className="flex items-center justify-start gap-2.5 sm:col-span-2 lg:col-span-2 min-w-0 max-w-full hover:opacity-90 transition-opacity cursor-pointer group"
           >
             <img 
@@ -34,7 +42,6 @@ export default function Footer() {
             </div>
           </Link>
 
-          {/* Contact Us */}
           <div className="text-slate-200 leading-snug space-y-0.5 min-w-0 text-xs lg:col-span-1">
             <h3 className="font-bold font-poppins text-xs sm:text-sm text-white uppercase tracking-wider mb-1.5">
               CONTACT US
@@ -46,7 +53,6 @@ export default function Footer() {
             <p className="break-all">Email: contact@rizallawoffice.com</p>
           </div>
 
-          {/* Visit Us */}
           <div className="text-slate-200 leading-snug space-y-0.5 min-w-0 text-xs lg:col-span-1">
             <h3 className="font-bold font-poppins text-xs sm:text-sm text-white uppercase tracking-wider mb-1.5">
               VISIT US
@@ -57,7 +63,6 @@ export default function Footer() {
             <p>Ortigas Center, Pasig City</p>
           </div>
 
-          {/* Terms of Use */}
           <div className="text-slate-200 leading-snug min-w-0 text-xs lg:col-span-1">
             <h3 className="font-bold font-poppins text-xs sm:text-sm text-white tracking-wider mb-1.5 uppercase">
               TERMS OF USE
@@ -70,7 +75,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Follow Us */}
           <div className="text-slate-200 leading-snug min-w-0 text-xs lg:col-span-1">
             <h3 className="font-bold font-poppins text-xs sm:text-sm text-white tracking-wider mb-1.5 uppercase">
               FOLLOW US:
