@@ -176,11 +176,11 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col pb-8 gap-8 items-center text-g4-900">
+      <div className="w-full flex flex-col pb-16 gap-8 items-center text-g4-900">
         <h1 className="w-full text-center g4-heading-1 font-bold">
           Values We Live By
         </h1>
-        <div className="w-full flex flex-col gap-16 lg:gap-0">
+        <div className="w-full flex flex-col p-6 lg:px-20 gap-16 lg:gap-0">
           {visibleValues.map((value, index) => (
             <ValueCard key={index} value={value} index={index} />
           ))}
