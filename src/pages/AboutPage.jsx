@@ -193,7 +193,11 @@ export default function AboutPage() {
 
       {/* with slant bg: "w-full p-6 lg:px-20 py-32 flex flex-col lg:flex-row items-center gap-24 bg-linear-358 from-g4-900 from-[89.9%] to-g4-white to-[90.1%] text-g4-50" */}
       <div className="flex flex-col w-full">
-        <img src={promiseImage} className="w-full object-cover aspect-4/1" />
+        <img
+          src={promiseImage}
+          className="w-full object-cover aspect-1/1 lg:aspect-4/1"
+        />
+
         <div className="w-full p-6 lg:px-20 py-16 flex flex-col lg:flex-row items-center gap-24 bg-g4-900 text-g4-50">
           <div className="w-full lg:w-1/2 flex flex-col gap-6">
             <h1 className="g4-heading-1 font-bold">Our Promise</h1>
