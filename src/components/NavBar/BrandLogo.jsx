@@ -1,12 +1,20 @@
 import React from "react";
-import { Link } from "react-router";
-// Import the SVG directly so Vite bundles it correctly
+import { Link, useNavigate } from "react-router";
 import lexLogo from "../../assets/Lex.svg";
 
 export default function BrandLogo() {
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate("/");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Link 
       to="/" 
+      onClick={handleClick}
       className="flex items-center gap-3 cursor-pointer group select-none"
       aria-label="Rizal Law Office Home"
     >

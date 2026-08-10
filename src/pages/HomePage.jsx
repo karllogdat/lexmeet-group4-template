@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router";
 
 import bg1 from "../assets/Homepage/bg1.png";
 import bg2 from "../assets/Homepage/bg2.png";
@@ -15,28 +16,35 @@ import Button from "../components/Button";
 export default function HomePage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#our-services" || location.state?.scrollToServices) {
+      setTimeout(() => {
+        const element = document.getElementById("our-services");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, [location]);
 
   return (
     <main className="bg-[#f8fafc]">
-      {/* Hero Section */}
       <section className="relative w-full min-h-[650px] bg-[#0c2a4a] text-white overflow-hidden flex items-center">
-        {/* Background Layer 1: Architectural Texture */}
         <div
           className="absolute inset-0 bg-cover bg-center opacity-80"
           style={{ backgroundImage: `url(${bg1})` }}
         />
 
-        {/* Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b243f] via-[#0b243f]/80 to-transparent" />
 
-        {/* Background Layer 2: Lady Justice */}
         <img
           src={bg2}
           alt="Lady Justice"
           className="hidden md:block absolute right-0 top-12 md:top-16 w-[710px] h-[1065px] max-w-none object-contain object-right-top z-0 pointer-events-none"
         />
 
-        {/* Hero Content Wrapper */}
         <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-20 md:pb-24 w-full flex flex-col md:flex-row items-center justify-between gap-8 z-10">
           <div className="w-full md:w-7/12 space-y-3 max-w-xl pt-0 -mt-20 md:-mt-24">
             <h1 className="font-['Playfair_Display'] text-[36px] sm:text-[48px] md:text-[48px] font-extrabold text-white leading-tight">
@@ -49,7 +57,6 @@ export default function HomePage() {
               tailored for your busy schedule, entirely from your screen.
             </p>
 
-            {/* Long full-width button */}
             <div className="pt-4 w-full">
               <button
                 type="button"
@@ -65,13 +72,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Component */}
       <OurServices />
 
-      {/* Practice Areas Component */}
       <PracticeArea />
 
-      {/* Got A Legal Question Banner */}
       <section className="w-full bg-[#033b67] text-white py-4 md:py-6 px-4 text-center flex items-center justify-center">
         <div className="max-w-xl mx-auto flex flex-col items-center justify-center space-y-2 w-full">
           <h2 className="g4-heading-1 font-bold tracking-wide leading-tight">
@@ -88,19 +92,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Everyday Law Section */}
       <EverydayLawSection />
 
-      {/* Law Updates Section */}
       <LawUpdatesSection />
 
-      {/* Contact Modal */}
       <ContactModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
       />
 
-      {/* Login Modal */}
       <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
     </main>
   );
